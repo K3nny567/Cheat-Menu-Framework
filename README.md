@@ -137,20 +137,6 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
   - Renamed to Cheat Menu Framework
 </details>
 
-## Mod Managing:
-<details>
-<summary>Mod Management Instructions:</summary>
-
-Note: Other mods not required, they are just what is in my load order.
-
-1. ![](/../Assets/instruc_1.png)
-
-2. ![](/../Assets/instruc_2.png)
-
-3. ![](/../Assets/instruc_3.png)
-
-</details>
-
 <hr/>
 
 <details>
