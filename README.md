@@ -39,9 +39,9 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - [Will NOT be changed] There is no default language fallback implemented in the mod, so if you use the MTL in the game itself, you MUST create the MTL folder in the mod too. This is by design as the mod relies on the language as set by the game. The MTL tool can be tricked into translating the mod, but the language the tool uses as a source is Google Translated from English and will be inaccurate. The only languages included in the mod that are confirmed accurate are English (being my native language) and Russian (see Credits spoiler)
 
 ## Planned changes (lower number = highest priority):
-- Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
-- Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
-- Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
+1. Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
+2. Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
+3. Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
 <hr/>
 
 ## Changelog:
