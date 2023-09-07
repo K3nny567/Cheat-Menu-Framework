@@ -1,0 +1,96 @@
+info/alert
+ВНИМАНИЕ!
+
+cheat/dirt
+ВКЛ/ВКЛ грязь
+
+cheat_toggle/on
+ВКЛ
+
+cheat_toggle/off
+ВЫКЛ
+
+commands/back
+Назад
+
+commands_race/human
+Человек
+
+commands_race/moot
+Смешанная
+
+commands_race/deepone
+Глубинная
+
+commands_race/truedeepone
+Морская ведьма
+
+commands_race/abom_human
+Мерзость (человек)
+
+commands_race/abom_moot
+Мерзость (смешанная)
+
+commands_morality/command
+Репутация
+
+commands/cheats
+Выбрать читы
+
+commands/summon
+Призвать
+
+commands/race
+Сменить расу
+
+commands/morality
+Уст. репутацию
+
+commands/heal
+Исцелить
+
+commands/healw
+Вылечить раны
+
+commands/fall
+Упасть
+
+commands/gib
+Получить очки обмена
+
+commands/lvl99
+Уст. уровень 99
+
+commands/stronk
+Уст. очки тал. 999
+
+command_help/cheats_0
+Включить/выключить читы.
+
+command_help/cheats_1
+Нажмите Z для переключения.
+
+command_help/summon_0
+Выберите NPC для вызова.
+
+command_help/summon_1
+Нажмите Z для вызова.
+
+command_help/race_0
+Выберите расу.
+
+command_help/race_1
+Нажмите Z, чтобы выбрать.
+
+command_help/morality_0
+Чтобы установить репутацию
+
+command_help/morality_1
+нажимайте влево/вправо, чтобы уменьшить/увеличить.
+
+command_help/morality_2
+Удерживайте SHIFT для увеличения на 10.
+
+command_help/morality_3
+Удерживайте ALT для приращения 100.
+

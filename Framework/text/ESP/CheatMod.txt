@@ -1,0 +1,96 @@
+info/alert
+ATENCIÓN
+
+cheat/dirt
+Estadística sucia
+
+cheat_toggle/on
+ACTIVADO
+
+cheat_toggle/off
+DESACTIVADO
+
+commands/back
+Volver
+
+commands_race/human
+Humano
+
+commands_race/moot
+Mestizos
+
+commands_race/deepone
+Pre Profundo Uno
+
+commands_race/truedeepone
+Profundo Uno
+
+commands_race/abom_human
+Abominación (Humana)
+
+commands_race/abom_moot
+Abominación (mestizo)
+
+commands_morality/command
+Moralidad
+
+commands/cheats
+Trucos Toggle
+
+commands/summon
+Invocar
+
+commands/race
+Cambiar de raza
+
+commands/morality
+Ajustar la moralidad
+
+commands/heal
+Cura
+
+commands/healw
+Curar heridas
+
+commands/fall
+Agotado
+
+commands/gib
+Dar dinero
+
+commands/lvl99
+Nivel 99
+
+commands/stronk
+Dar puntos de rasgo
+
+command_help/cheats_0
+Activar/desactivar Trucos.
+
+command_help/cheats_1
+Pulsa Z para alternar.
+
+command_help/summon_0
+Selecciona el PNJ a invocar.
+
+command_help/summon_1
+Pulsa Z para invocar.
+
+command_help/race_0
+Selecciona raza.
+
+command_help/race_1
+Pulse Z para seleccionar.
+
+command_help/morality_0
+Ajustar la moralidad.
+
+command_help/morality_1
+Pulsa Izquierda/Derecha para perder/ganar.
+
+command_help/morality_2
+Mantenga pulsado SHIFT para incrementos de 10.
+
+command_help/morality_3
+Mantenga pulsado ALT para incrementos de 100.
+
