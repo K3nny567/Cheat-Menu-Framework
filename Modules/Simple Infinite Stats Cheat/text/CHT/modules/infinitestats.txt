@@ -1,0 +1,9 @@
+cheat/health
+无限健康
+
+cheat/food
+无限的食物
+
+cheat/stamina
+无限的耐力
+

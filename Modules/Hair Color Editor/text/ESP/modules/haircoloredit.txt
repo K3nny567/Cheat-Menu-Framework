@@ -1,0 +1,18 @@
+command_ext
+Color de pelo
+
+command_desc
+Fijar el color del pelo
+
+command_help_0
+Cambiar el color del pelo.
+
+command_help_1
+Pulse Izquierda/Derecha para cambiar de color.
+
+command_help_2
+0：Gris, 1：Negro, 2：Blanco
+
+command_help_3
+3：Aqua, 4：Rojo, 5：Rubio
+

@@ -1,0 +1,44 @@
+commands_preg/human
+인간
+
+commands_preg/moot
+혼합 인종
+
+commands_preg/deepone
+딥 원
+
+commands_preg/fishkind
+피쉬카인드
+
+commands_preg/orkind
+오크 종족
+
+commands_preg/goblin
+고블린
+
+commands_preg/abom
+어보미네이션
+
+commands/preg
+함침
+
+command_help/preg_0
+인종을 선택합니다.
+
+command_help/preg_1
+Z를 눌러 선택합니다.
+
+window/babyRace
+베이비 레이스
+
+window/daysTillBirth
+생년월일까지
+
+window/pregplus
+임신 하루 앞당기기
+
+window/birthInOneDay
+마지막 날까지 임신을 진행
+
+window/selectInfo
+임신한 경우 아래로 스크롤하여 임신 진행

@@ -1,0 +1,50 @@
+commands_preg/human
+Human
+
+commands_preg/moot
+Mixed-Race
+
+commands_preg/deepone
+Deep One
+
+commands_preg/fishkind
+Fishkind
+
+commands_preg/orkind
+Orkind
+
+commands_preg/goblin
+Goblin
+
+commands_preg/abom
+Abomination
+
+commands/preg
+Impregnate
+
+command_help/preg_0
+Select race.
+
+command_help/preg_1
+Press Z to select.
+
+window/babyRace
+Baby race
+
+window/daysTillBirth
+Days till birth
+
+window/pregplus
+Advance pregnancy by one day
+
+window/birthInOneDay
+Advance pregnancy till last day
+
+window/selectInfo
+Select race to be impregnated by
+
+window/selectInfo2
+Select multiple times to get desired baby race
+
+window/selectInfo3
+If pregnant, scroll down to advance pregnancy

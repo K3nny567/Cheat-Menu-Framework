@@ -1,0 +1,3 @@
+command
+Auto-Bandage
+

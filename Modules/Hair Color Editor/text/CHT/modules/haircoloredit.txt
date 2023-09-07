@@ -1,0 +1,18 @@
+command_ext
+头发颜色
+
+command_desc
+设置头发颜色
+
+command_help_0
+改变头发颜色。
+
+command_help_1
+按左/右键来改变颜色。
+
+command_help_2
+0：灰色, 1：黑色, 2：白化
+
+command_help_3
+3：水蓝色, 4：红色, 5：金色
+

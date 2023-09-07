@@ -1,0 +1,9 @@
+cheat/health
+Infinite Health
+
+cheat/food
+Infinite Food
+
+cheat/stamina
+Infinite Stamina
+

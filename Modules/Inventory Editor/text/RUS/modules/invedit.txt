@@ -1,0 +1,21 @@
+commands/items
+Предметы
+
+commands/weapons
+Оружие
+
+commands/armors
+Доспехи
+
+command_help/items_0
+Настройте элементы.
+
+command_help/items_1
+Нажимайте влево/вправо, чтобы потерять/приобрести.
+
+command_help/items_2
+Удерживайте SHIFT для увеличения на 10.
+
+command_help/items_3
+Удерживайте ALT для приращения 100.
+
