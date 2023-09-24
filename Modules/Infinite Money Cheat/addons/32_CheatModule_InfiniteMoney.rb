@@ -22,10 +22,13 @@ module CheatUtils
 	end
 end
 
-class Scene_Base
-	alias_method :trigger_debug_window_entry_CHEATSMODULE_INFINITE_MONEY, :trigger_debug_window_entry
-	def trigger_debug_window_entry
-		trigger_debug_window_entry_CHEATSMODULE_INFINITE_MONEY
+##---------------------------------------------------------------------------
+## Hotkeys
+##---------------------------------------------------------------------------
+module CheatsMod
+	self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_INFINITE_MONEY, :cheat_triggers)
+	def self.cheat_triggers
+		cheat_triggers_CHEATSMODULE_INFINITE_MONEY
 		if $cheat_infinite_money
 			CheatUtils.set_gold if $game_party.gold != 99999
 		end

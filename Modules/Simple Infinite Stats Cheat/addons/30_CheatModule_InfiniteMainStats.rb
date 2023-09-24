@@ -53,10 +53,13 @@ module CheatUtils
 	end
 end
 
-class Scene_Base
-	alias_method :trigger_debug_window_entry_CHEATSMODULE_AUTOHEAL, :trigger_debug_window_entry
-	def trigger_debug_window_entry
-		trigger_debug_window_entry_CHEATSMODULE_AUTOHEAL
+##---------------------------------------------------------------------------
+## Hotkeys
+##---------------------------------------------------------------------------
+module CheatsMod
+	self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_AUTOHEAL, :cheat_triggers)
+	def self.cheat_triggers
+		cheat_triggers_CHEATSMODULE_AUTOHEAL
 		if Input.trigger?(Input::F8)
 			CheatUtils.heal_player
 			SndLib.buff_life

@@ -16,10 +16,13 @@ module CheatUtils
 	end
 end
 
-class Scene_Base
-	alias_method :trigger_debug_window_entry_CHEATSMODULE_AUTOBANDAGE, :trigger_debug_window_entry
-	def trigger_debug_window_entry
-		trigger_debug_window_entry_CHEATSMODULE_AUTOBANDAGE
+##---------------------------------------------------------------------------
+## Hotkeys
+##---------------------------------------------------------------------------
+module CheatsMod
+	self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_AUTOBANDAGE, :cheat_triggers)
+	def self.cheat_triggers
+		cheat_triggers_CHEATSMODULE_AUTOBANDAGE
 		if Input.trigger?(Input::F7)
 			CheatUtils.bandage_player
 			SndLib.sound_equip_armor

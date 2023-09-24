@@ -13,6 +13,21 @@ module CheatUtils
 	end
 end
 
+##---------------------------------------------------------------------------
+## Hotkeys
+##---------------------------------------------------------------------------
+module CheatsMod
+	self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_UNEQUIPITEMS, :cheat_triggers)
+	def self.cheat_triggers
+		cheat_triggers_CHEATSMODULE_UNEQUIPITEMS
+		if Input.trigger?(Input::F3)
+			CheatUtils.unequipall(false)
+		end
+		if Input.press?(:SHIFT) && Input.trigger?(Input::F3)
+			CheatUtils.unequipall(true)
+		end
+	end
+end
 class Scene_Base
 	alias_method :trigger_debug_window_entry_CHEATSMODULE_UNEQUIPITEMS, :trigger_debug_window_entry
 	def trigger_debug_window_entry
