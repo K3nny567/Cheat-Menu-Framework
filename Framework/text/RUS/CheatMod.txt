@@ -50,7 +50,7 @@ commands/heal
 Исцелить
 
 commands/healw
-Вылечить раны
+Вылечить рану
 
 commands/fall
 Упасть
