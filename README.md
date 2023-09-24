@@ -34,7 +34,7 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 
 ## Known Issues:
 - Hive Hearts summoned on maps without H_BIOS storypoints crash the game. Only summon them if you wish to farm them on their actual maps. (If anyone knows how to recreate these storypoints in code if they don't exist in the current area, feel free to make and share a patch to the Summon feature)
-- Having all 3 Infinite Stats cheats enabled causes lag to a noticeable degree. (Configurable variant ONLY)
+- Having all 3 Infinite Stats cheats enabled causes lag to a noticeable degree. (Configurable variant ONLY, partially fixed by recent changes)
 - Some things don't change when changing languages. This is a problem with even the game itself, so restart after switching languages.
 - [Will NOT be changed] There is no default language fallback implemented in the mod, so if you use the MTL in the game itself, you MUST create the MTL folder in the mod too. This is by design as the mod relies on the language as set by the game. The MTL tool can be tricked into translating the mod, but the language the tool uses as a source is Google Translated from English and will be inaccurate. The only languages included in the mod that are confirmed accurate are English (being my native language) and Russian (see Credits spoiler)
 
@@ -135,7 +135,10 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - Removed - UnlockTool translations removed as a previous update negated the need to translate the CheatModule.
 - Fixed - Sickly was renamed to AbomSickly.
 - Initial steps for v1.0 release of the mod.
-  - Renamed to Cheat Menu Framework
+- Renamed to Cheat Menu Framework
+- Changed how cheat triggers work.
+- Removed the plural in the heal wound command and it's translations.
+- CheatModules now only declare globals once per game session. This has reduced some of the lag in relation to the `Configurable Infinite Main Stats` module.
 </details>
 
 <hr/>
