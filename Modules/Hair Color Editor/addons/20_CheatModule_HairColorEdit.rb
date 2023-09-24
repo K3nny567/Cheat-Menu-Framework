@@ -1,5 +1,7 @@
 # Cheats Mod Module - Hair Color Editor
 
+$CHEATSMOD_CHEATMODULES["Hair Color Editor"] = true
+
 #==============================================================================
 # Window_DebugHairColor
 #==============================================================================

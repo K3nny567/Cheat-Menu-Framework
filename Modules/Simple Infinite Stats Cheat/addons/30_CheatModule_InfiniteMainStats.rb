@@ -1,9 +1,13 @@
 # Cheats Mod Module - Infinite Main Stats
 
-# load toggle state from ini
-$cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
-$cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
-$cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
+if !$CHEATSMOD_CHEATMODULES["Infinite Main Stats"]
+	# load toggle state from ini
+	$cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
+	$cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
+	$cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
+
+	$CHEATSMOD_CHEATMODULES["Infinite Main Stats"] = true
+end
 
 module CheatUtils
 	def self.heal_player

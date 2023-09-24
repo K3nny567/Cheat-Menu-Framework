@@ -1,4 +1,7 @@
 # Cheats Mod Module - Stats Editor
+
+$CHEATSMOD_CHEATMODULES["Stats Editor"] = true
+
 class Game_Actor
 	def remove_one_state(state_id)
 		state_id = $data_StateName[state_id].id if state_id.is_a?(String)

@@ -1,25 +1,29 @@
 # Cheats Mod Module - Infinite Main Stats
 
-# load toggle state from ini
-$cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
-$cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
-$cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
+if !$CHEATSMOD_CHEATMODULES["Infinite Main Stats"]
+	# load toggle state from ini
+	$cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
+	$cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
+	$cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
 
-# load cheat config from ini
-$cheat_infinite_health_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenLimit", 0.20)
-$cheat_infinite_health_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenRate", 0.01)
-$cheat_infinite_food_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenLimit", 0.10)
-$cheat_infinite_food_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenRate", 0.005)
-$cheat_infinite_stamina_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenLimit", 0.40)
-$cheat_infinite_stamina_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenRate", 0.002)
-$cheat_infinite_health_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenMode", "OnlyBelow")
-$cheat_infinite_food_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenMode", "OnlyBelow")
-$cheat_infinite_stamina_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenMode", "OnlyBelow")
+	# load cheat config from ini
+	$cheat_infinite_health_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenLimit", 0.20)
+	$cheat_infinite_health_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenRate", 0.01)
+	$cheat_infinite_food_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenLimit", 0.10)
+	$cheat_infinite_food_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenRate", 0.005)
+	$cheat_infinite_stamina_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenLimit", 0.40)
+	$cheat_infinite_stamina_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenRate", 0.002)
+	$cheat_infinite_health_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenMode", "OnlyBelow")
+	$cheat_infinite_food_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenMode", "OnlyBelow")
+	$cheat_infinite_stamina_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenMode", "OnlyBelow")
 
-# loop toggle state for mode "DropsBelow"
-$cheat_infinite_health_loop = false
-$cheat_infinite_food_loop = false
-$cheat_infinite_stamina_loop = false
+	# loop toggle state for mode "DropsBelow"
+	$cheat_infinite_health_loop = false
+	$cheat_infinite_food_loop = false
+	$cheat_infinite_stamina_loop = false
+
+	$CHEATSMOD_CHEATMODULES["Infinite Main Stats"] = true
+end
 
 module CheatUtils
 	def self.heal_player

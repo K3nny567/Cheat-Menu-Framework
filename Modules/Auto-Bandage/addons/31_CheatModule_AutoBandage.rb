@@ -1,6 +1,9 @@
 # Cheats Mod Module - Auto-Bandage Module
 
-$autobandage = FileGetter.cheat_load("Cheats Mod - Modules", "Auto-Bandage", false)
+if !$CHEATSMOD_CHEATMODULES["Auto-Bandage"]
+	$autobandage = FileGetter.cheat_load("Cheats Mod - Modules", "Auto-Bandage", false)
+	$CHEATSMOD_CHEATMODULES["Auto-Bandage"] = true
+end
 
 module CheatUtils
 	def self.bandage_player

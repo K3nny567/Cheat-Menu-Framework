@@ -4,6 +4,8 @@
 ###	Author: Kenny567
 #===============================================================================
 
+$CHEATSMOD_CHEATMODULES = {} if $CHEATSMOD_CHEATMODULES.nil?
+
 module CheatsMod
 	#defines
 	MOD_NAME = "Cheats Mod"
@@ -26,6 +28,12 @@ module CheatsMod
 		module_list = FileGetter.getFileList("#{MOD_FOLDER}/#{path}/*.rb");
 		FileGetter.load_from_list(module_list);
 	end
+  
+	#overridable function
+	def self.cheat_triggers
+		#empty so cheatmodules can override
+	end
+
 end
 
 #Include Libraries

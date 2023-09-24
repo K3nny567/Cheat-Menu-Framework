@@ -1,3 +1,6 @@
+
+$CHEATSMOD_CHEATMODULES["Sea Witch Awaken Skill"] = true
+
 module CheatUtils
 	def self.deepone?
 		case $game_player.actor.record_lona_race

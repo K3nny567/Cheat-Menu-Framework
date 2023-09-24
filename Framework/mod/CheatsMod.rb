@@ -3,10 +3,10 @@
 ##---------------------------------------------------------------------------
 ## Hotkeys
 ##---------------------------------------------------------------------------
-class Scene_Base
-	alias_method :trigger_debug_window_entry_CHEATSMOD, :trigger_debug_window_entry
-	def trigger_debug_window_entry
-		trigger_debug_window_entry_CHEATSMOD
+module CheatsMod
+	self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMOD, :cheat_triggers)
+	def self.cheat_triggers
+		cheat_triggers_CHEATSMOD
 		if Input.trigger?(Input::F6)
 			$game_party.gain_gold(99999) if CheatUtils.ingame?
 			SndLib.sys_ok

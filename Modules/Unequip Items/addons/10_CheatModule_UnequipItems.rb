@@ -1,5 +1,7 @@
 # Cheats Mod Module - Unequip Items
 
+$CHEATSMOD_CHEATMODULES["Unequip Items"] = true
+
 module CheatUtils
 	def self.unequipall(force)
 		if self.ingame?

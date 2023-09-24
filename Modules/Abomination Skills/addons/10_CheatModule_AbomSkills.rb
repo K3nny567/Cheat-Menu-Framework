@@ -1,3 +1,5 @@
+$CHEATSMOD_CHEATMODULES["Abomination Skills"] = true
+
 module CheatUtils
 	def self.abom?
 		return $game_player.actor.record_lona_race == "Abomination"

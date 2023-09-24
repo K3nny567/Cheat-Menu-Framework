@@ -1,6 +1,9 @@
 # Cheats Mod Module - Infinite Money Module
 
-$cheat_infinite_money = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Money", false)
+if !$CHEATSMOD_CHEATMODULES["Infinite Money"]
+	$cheat_infinite_money = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Money", false)
+	$CHEATSMOD_CHEATMODULES["Infinite Money"] = true
+end
 
 class Game_Party
 	def set_gold_only(amount)

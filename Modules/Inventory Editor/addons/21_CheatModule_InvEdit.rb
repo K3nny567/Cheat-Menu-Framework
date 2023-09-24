@@ -1,5 +1,7 @@
 # Cheats Mod Module - Inventory Editor
 
+$CHEATSMOD_CHEATMODULES["Inventory Editor"] = true
+
 #==============================================================================
 # ¦ Window_DebugItem
 #==============================================================================

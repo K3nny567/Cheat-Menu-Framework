@@ -1,5 +1,7 @@
 # Cheats Mod Module - Pregnancy advancement
 
+$CHEATSMOD_CHEATMODULES["Pregnancy"] = true
+
 module CheatsMod
 	module Pregnancy
 		COMMANDS = [
