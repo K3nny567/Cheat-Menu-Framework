@@ -133,6 +133,7 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - New CheatModule: Sea Witch Awaken Skill - When using the Race Changer to change race to either Pre or True Deepone, the Awaken skill is learnt, for other races it is removed.
 - Removed - Pregnancy submenu in favor of the new CheatModule which replaces it.
 - Removed - UnlockTool translations removed as a previous update negated the need to translate the CheatModule.
+- Fixed - Sickly was renamed to AbomSickly.
 - Initial steps for v1.0 release of the mod.
   - Renamed to Cheat Menu Framework
 </details>
