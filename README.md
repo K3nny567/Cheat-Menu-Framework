@@ -1,7 +1,9 @@
 # Cheat Menu Framework (a.k.a CMF)
+
 An updated, module-based version of the Cheats Mod.
 
-## Compatibility:
+## Compatibility
+
 Minimum required game version: 0.8.4
 
 <details>
@@ -16,35 +18,44 @@ F8: Heal<br/>
 F9: Show Cheats Menu<br/>
 </details>
 
-## Before installing the mod:
+## Before installing the mod
+
 Ensure that the old cheat mod and the dependency are not installed as they are not compatible with this mod and will result in crashes.
 
 Now make sure you can answer yes to the following questions:
+
 1. Have you set the game path in NyxLauncher?
 2. Have you launched the game to the title screen at least once?
 
-## After installing the mod:
+## After installing the mod
+
 1. Did your archive extractor of choice add a folder with the archive filename? <------- For this one, if you answered yes, the mod will NOT work regardless of if it shows up in nyxlauncher.
 
-## Notice:
+## Notice
+
 Cheat Menu Framework does not nor has it ever provided the console. That feature is built into the game (See `Data/Scripts/Frames/RVscript/520_YanflyF10.rb` within the game files)
 
-## Important Information:
+## Important Information
+
 Any archive I share must be extracted how I say (if applicable), not into a folder with the archive name. The file/folder structure within is exactly how it needs to be for where it is to be extracted.
 
-## Known Issues:
+## Known Issues
+
 - Hive Hearts summoned on maps without H_BIOS storypoints crash the game. Only summon them if you wish to farm them on their actual maps. (If anyone knows how to recreate these storypoints in code if they don't exist in the current area, feel free to make and share a patch to the Summon feature)
 - Having all 3 Infinite Stats cheats enabled causes lag to a noticeable degree. (Configurable variant ONLY, partially fixed by recent changes)
 - Some things don't change when changing languages. This is a problem with even the game itself, so restart after switching languages.
 - [Will NOT be changed] There is no default language fallback implemented in the mod, so if you use the MTL in the game itself, you MUST create the MTL folder in the mod too. This is by design as the mod relies on the language as set by the game. The MTL tool can be tricked into translating the mod, but the language the tool uses as a source is Google Translated from English and will be inaccurate. The only languages included in the mod that are confirmed accurate are English (being my native language) and Russian (see Credits spoiler)
 
-## Planned changes (lower number = highest priority):
+## Planned changes (lower number = highest priority)
+
 1. Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
 2. Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
 3. Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
+
 <hr/>
 
-## Changelog:
+## Changelog
+
 <details>
 <summary>Changelog</summary>
 
@@ -139,6 +150,8 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - Changed how cheat triggers work.
 - Removed the plural in the heal wound command and it's translations.
 - CheatModules now only declare globals once per game session. This has reduced some of the lag in relation to the `Configurable Infinite Main Stats` module.
+- Fixed/improved - Hotkeys and menu can no longer be used during loadup and while at the title screen.
+
 </details>
 
 <hr/>
@@ -153,4 +166,5 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - Teravisor (for the code to toggle the Dirty stat, NoFriendlyFire mod, and the Summon Menu mod that the original Cheats mod was based on)
 - DocNITE (for the code used in the translation support)
 - Zhong Xina | z洪ξ那 (for the RUS manual translation)
+
 </details>
