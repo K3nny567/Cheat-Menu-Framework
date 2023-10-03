@@ -4,7 +4,7 @@
 ##---------------------------------------------------------------------------
 module CheatUtils
 	def self.ingame?
-		return (!$game_system.menu_disabled or $loading_screen.nil?)
+		return ($loading_screen.nil? or !SceneManager.scene_is?(Scene_Title) or !SceneManager.scene_is?(Scene_AdultContentWarning) or !SceneManager.scene_is?(Scene_MapTitle))
 	end
 end
 
