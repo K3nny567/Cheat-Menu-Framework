@@ -4,7 +4,7 @@
 ##---------------------------------------------------------------------------
 module CheatUtils
 	def self.ingame?
-		return !$game_player.actor.nil?
+		return (!$game_system.menu_disabled or $loading_screen.nil?)
 	end
 end
 
