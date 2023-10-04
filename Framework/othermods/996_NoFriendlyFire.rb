@@ -22,9 +22,9 @@ class Game_Actor
 		end
 		#-- Companion's projectile hits player
 		#-- Comment out if bugs
-		if (user.class == Game_PorjectileCharacter || user.class == Game_DestroyableObject) && user.event && user.event.summon_data[:user]
-			return map_token.perform_dodge unless skill.is_support
-		end
+		#if (user.class == Game_PorjectileCharacter || user.class == Game_DestroyableObject) && user.event && user.event.summon_data[:user]
+		#	return map_token.perform_dodge unless skill.is_support
+		#end
 		take_skill_effect_nofriendlyfire(user,skill,can_sap,force_hit)
 	end
 end
