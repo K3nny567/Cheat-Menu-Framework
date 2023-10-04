@@ -1,2 +1,9 @@
 commands/stats
 狀況
+
+command_help/stats_0
+條件調整。
+
+command_help/stats_1
+按左/右键来减/增。
+

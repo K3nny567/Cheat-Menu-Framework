@@ -1,2 +1,9 @@
 commands/stats
 Статы
+
+command_help/stats_0
+Отрегулировать статы.
+
+command_help/stats_1
+Нажимайте влево/вправо, чтобы потерять/приобрести.
+

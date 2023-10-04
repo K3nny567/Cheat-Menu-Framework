@@ -1,2 +1,9 @@
 commands/stats
 상태
+
+command_help/stats_0
+상황을 조정합니다.
+
+command_help/stats_1
+왼쪽/오른쪽을 눌러 잃거나 얻습니다.
+

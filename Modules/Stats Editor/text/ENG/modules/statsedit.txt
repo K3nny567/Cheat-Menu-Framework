@@ -1,2 +1,9 @@
 commands/stats
 Stats
+
+command_help/stats_0
+Adjust stats.
+
+command_help/stats_1
+Press Left/Right to lose/gain.
+
