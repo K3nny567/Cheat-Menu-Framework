@@ -49,10 +49,10 @@ class Window_DebugPreg < Window_Command
 			add_command(command[0], command[1], command[2], command[3])
 		end
 		if ($game_player.actor.preg_level >= 1) then
-			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/babyRace")}: #{$game_player.actor.baby_race}", :pregCurrent,	false,	"separator")
-			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/daysTillBirth")}: #{$game_player.actor.preg_whenGiveBirth?}", :pregCurrent,	false,	"separator")
-			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/pregplus")}",	:pregCurrent,	 true,	"PregPlusOneDay")
-			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/birthInOneDay")}",	:pregCurrent,	 true,	"BirthOneDay")
+			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/babyRace")}: #{$game_player.actor.baby_race}",			:pregCurrent,	false,	"separator")
+			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/daysTillBirth")}: #{$game_player.actor.preg_whenGiveBirth?}",	:pregCurrent,	false,	"separator")
+			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/pregplus")}",							:pregCurrent,	 true,	"PregPlusOneDay")
+			add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/birthInOneDay")}",						:pregCurrent,	 true,	"BirthOneDay")
 		end
 	end
 	
@@ -65,10 +65,10 @@ class Window_DebugPreg < Window_Command
 					if ($game_player.actor.preg_level >= 1) then 
 						if ($game_player.actor.preg_whenGiveBirth? > 1) then
 							current_preg_date = $game_player.actor.preg_date
-							if(current_preg_date[2] > 1) then
+							if (current_preg_date[2] > 1) then
 								current_preg_date[2] = current_preg_date[2] - 1
 							else
-								if(current_preg_date[1] > 1)then
+								if (current_preg_date[1] > 1)then
 									current_preg_date[2] = 16
 									current_preg_date[1] = current_preg_date[1] - 1
 								else
@@ -94,10 +94,10 @@ class Window_DebugPreg < Window_Command
 							daysTillBirth = $game_player.actor.preg_whenGiveBirth?
 							current_preg_date = $game_player.actor.preg_date
 							while daysTillBirth > 1
-								if(current_preg_date[2] > 1) then
+								if (current_preg_date[2] > 1) then
 									current_preg_date[2] = current_preg_date[2] - 1
 								else
-									if(current_preg_date[1] > 1)then
+									if (current_preg_date[1] > 1)then
 										current_preg_date[2] = 16
 										current_preg_date[1] = current_preg_date[1] - 1
 									else
@@ -120,7 +120,6 @@ class Window_DebugPreg < Window_Command
 					$game_player.actor.set_preg(name, days = 0)
 					System_Settings::CROSS_BREEDING_RESULT[$game_player.actor.race][name] = raceChoice
 				end
-				SndLib.sys_ok
 			end
 		rescue => e
 			p "Oops, something gone wrong: cannot do event #{name} because #{e.message}"
