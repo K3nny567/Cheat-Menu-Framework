@@ -17,17 +17,18 @@ class Window_DebugStats < Window_Command
 
 	def initialize(help_window)
 		@stats_help_window = help_window
-		super(0, 0)
+		super(160, 0)
 		deactivate
 		hide
+		refresh
 	end
 
 	def window_width
-		return (Graphics.width / 2);
+		return ((Graphics.width - 160) / 2);
 	end
 
 	def window_height
-		return Graphics.height;
+		return Graphics.height - 120;
 	end
 
 	def make_command_list
@@ -104,20 +105,19 @@ end
 
 module YEA
 	module DEBUG
-		COMMANDS.insert(3, [:stats, "#{CheatsMod.getTextInfo("modules/statsedit:commands/stats")}"])
+		COMMANDS.insert(3, [:stats,	"#{CheatsMod.getTextInfo("modules/statsedit:commands/stats")}"])
 	end
 end
 
 class Scene_Debug
 	alias_method :create_command_window_MODULE_STATSEDIT, :create_command_window
-
 	def create_command_window
 		create_command_window_MODULE_STATSEDIT
 		@command_window.set_handler(:stats, method(:command_stats)) if CheatUtils.ingame?
 	end
 
 	def create_stats_window
-		@stats_help_window = Window_Base.new(Graphics.width / 2, 0, Graphics.width / 2, Graphics.height)
+		@stats_help_window = Window_Base.new(((Graphics.width - 160) / 2) + 160, 0, (Graphics.width - 160) / 2, Graphics.height - 120)
 		@stats_window = Window_DebugStats.new(@stats_help_window)
 		@stats_window.set_handler(:cancel, method(:on_stats_cancel))
 	end
@@ -125,17 +125,14 @@ class Scene_Debug
 	def command_stats
 		create_stats_window if @stats_window == nil
 		@dummy_window.hide
-		@command_window.hide
-		@help_window.hide
 		@stats_window.show
 		@stats_help_window.show
 		@stats_window.activate
+		refresh_help_window(:stats, "#{CheatsMod.getTextInfo("modules/statsedit:command_help/stats_0")}\n#{CheatsMod.getTextInfo("modules/statsedit:command_help/stats_1")}\n\n")
 	end
 
 	def on_stats_cancel
 		@dummy_window.show
-		@help_window.show
-		@command_window.show
 		@stats_window.hide
 		@stats_help_window.hide
 		@command_window.activate
