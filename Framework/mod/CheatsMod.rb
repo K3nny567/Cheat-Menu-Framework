@@ -178,7 +178,6 @@ class Window_DebugSummon < Window_Command
 			refresh
 			select(0)
 			activate
-			SndLib.sys_ok
 		rescue => e
 			p "Oops, something gone wrong: cannot summon event #{name} because #{e.message}"
 			SndLib.sys_buzzer
@@ -194,7 +193,6 @@ class Window_DebugSummon < Window_Command
 		begin
 			if !name.nil? then
 				$game_map.summon_event(name, $game_player.x, $game_player.y)
-				SndLib.sys_ok
 			end
 		rescue => e
 			p "Oops, something gone wrong: cannot summon event #{name} because #{e.message}"
@@ -240,12 +238,12 @@ class Window_DebugRace < Window_Command
 	# make_command_list
 	#--------------------------------------------------------------------------
 	def make_command_list
-		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/human")}", :raceCurrent, true, 'Human')
-		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/moot")}", :raceCurrent, true, 'Moot')
-		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/deepone")}", :raceCurrent, true, 'Deepone')
-		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/truedeepone")}", :raceCurrent, true, 'TrueDeepone')
-		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/abom_human")}", :raceCurrent, true, 'HumanAbomination')
-		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/abom_moot")}", :raceCurrent, true, 'MootAbomination')
+		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/human")}",		:raceCurrent, true, 'Human'		)
+		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/moot")}",		:raceCurrent, true, 'Moot'		)
+		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/deepone")}",	:raceCurrent, true, 'Deepone'		)
+		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/truedeepone")}",	:raceCurrent, true, 'TrueDeepone'	)
+		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/abom_human")}",	:raceCurrent, true, 'HumanAbomination'	)
+		add_command("#{CheatsMod.getTextInfo("CheatMod:commands_race/abom_moot")}",	:raceCurrent, true, 'MootAbomination'	)
 	end
 	
 	def raceCurrent
@@ -293,7 +291,6 @@ class Window_DebugRace < Window_Command
 					$game_player.actor.stat["Race"] = "Human"
 					$game_player.actor.race = "Human"
 				end
-				SndLib.sys_ok
 			end
 		rescue => e
 			p "Oops, something gone wrong: cannot do event #{name} because #{e.message}"
@@ -391,15 +388,15 @@ module YEA
 	module DEBUG
 		COMMANDS = [
 			[:toggle_cheats,	"#{CheatsMod.getTextInfo("CheatMod:commands/cheats")}"],
-			[:summon, 			"#{CheatsMod.getTextInfo("CheatMod:commands/summon")}"],
+			[:summon, 		"#{CheatsMod.getTextInfo("CheatMod:commands/summon")}"],
 			[:make_race,		"#{CheatsMod.getTextInfo("CheatMod:commands/race")}"],
 			[:set_morality,		"#{CheatsMod.getTextInfo("CheatMod:commands/morality")}"],
-			[:heal,				"#{CheatsMod.getTextInfo("CheatMod:commands/heal")}"],
-			[:healw,			"#{CheatsMod.getTextInfo("CheatMod:commands/healw")}"],
-			[:fall,				"#{CheatsMod.getTextInfo("CheatMod:commands/fall")}"],
-			[:gib,				"#{CheatsMod.getTextInfo("CheatMod:commands/gib")}"],
-			[:lvl99,			"#{CheatsMod.getTextInfo("CheatMod:commands/lvl99")}"],
-			[:stronk,			"#{CheatsMod.getTextInfo("CheatMod:commands/stronk")}"],
+			[:heal,			"#{CheatsMod.getTextInfo("CheatMod:commands/heal")}"],
+			[:healw,		"#{CheatsMod.getTextInfo("CheatMod:commands/healw")}"],
+			[:fall,			"#{CheatsMod.getTextInfo("CheatMod:commands/fall")}"],
+			[:gib,			"#{CheatsMod.getTextInfo("CheatMod:commands/gib")}"],
+			[:lvl99,		"#{CheatsMod.getTextInfo("CheatMod:commands/lvl99")}"],
+			[:stronk,		"#{CheatsMod.getTextInfo("CheatMod:commands/stronk")}"],
 		]
 	end
 end
