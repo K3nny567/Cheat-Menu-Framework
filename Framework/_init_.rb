@@ -44,7 +44,7 @@ CheatsMod.import_path("mod/lib");
 CheatsMod.import_path("othermods");
 
 #Include project
-CheatsMod.import("mod", "CheatsMod");
+CheatsMod.import("mod", "Menu");
 
 #Include Cheat Modules
 CheatsMod.import_path("addons");
