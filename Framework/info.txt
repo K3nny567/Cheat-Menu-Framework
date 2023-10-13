@@ -2,7 +2,7 @@ Cheats Mod Controls:
 	F3: Unequip All Equipment (SHIFT+F3: Force Unequip) [Requires addon module]
 	F4: Toggle Auto-Bandage [Requires addon module]
 	F5: Toggle Infinite Main Stats (Individual options in the menu) [Requires addon module]
-	F6: Add 99,999 Trade Points
-	F7: Heal a wound (at random)
-	F8: Heal
+	F6: Add 99,999 Trade Points [Requires addon module]
+	F7: Heal a wound (at random) [Requires addon module]
+	F8: Heal [Requires addon module]
 	F9: Show Cheats Menu

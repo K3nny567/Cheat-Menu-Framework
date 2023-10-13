@@ -151,6 +151,8 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - Removed the plural in the heal wound command and it's translations.
 - CheatModules now only declare globals once per game session. This has reduced some of the lag in relation to the `Configurable Infinite Main Stats` module.
 - Fixed/improved - Hotkeys and menu can only be used while the current scene is Scene_Map. ie: A valid save.
+- Renamed core script - CheatMod.rb to Menu.rb
+- Give Gold hotkey moved to Infinite Money CheatModule.
 
 </details>
 
