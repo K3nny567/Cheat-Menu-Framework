@@ -4,7 +4,9 @@ An updated, module-based version of the Cheats Mod.
 
 ## Compatibility
 
-Minimum required game version: 0.8.4
+Minimum required game version: 0.8.4.3+<br/>
+For game versions below 0.8.1.0, lines with _state("Tail") need to be commented out.<br/>
+For game versions below 0.8.4.0, instances of _state("AbomSickly") need to be replaced with _state("Sickly")
 
 <details>
 <summary>Hotkeys:</summary>
@@ -13,8 +15,8 @@ F3: Unequip All Equipment (SHIFT+F3: Force Unequip) [Requires addon module]<br/>
 F4: Toggle Auto-Bandage [Requires addon module]<br/>
 F5: Toggle Infinite Main Stats (Individual options in the menu) [Requires addon module]<br/>
 F6: Add 99,999 Trade Points<br/>
-F7: Heal a wound (at random)<br/>
-F8: Heal<br/>
+F7: Heal a wound (at random) [Requires addon module]<br/>
+F8: Heal [Requires addon module]<br/>
 F9: Show Cheats Menu<br/>
 </details>
 
