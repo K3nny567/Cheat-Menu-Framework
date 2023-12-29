@@ -4,7 +4,7 @@
 module CheatUtils
   #Check if a game is loaded
   def self.ingame?
-    return (!SceneManager.scene_is?(Scene_MapTitle) and !SceneManager.scene_is?(Scene_AdultContentWarning) and !SceneManager.scene_is?(Scene_LangFirstPicker) and !SceneManager.scene_is?(Scene_Title) and $loading_screen.disposed?)
+    return (!SceneManager.scene_is?(Scene_MapTitle) and !SceneManager.scene_is?(Scene_AdultContentWarning) and !SceneManager.scene_is?(Scene_FirstTimeSetup) and !SceneManager.scene_is?(Scene_Title) and $loading_screen.disposed?)
   end
 end
 
