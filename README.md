@@ -4,9 +4,7 @@ An updated, module-based version of the Cheats Mod.
 
 ## Compatibility
 
-Minimum required game version: 0.8.4.3+<br/>
-For game versions below 0.8.1.0, lines with _state("Tail") need to be commented out.<br/>
-For game versions below 0.8.4.0, instances of _state("AbomSickly") need to be replaced with _state("Sickly")
+Minimum required game version: 0.8.7.0<br/>
 
 <details>
 <summary>Hotkeys:</summary>
