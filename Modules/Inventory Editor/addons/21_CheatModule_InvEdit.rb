@@ -75,7 +75,7 @@ class Window_DebugItem < Window_Command
     rect.x += 24
     rect.width -= 24
     draw_text(rect, name)
-    text = sprintf("×%s", $game_party.item_number(item).group)
+    text = sprintf("×%s", $game_party.item_number(item))
     draw_text(rect, text, 2)
   end
 
