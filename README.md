@@ -170,3 +170,6 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 - Zhong Xina | z洪ξ那 (for the RUS manual translation)
 
 </details>
+
+## A note about the license:
+I tried to select the best one to fit the project. However, all code used belongs to those who originally wrote each segment of code. Those known are listed in the credits.
