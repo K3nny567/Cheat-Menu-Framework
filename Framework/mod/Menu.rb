@@ -90,125 +90,6 @@ class Window_DebugCheats < Window_Command
 end # Window_DebugCheats
 
 ##---------------------------------------------------------------------------
-## Summon Menu
-##---------------------------------------------------------------------------
-class Window_DebugSummon < Window_Command
-  #--------------------------------------------------------------------------
-  # initialize
-  #-------------------------------------------------------------------------
-  def initialize
-    begin
-      @prefix = ""
-      @summonable = []
-      $data_npcs.all? { |npc| @summonable += [npc[0]] }
-      compute_folders
-    rescue => e
-      p "Oops, something gone wrong: cannot summon event because #{e.message}"
-    end
-    super(160, 0)
-    deactivate
-    hide
-    refresh
-  end
-
-  #--------------------------------------------------------------------------
-  # compute_folders
-  #-------------------------------------------------------------------------
-  def compute_folders
-    @folders = []
-    $data_EventLib.each_key do |key|
-      begin
-        next if !@summonable.include? key
-        camel_split = key.split(/(?=[A-Z])/).reject { |x| x.empty? }
-        unless camel_split.empty?
-          @folders.push(camel_split[0])
-        end
-      rescue => e
-        p "Oops, something gone wrong: cannot compute folders because #{e.message}"
-      end
-    end
-    @folders.uniq!
-    @folders.sort!
-  end
-
-  #--------------------------------------------------------------------------
-  # window_width
-  #-------------------------------------------------------------------------
-  def window_width; return Graphics.width - 160; end
-
-  #--------------------------------------------------------------------------
-  # window_height
-  #-------------------------------------------------------------------------
-  def window_height; return Graphics.height - 120; end
-
-  #--------------------------------------------------------------------------
-  # make_command_list
-  #-------------------------------------------------------------------------
-  def make_command_list
-    unless @prefix.empty?
-      add_command("#{CheatsMod.getTextInfo("CheatMod:commands/back")}", :subfolder, true, "")
-      $data_EventLib.each_key { |key|
-        next if !@summonable.include? key
-        name = key
-        camel_split = name.split(/(?=[A-Z])/).reject { |x| x.empty? }
-        if camel_split[0] == @prefix
-          text = camel_split.join("")
-          add_command(text, :summon, true, key)
-        end
-      }
-    else
-      @folders.each { |folder|
-        add_command(folder, :subfolder, true, folder)
-      }
-    end
-  rescue => e
-    p "Oops, something gone wrong: cannot because #{e.message}"
-  end
-
-  def subfolder
-    name = current_ext
-    begin
-      if name.nil?
-        name = ""
-      end
-      @prefix = name
-      clear_command_list
-      make_command_list
-      refresh
-      select(0)
-      activate
-    rescue => e
-      p "Oops, something gone wrong: cannot summon event #{name} because #{e.message}"
-      SndLib.sys_buzzer
-    end
-  end
-
-  def summonCurrent
-    name = current_ext
-    if @prefix.empty? || name == "#{CheatsMod.getTextInfo("CheatMod:commands/back")}" || name.empty?
-      return subfolder
-    end
-
-    begin
-      if !name.nil?
-        $game_map.summon_event(name, $game_player.x, $game_player.y)
-      end
-    rescue => e
-      p "Oops, something gone wrong: cannot summon event #{name} because #{e.message}"
-      SndLib.sys_buzzer
-    end
-  end
-
-  def cursor_left(wrap = false)
-    cursor_pageup
-  end
-
-  def cursor_right(wrap = false)
-    cursor_pagedown
-  end
-end # Window_DebugSummon
-
-##---------------------------------------------------------------------------
 ## Race Menu
 ##---------------------------------------------------------------------------
 class Window_DebugRace < Window_Command
@@ -387,7 +268,6 @@ module YEA
   module DEBUG
     COMMANDS = [
       [:toggle_cheats, "#{CheatsMod.getTextInfo("CheatMod:commands/cheats")}"],
-      [:summon, "#{CheatsMod.getTextInfo("CheatMod:commands/summon")}"],
       [:make_race, "#{CheatsMod.getTextInfo("CheatMod:commands/race")}"],
       [:set_morality, "#{CheatsMod.getTextInfo("CheatMod:commands/morality")}"],
       [:heal, "#{CheatsMod.getTextInfo("CheatMod:commands/heal")}"],
@@ -451,7 +331,6 @@ class Scene_Debug < Scene_MenuBase
     @command_window = Window_DebugCommand.new
     @command_window.set_handler(:cancel, method(:return_scene))
     @command_window.set_handler(:toggle_cheats, method(:command_toggle_cheats)) if CheatUtils.ingame?
-    @command_window.set_handler(:summon, method(:command_summon)) if CheatUtils.ingame?
     @command_window.set_handler(:make_race, method(:command_race)) if CheatUtils.ingame?
     @command_window.set_handler(:set_morality, method(:command_morality)) if CheatUtils.ingame?
     @command_window.set_handler(:heal, method(:command_heal)) if CheatUtils.ingame?
@@ -503,33 +382,6 @@ class Scene_Debug < Scene_MenuBase
     @cheats_window.activate
     refresh_help_window(:toggle_cheats, "#{CheatsMod.getTextInfo("CheatMod:command_help/cheats_0")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/cheats_1")}\n\n")
   end # Toggle Cheats Window
-
-  # Summon Window
-  def create_summon_window
-    @summon_window = Window_DebugSummon.new
-    @summon_window.set_handler(:ok, method(:on_summon_ok))
-    @summon_window.set_handler(:cancel, method(:on_summon_cancel))
-  end
-
-  def on_summon_ok
-    @summon_window.activate
-    @summon_window.summonCurrent
-  end
-
-  def on_summon_cancel
-    @dummy_window.show
-    @summon_window.hide
-    @command_window.activate
-    refresh_help_window(:cancel, "")
-  end
-
-  def command_summon
-    create_summon_window if @summon_window == nil
-    @dummy_window.hide
-    @summon_window.show
-    @summon_window.activate
-    refresh_help_window(:summon, "#{CheatsMod.getTextInfo("CheatMod:command_help/summon_0")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/summon_1")}\n\n")
-  end # Summon window
 
   # Race Window
   def create_race_window

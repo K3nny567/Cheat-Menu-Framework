@@ -1,0 +1,9 @@
+commands/summon
+Invocar
+
+command_help/summon_0
+Selecciona el PNJ a invocar.
+
+command_help/summon_1
+Pulsa Z para invocar.
+

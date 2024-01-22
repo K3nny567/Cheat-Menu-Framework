@@ -1,0 +1,9 @@
+commands/summon
+Призвать
+
+command_help/summon_0
+Выберите NPC для вызова.
+
+command_help/summon_1
+Нажмите Z для вызова.
+

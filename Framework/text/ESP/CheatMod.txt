@@ -37,9 +37,6 @@ Moralidad
 commands/cheats
 Trucos Toggle
 
-commands/summon
-Invocar
-
 commands/race
 Cambiar de raza
 
@@ -69,12 +66,6 @@ Activar/desactivar Trucos.
 
 command_help/cheats_1
 Pulsa Z para alternar.
-
-command_help/summon_0
-Selecciona el PNJ a invocar.
-
-command_help/summon_1
-Pulsa Z para invocar.
 
 command_help/race_0
 Selecciona raza.

@@ -37,9 +37,6 @@ Morality
 commands/cheats
 Toggle Cheats
 
-commands/summon
-Summon
-
 commands/race
 Change Race
 
@@ -69,12 +66,6 @@ Enable/disable Cheats.
 
 command_help/cheats_1
 Press Z to toggle.
-
-command_help/summon_0
-Select NPC to summon.
-
-command_help/summon_1
-Press Z to summon.
 
 command_help/race_0
 Select race.

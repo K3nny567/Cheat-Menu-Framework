@@ -37,9 +37,6 @@ commands_morality/command
 commands/cheats
 Выбрать читы
 
-commands/summon
-Призвать
-
 commands/race
 Сменить расу
 
@@ -69,12 +66,6 @@ command_help/cheats_0
 
 command_help/cheats_1
 Нажмите Z для переключения.
-
-command_help/summon_0
-Выберите NPC для вызова.
-
-command_help/summon_1
-Нажмите Z для вызова.
 
 command_help/race_0
 Выберите расу.

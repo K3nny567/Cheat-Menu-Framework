@@ -37,9 +37,6 @@ commands_morality/command
 commands/cheats
 切换作弊器
 
-commands/summon
-召唤
-
 commands/race
 改变种族
 
@@ -69,12 +66,6 @@ command_help/cheats_0
 
 command_help/cheats_1
 按Z键进行切换。
-
-command_help/summon_0
-选择要召唤的NPC。
-
-command_help/summon_1
-按Z键召唤。
 
 command_help/race_0
 选择种族。
