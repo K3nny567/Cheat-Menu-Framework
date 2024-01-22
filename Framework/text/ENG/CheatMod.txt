@@ -13,29 +13,8 @@ OFF
 commands/back
 Back
 
-commands_race/human
-Human
-
-commands_race/moot
-Mixed-Race
-
-commands_race/deepone
-Pre Deep One
-
-commands_race/truedeepone
-Deep One
-
-commands_race/abom_human
-Abomination (Human)
-
-commands_race/abom_moot
-Abomination (Mixed-Race)
-
 commands/cheats
 Toggle Cheats
-
-commands/race
-Change Race
 
 commands/heal
 Heal
@@ -60,10 +39,4 @@ Enable/disable Cheats.
 
 command_help/cheats_1
 Press Z to toggle.
-
-command_help/race_0
-Select race.
-
-command_help/race_1
-Press Z to select.
 

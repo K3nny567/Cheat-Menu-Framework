@@ -1,0 +1,27 @@
+commands_race/human
+인간
+
+commands_race/moot
+혼합 인종
+
+commands_race/deepone
+프리 딥 원
+
+commands_race/truedeepone
+딥 원
+
+commands_race/abom_human
+어보미네이션 (인간)
+
+commands_race/abom_moot
+어보미네이션 (혼혈)
+
+commands/race
+인종 변경
+
+command_help/race_0
+인종을 선택합니다.
+
+command_help/race_1
+Z를 눌러 선택합니다.
+

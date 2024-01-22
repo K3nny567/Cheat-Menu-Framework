@@ -13,29 +13,8 @@ cheat_toggle/off
 commands/back
 溯源
 
-commands_race/human
-人类
-
-commands_race/moot
-混血儿
-
-commands_race/deepone
-预深一
-
-commands_race/truedeepone
-深一度
-
-commands_race/abom_human
-憎恶（人类）
-
-commands_race/abom_moot
-憎恶（混合种族）
-
 commands/cheats
 切换作弊器
-
-commands/race
-改变种族
 
 commands/heal
 痊愈
@@ -60,10 +39,4 @@ command_help/cheats_0
 
 command_help/cheats_1
 按Z键进行切换。
-
-command_help/race_0
-选择种族。
-
-command_help/race_1
-按Z键选择。
 

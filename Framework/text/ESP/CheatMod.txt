@@ -13,29 +13,8 @@ DESACTIVADO
 commands/back
 Volver
 
-commands_race/human
-Humano
-
-commands_race/moot
-Mestizos
-
-commands_race/deepone
-Pre Profundo Uno
-
-commands_race/truedeepone
-Profundo Uno
-
-commands_race/abom_human
-Abominación (Humana)
-
-commands_race/abom_moot
-Abominación (mestizo)
-
 commands/cheats
 Trucos Toggle
-
-commands/race
-Cambiar de raza
 
 commands/heal
 Cura
@@ -60,10 +39,4 @@ Activar/desactivar Trucos.
 
 command_help/cheats_1
 Pulsa Z para alternar.
-
-command_help/race_0
-Selecciona raza.
-
-command_help/race_1
-Pulse Z para seleccionar.
 
