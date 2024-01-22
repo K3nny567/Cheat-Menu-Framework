@@ -31,17 +31,11 @@ commands_race/abom_human
 commands_race/abom_moot
 어보미네이션 (혼혈)
 
-commands_morality/command
-도덕성
-
 commands/cheats
 치트 토글
 
 commands/race
 인종 변경
-
-commands/morality
-도덕성 조정
 
 commands/heal
 치유
@@ -72,16 +66,4 @@ command_help/race_0
 
 command_help/race_1
 Z를 눌러 선택합니다.
-
-command_help/morality_0
-도덕성을 조정합니다.
-
-command_help/morality_1
-왼쪽/오른쪽을 눌러 잃거나 얻습니다.
-
-command_help/morality_2
-10 단위로 시프트 키를 누릅니다.
-
-command_help/morality_3
-100 단위로 ALT 키를 누릅니다.
 

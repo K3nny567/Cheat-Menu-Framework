@@ -31,17 +31,11 @@ Abominación (Humana)
 commands_race/abom_moot
 Abominación (mestizo)
 
-commands_morality/command
-Moralidad
-
 commands/cheats
 Trucos Toggle
 
 commands/race
 Cambiar de raza
-
-commands/morality
-Ajustar la moralidad
 
 commands/heal
 Cura
@@ -72,16 +66,4 @@ Selecciona raza.
 
 command_help/race_1
 Pulse Z para seleccionar.
-
-command_help/morality_0
-Ajustar la moralidad.
-
-command_help/morality_1
-Pulsa Izquierda/Derecha para perder/ganar.
-
-command_help/morality_2
-Mantenga pulsado SHIFT para incrementos de 10.
-
-command_help/morality_3
-Mantenga pulsado ALT para incrementos de 100.
 

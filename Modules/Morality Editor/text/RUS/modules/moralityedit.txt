@@ -1,0 +1,18 @@
+commands_morality/command
+Репутация
+
+commands/morality
+Уст. репутацию
+
+command_help/morality_0
+Чтобы установить репутацию
+
+command_help/morality_1
+нажимайте влево/вправо, чтобы уменьшить/увеличить.
+
+command_help/morality_2
+Удерживайте SHIFT для увеличения на 10.
+
+command_help/morality_3
+Удерживайте ALT для приращения 100.
+

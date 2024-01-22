@@ -31,17 +31,11 @@ commands_race/abom_human
 commands_race/abom_moot
 Мерзость (смешанная)
 
-commands_morality/command
-Репутация
-
 commands/cheats
 Выбрать читы
 
 commands/race
 Сменить расу
-
-commands/morality
-Уст. репутацию
 
 commands/heal
 Исцелить
@@ -72,16 +66,4 @@ command_help/race_0
 
 command_help/race_1
 Нажмите Z, чтобы выбрать.
-
-command_help/morality_0
-Чтобы установить репутацию
-
-command_help/morality_1
-нажимайте влево/вправо, чтобы уменьшить/увеличить.
-
-command_help/morality_2
-Удерживайте SHIFT для увеличения на 10.
-
-command_help/morality_3
-Удерживайте ALT для приращения 100.
 

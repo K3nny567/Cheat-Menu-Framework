@@ -31,17 +31,11 @@ commands_race/abom_human
 commands_race/abom_moot
 憎恶（混合种族）
 
-commands_morality/command
-道德
-
 commands/cheats
 切换作弊器
 
 commands/race
 改变种族
-
-commands/morality
-调整道德规范
 
 commands/heal
 痊愈
@@ -72,16 +66,4 @@ command_help/race_0
 
 command_help/race_1
 按Z键选择。
-
-command_help/morality_0
-调整道德。
-
-command_help/morality_1
-按左/右键来减/增。
-
-command_help/morality_2
-按住SHIFT键，增量为10。
-
-command_help/morality_3
-按住ALT键，增量为100。
 

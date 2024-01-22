@@ -1,0 +1,18 @@
+commands_morality/command
+Moralidad
+
+commands/morality
+Ajustar la moralidad
+
+command_help/morality_0
+Ajustar la moralidad.
+
+command_help/morality_1
+Pulsa Izquierda/Derecha para perder/ganar.
+
+command_help/morality_2
+Mantenga pulsado SHIFT para incrementos de 10.
+
+command_help/morality_3
+Mantenga pulsado ALT para incrementos de 100.
+

@@ -187,89 +187,11 @@ class Window_DebugRace < Window_Command
   end
 end # Window_DebugRace
 
-#==============================================================================
-# Window_DebugMorals
-#==============================================================================
-class Window_DebugMorals < Window_Command
-
-  #--------------------------------------------------------------------------
-  # initialize
-  #-------------------------------------------------------------------------
-  def initialize
-    super(160, 0)
-    deactivate
-    hide
-  end
-
-  #--------------------------------------------------------------------------
-  # window_width
-  #--------------------------------------------------------------------------
-  def window_width; return Graphics.width - 160; end
-
-  #--------------------------------------------------------------------------
-  # window_height
-  #--------------------------------------------------------------------------
-  def window_height; return Graphics.height - 120; end
-
-  #--------------------------------------------------------------------------
-  # make_command_list
-  #--------------------------------------------------------------------------
-  def make_command_list
-    add_command("", :morality, true, "#{CheatsMod.getTextInfo("CheatMod:commands_morality/command")}")
-  end
-
-  def morality
-    # dummy
-  end
-
-  def updateMorality
-    $game_player.actor.morality = $game_player.actor.morality_lona
-  end
-
-  #--------------------------------------------------------------------------
-  # draw_item
-  #--------------------------------------------------------------------------
-  def draw_item(index)
-    updateMorality
-    contents.clear_rect(item_rect_for_text(index))
-    rect = item_rect_for_text(index)
-    name = @list[index][:ext]
-    change_color(param_change_color($game_player.actor.morality_lona))
-    draw_text(rect, command_name(index))
-    rect.x += text_size(command_name(index)).width
-    rect.width -= text_size(command_name(index)).width
-    draw_text(rect, name)
-    text = sprintf("%s", $game_player.actor.morality_lona)
-    draw_text(rect, text, 2)
-  end
-
-  #--------------------------------------------------------------------------
-  # cursor_right
-  #--------------------------------------------------------------------------
-  def cursor_right(wrap = false)
-    SndLib.play_cursor
-    $game_player.actor.morality_lona += Input.press?(Input::KEYMAP[:SHIFT]) ? 10 : 1
-    $game_player.actor.morality_lona += Input.press?(Input::KEYMAP[:ALT]) ? 99 : 0
-    draw_item(index)
-  end
-
-  #--------------------------------------------------------------------------
-  # cursor_left
-  #--------------------------------------------------------------------------
-  def cursor_left(wrap = false)
-    SndLib.play_cursor
-    $game_player.actor.morality_lona -= Input.press?(Input::KEYMAP[:SHIFT]) ? 10 : 1
-    $game_player.actor.morality_lona -= Input.press?(Input::KEYMAP[:ALT]) ? 99 : 0
-    draw_item(index)
-  end
-end # Window_DebugMorals
-
 module YEA
   module DEBUG
     COMMANDS = [
       [:toggle_cheats, "#{CheatsMod.getTextInfo("CheatMod:commands/cheats")}"],
       [:make_race, "#{CheatsMod.getTextInfo("CheatMod:commands/race")}"],
-      [:set_morality, "#{CheatsMod.getTextInfo("CheatMod:commands/morality")}"],
       [:heal, "#{CheatsMod.getTextInfo("CheatMod:commands/heal")}"],
       [:healw, "#{CheatsMod.getTextInfo("CheatMod:commands/healw")}"],
       [:fall, "#{CheatsMod.getTextInfo("CheatMod:commands/fall")}"],
@@ -332,7 +254,6 @@ class Scene_Debug < Scene_MenuBase
     @command_window.set_handler(:cancel, method(:return_scene))
     @command_window.set_handler(:toggle_cheats, method(:command_toggle_cheats)) if CheatUtils.ingame?
     @command_window.set_handler(:make_race, method(:command_race)) if CheatUtils.ingame?
-    @command_window.set_handler(:set_morality, method(:command_morality)) if CheatUtils.ingame?
     @command_window.set_handler(:heal, method(:command_heal)) if CheatUtils.ingame?
     @command_window.set_handler(:healw, method(:command_healwound)) if CheatUtils.ingame?
     @command_window.set_handler(:fall, method(:command_exhaust)) if CheatUtils.ingame?
@@ -409,27 +330,6 @@ class Scene_Debug < Scene_MenuBase
     @race_window.activate
     refresh_help_window(:make_race, "#{CheatsMod.getTextInfo("CheatMod:command_help/race_0")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/race_1")}\n\n")
   end # Race Window
-
-  # Morality Window
-  def create_morals_windows
-    @morals_window = Window_DebugMorals.new
-    @morals_window.set_handler(:cancel, method(:on_morals_cancel))
-  end
-
-  def on_morals_cancel
-    @dummy_window.show
-    @morals_window.hide
-    @command_window.activate
-    refresh_help_window(:cancel, "")
-  end
-
-  def command_morality
-    create_morals_windows if @morals_window == nil
-    @dummy_window.hide
-    @morals_window.show
-    @morals_window.activate
-    refresh_help_window(@command_window.current_symbol, "#{CheatsMod.getTextInfo("CheatMod:command_help/morality_0")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/morality_1")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/morality_2")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/morality_3")}")
-  end # Morality Window
 
   def command_heal
     $game_player.actor.health += 999

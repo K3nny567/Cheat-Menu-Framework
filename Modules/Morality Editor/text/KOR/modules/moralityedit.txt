@@ -1,0 +1,18 @@
+commands_morality/command
+도덕성
+
+commands/morality
+도덕성 조정
+
+command_help/morality_0
+도덕성을 조정합니다.
+
+command_help/morality_1
+왼쪽/오른쪽을 눌러 잃거나 얻습니다.
+
+command_help/morality_2
+10 단위로 시프트 키를 누릅니다.
+
+command_help/morality_3
+100 단위로 ALT 키를 누릅니다.
+
