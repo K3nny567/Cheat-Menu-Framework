@@ -1,0 +1,48 @@
+mod/name
+Cheat Menu Framework
+
+mod/description
+The old Cheats Mod, reworked to use modules to add new cheats.
+
+info/alert
+주의!
+
+cheat/dirt
+더티 스탯
+
+cheat_toggle/on
+켜기
+
+cheat_toggle/off
+꺼짐
+
+commands/back
+뒤로
+
+commands/cheats
+치트 토글
+
+commands/heal
+치유
+
+commands/healw
+상처 치료
+
+commands/fall
+소진됨
+
+commands/gib
+기부하기
+
+commands/lvl99
+99 레벨
+
+commands/stronk
+특성 점수 부여
+
+command_help/cheats_0
+치트 활성화/비활성화.
+
+command_help/cheats_1
+Z를 눌러 전환합니다.
+

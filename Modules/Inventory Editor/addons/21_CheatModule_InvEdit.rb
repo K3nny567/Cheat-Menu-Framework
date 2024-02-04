@@ -66,7 +66,7 @@ class Window_DebugItem < Window_Command
     change_color(normal_color, $game_party.item_number(item) > 0)
     if $game_party.item_number(item) > 0 && item.name == ""
       change_color(knockout_color)
-      name = "#{CheatsMod.getTextInfo("CheatMod:info/alert")}"
+      name = "#{$game_text["cheatmenu:menu:info/alert"]}"
     end
     draw_text(rect, command_name(index))
     rect.x += text_size(command_name(index)).width
@@ -102,9 +102,9 @@ end # Window_DebugItem
 
 module YEA
   module DEBUG
-    COMMANDS.insert(1, [:items, "#{CheatsMod.getTextInfo("modules/invedit:commands/items")}"])
-    COMMANDS.insert(2, [:weapons, "#{CheatsMod.getTextInfo("modules/invedit:commands/weapons")}"])
-    COMMANDS.insert(3, [:armors, "#{CheatsMod.getTextInfo("modules/invedit:commands/armors")}"])
+    COMMANDS.insert(1, [:items, "#{$game_text["cheatmenu:modules/invedit:commands/items"]}"])
+    COMMANDS.insert(2, [:weapons, "#{$game_text["cheatmenu:modules/invedit:commands/weapons"]}"])
+    COMMANDS.insert(3, [:armors, "#{$game_text["cheatmenu:modules/invedit:commands/armors"]}"])
   end
 end
 
@@ -135,7 +135,7 @@ class Scene_Debug
     @item_window.show
     @item_window.activate
     @item_window.set_type(@command_window.current_symbol)
-    refresh_help_window(@command_window.current_symbol, "#{CheatsMod.getTextInfo("modules/invedit:command_help/items_0")}\n#{CheatsMod.getTextInfo("modules/invedit:command_help/items_1")}\n#{CheatsMod.getTextInfo("modules/invedit:command_help/items_2")}\n#{CheatsMod.getTextInfo("modules/invedit:command_help/items_3")}")
+    refresh_help_window(@command_window.current_symbol, "#{$game_text["cheatmenu:modules/invedit:command_help/items_0"]}\n#{$game_text["cheatmenu:modules/invedit:command_help/items_1"]}\n#{$game_text["cheatmenu:modules/invedit:command_help/items_2"]}\n#{$game_text["cheatmenu:modules/invedit:command_help/items_3"]}")
   end
 
   #--------------------------------------------------------------------------

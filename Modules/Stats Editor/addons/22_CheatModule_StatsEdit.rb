@@ -104,7 +104,7 @@ end
 
 module YEA
   module DEBUG
-    COMMANDS.insert(3, [:stats, "#{CheatsMod.getTextInfo("modules/statsedit:commands/stats")}"])
+    COMMANDS.insert(3, [:stats, "#{$game_text["cheatmenu:modules/statsedit:commands/stats"]}"])
   end
 end
 
@@ -128,7 +128,7 @@ class Scene_Debug
     @stats_window.show
     @stats_help_window.show
     @stats_window.activate
-    refresh_help_window(:stats, "#{CheatsMod.getTextInfo("modules/statsedit:command_help/stats_0")}\n#{CheatsMod.getTextInfo("modules/statsedit:command_help/stats_1")}\n\n")
+    refresh_help_window(:stats, "#{$game_text["cheatmenu:modules/statsedit:command_help/stats_0"]}\n#{$game_text["cheatmenu:modules/statsedit:command_help/stats_1"]}\n\n")
   end
 
   def on_stats_cancel

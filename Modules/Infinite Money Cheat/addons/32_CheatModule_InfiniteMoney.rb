@@ -44,7 +44,7 @@ class Window_DebugCheats
 
   def make_command_list
     make_command_list_CHEATSMODULE_INFINITE_MONEY
-    add_command("#{CheatsMod.getTextInfo("modules/infinitemoney:command")}", :cheatToggle, true, "toggle_infinite_money")
+    add_command("#{$game_text["cheatmenu:modules/infinitemoney:command"]}", :cheatToggle, true, "toggle_infinite_money")
   end
 
   def cheatToggle
@@ -67,7 +67,7 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_INFINITE_MONEY(index)
     if @list[index][:ext] == "toggle_infinite_money"
       name = command_name(index)
-      text = $cheat_infinite_money ? "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/on")}]" : "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/off")}]"
+      text = $cheat_infinite_money ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
       draw_item_content(index, name, text)
     end
   end

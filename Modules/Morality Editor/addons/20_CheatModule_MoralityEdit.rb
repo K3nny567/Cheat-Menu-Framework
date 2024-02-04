@@ -28,7 +28,7 @@ class Window_DebugMorals < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("", :morality, true, "#{CheatsMod.getTextInfo("modules/moralityedit:commands_morality/command")}")
+    add_command("", :morality, true, "#{$game_text["cheatmenu:modules/moralityedit:commands_morality/command"]}")
   end
 
   def morality
@@ -79,7 +79,7 @@ end # Window_DebugMorals
 
 module YEA
   module DEBUG
-    COMMANDS.insert(4, [:set_morality, "#{CheatsMod.getTextInfo("modules/moralityedit:commands/morality")}"])
+    COMMANDS.insert(4, [:set_morality, "#{$game_text["cheatmenu:modules/moralityedit:commands/morality"]}"])
   end
 end
 
@@ -109,7 +109,7 @@ class Scene_Debug
     @dummy_window.hide
     @morals_window.show
     @morals_window.activate
-    refresh_help_window(@command_window.current_symbol, "#{CheatsMod.getTextInfo("modules/moralityedit:command_help/morality_0")}\n#{CheatsMod.getTextInfo("modules/moralityedit:command_help/morality_1")}\n#{CheatsMod.getTextInfo("modules/moralityedit:command_help/morality_2")}\n#{CheatsMod.getTextInfo("modules/moralityedit:command_help/morality_3")}")
+    refresh_help_window(@command_window.current_symbol, "#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_0"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_1"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_2"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_3"]}")
   end # Morality Window
 end
 

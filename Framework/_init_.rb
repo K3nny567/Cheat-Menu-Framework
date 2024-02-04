@@ -9,28 +9,14 @@ $CHEATSMOD_CHEATMODULES = {} if $CHEATSMOD_CHEATMODULES.nil?
 
 #Mod namespace
 module CheatsMod
-  #Mod Name
-  #Used as part of the Mod Folder Path
-  MOD_NAME = "Cheats Mod"
-
-  #
-  if ($MODS_PATH.nil?)
-    MODS_PATH = "ModScripts/_Mods"
-    MOD_FOLDER = "#{MODS_PATH}/#{MOD_NAME}"
-  else
-    MOD_FOLDER = "#{$MODS_PATH}/#{MOD_NAME}"
-  end
-
   #Include a single script
   def self.import(path, file)
-    module_list = FileGetter.getFileList("#{MOD_FOLDER}/#{path}/#{file}.rb")
-    FileGetter.load_from_list(module_list)
+    FileGetter.load_from_list(FileGetter.getFileList($mod_manager.get_resource("cheatmenu", "#{path}/#{file}.rb")))
   end
 
   #Include scripts from path
   def self.import_path(path)
-    module_list = FileGetter.getFileList("#{MOD_FOLDER}/#{path}/*.rb")
-    FileGetter.load_from_list(module_list)
+    FileGetter.load_from_list(FileGetter.getFileList($mod_manager.get_resource("cheatmenu", "#{path}/*.rb")))
   end
 
   #Expand cheat hotkeys
@@ -41,14 +27,14 @@ module CheatsMod
 end
 
 #Include Libraries
-CheatsMod.import_path("mod/lib")
+CheatsMod.import_path("scripts/lib")
 
 #Include Other Mods
 CheatsMod.import_path("othermods")
 
 #Include project
-CheatsMod.import("mod", "Utils") # CheatUtils
-CheatsMod.import("mod", "Menu") # Cheat Menu
+CheatsMod.import("scripts", "Utils") # CheatUtils
+CheatsMod.import("scripts", "Menu") # Cheat Menu
 
 #Include Cheat Modules
 CheatsMod.import_path("addons")

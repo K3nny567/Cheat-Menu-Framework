@@ -4,13 +4,13 @@
 module CheatsMod
   module Pregnancy
     COMMANDS = [
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/human")}", :pregCurrent, true, "Human"],
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/moot")}", :pregCurrent, true, "Moot"],
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/deepone")}", :pregCurrent, true, "Deepone"],
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/fishkind")}", :pregCurrent, true, "Fishkind"],
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/orkind")}", :pregCurrent, true, "Orkind"],
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/goblin")}", :pregCurrent, true, "Goblin"],
-      ["#{CheatsMod.getTextInfo("modules/pregnancy:commands_preg/abom")}", :pregCurrent, true, "Abomination"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/human"]}", :pregCurrent, true, "Human"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/moot"]}", :pregCurrent, true, "Moot"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/deepone"]}", :pregCurrent, true, "Deepone"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/fishkind"]}", :pregCurrent, true, "Fishkind"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/orkind"]}", :pregCurrent, true, "Orkind"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/goblin"]}", :pregCurrent, true, "Goblin"],
+      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/abom"]}", :pregCurrent, true, "Abomination"],
     ]
   end
 end
@@ -48,10 +48,10 @@ class Window_DebugPreg < Window_Command
       add_command(command[0], command[1], command[2], command[3])
     end
     if ($game_player.actor.preg_level >= 1)
-      add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/babyRace")}: #{$game_player.actor.baby_race}", :pregCurrent, false, "separator")
-      add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/daysTillBirth")}: #{$game_player.actor.preg_whenGiveBirth?}", :pregCurrent, false, "separator")
-      add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/pregplus")}", :pregCurrent, true, "PregPlusOneDay")
-      add_command("#{CheatsMod.getTextInfo("modules/pregnancy:window/birthInOneDay")}", :pregCurrent, true, "BirthOneDay")
+      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/babyRace"]}: #{$game_player.actor.baby_race}", :pregCurrent, false, "separator")
+      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/daysTillBirth"]}: #{$game_player.actor.preg_whenGiveBirth?}", :pregCurrent, false, "separator")
+      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/pregplus"]}", :pregCurrent, true, "PregPlusOneDay")
+      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/birthInOneDay"]}", :pregCurrent, true, "BirthOneDay")
     end
   end
 
@@ -137,7 +137,7 @@ end # Window_DebugPreg
 
 module YEA
   module DEBUG
-    COMMANDS.insert(3, [:make_pregnant, "#{CheatsMod.getTextInfo("modules/pregnancy:commands/preg")}"])
+    COMMANDS.insert(3, [:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:commands/preg"]}"])
   end
 end
 
@@ -173,7 +173,7 @@ class Scene_Debug
     @dummy_window.hide
     @preg_window.show
     @preg_window.activate
-    refresh_help_window(:make_pregnant, "#{CheatsMod.getTextInfo("modules/pregnancy:command_help/preg_0")}\n#{CheatsMod.getTextInfo("modules/pregnancy:window/selectInfo")}\n#{CheatsMod.getTextInfo("modules/pregnancy:command_help/preg_1")}\n\n")
+    refresh_help_window(:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_0"]}\n#{$game_text["cheatmenu:modules/pregnancy:window/selectInfo"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_1"]}\n\n")
   end # Pregnancy Window
 end
 

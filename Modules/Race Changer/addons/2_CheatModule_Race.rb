@@ -29,12 +29,12 @@ class Window_DebugRace < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("#{CheatsMod.getTextInfo("modules/race:commands_race/human")}", :raceCurrent, true, "Human")
-    add_command("#{CheatsMod.getTextInfo("modules/race:commands_race/moot")}", :raceCurrent, true, "Moot")
-    add_command("#{CheatsMod.getTextInfo("modules/race:commands_race/deepone")}", :raceCurrent, true, "Deepone")
-    add_command("#{CheatsMod.getTextInfo("modules/race:commands_race/truedeepone")}", :raceCurrent, true, "TrueDeepone")
-    add_command("#{CheatsMod.getTextInfo("modules/race:commands_race/abom_human")}", :raceCurrent, true, "HumanAbomination")
-    add_command("#{CheatsMod.getTextInfo("modules/race:commands_race/abom_moot")}", :raceCurrent, true, "MootAbomination")
+    add_command("#{$game_text["cheatmenu:modules/race:commands_race/human"]}", :raceCurrent, true, "Human")
+    add_command("#{$game_text["cheatmenu:modules/race:commands_race/moot"]}", :raceCurrent, true, "Moot")
+    add_command("#{$game_text["cheatmenu:modules/race:commands_race/deepone"]}", :raceCurrent, true, "Deepone")
+    add_command("#{$game_text["cheatmenu:modules/race:commands_race/truedeepone"]}", :raceCurrent, true, "TrueDeepone")
+    add_command("#{$game_text["cheatmenu:modules/race:commands_race/abom_human"]}", :raceCurrent, true, "HumanAbomination")
+    add_command("#{$game_text["cheatmenu:modules/race:commands_race/abom_moot"]}", :raceCurrent, true, "MootAbomination")
   end
 
   def raceCurrent
@@ -100,7 +100,7 @@ end # Window_DebugRace
 
 module YEA
   module DEBUG
-    COMMANDS.insert(1, [:make_race, "#{CheatsMod.getTextInfo("modules/race:commands/race")}"])
+    COMMANDS.insert(1, [:make_race, "#{$game_text["cheatmenu:modules/race:commands/race"]}"])
   end
 end
 
@@ -136,7 +136,7 @@ class Scene_Debug
     @dummy_window.hide
     @race_window.show
     @race_window.activate
-    refresh_help_window(:make_race, "#{CheatsMod.getTextInfo("modules/race:command_help/race_0")}\n#{CheatsMod.getTextInfo("modules/race:command_help/race_1")}\n\n")
+    refresh_help_window(:make_race, "#{$game_text["cheatmenu:modules/race:command_help/race_0"]}\n#{$game_text["cheatmenu:modules/race:command_help/race_1"]}\n\n")
   end # Race Window
 end
 

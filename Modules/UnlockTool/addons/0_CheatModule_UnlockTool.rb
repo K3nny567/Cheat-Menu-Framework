@@ -3,6 +3,8 @@
 # Add silent variant to Scene_Base
 class Scene_Base
   def achievementGetSilently(tmpAchName = "", tmpIcon = nil)
+    #Note:
+    #The string here is in English even in the base game.
     achievementPopup("Achievement unlocked", tmpAchName, 300, achIcon = tmpIcon)
   end
 end

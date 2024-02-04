@@ -81,9 +81,9 @@ class Window_DebugCheats
 
   def make_command_list
     make_command_list_CHEATSMODULE_AUTOHEAL
-    add_command("#{CheatsMod.getTextInfo("modules/infinitestats:cheat/health")}", :cheatToggle, true, "toggle_infinite_health")
-    add_command("#{CheatsMod.getTextInfo("modules/infinitestats:cheat/food")}", :cheatToggle, true, "toggle_infinite_food")
-    add_command("#{CheatsMod.getTextInfo("modules/infinitestats:cheat/stamina")}", :cheatToggle, true, "toggle_infinite_stamina")
+    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/health"]}", :cheatToggle, true, "toggle_infinite_health")
+    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/food"]}", :cheatToggle, true, "toggle_infinite_food")
+    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/stamina"]}", :cheatToggle, true, "toggle_infinite_stamina")
   end
 
   def cheatToggle
@@ -110,17 +110,17 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_AUTOHEAL(index)
     if @list[index][:ext] == "toggle_infinite_health"
       name = command_name(index)
-      text = $cheat_infinite_health ? "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/on")}]" : "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/off")}]"
+      text = $cheat_infinite_health ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
       draw_item_content(index, name, text)
     end
     if @list[index][:ext] == "toggle_infinite_food"
       name = command_name(index)
-      text = $cheat_infinite_food ? "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/on")}]" : "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/off")}]"
+      text = $cheat_infinite_food ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
       draw_item_content(index, name, text)
     end
     if @list[index][:ext] == "toggle_infinite_stamina"
       name = command_name(index)
-      text = $cheat_infinite_stamina ? "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/on")}]" : "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/off")}]"
+      text = $cheat_infinite_stamina ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
       draw_item_content(index, name, text)
     end
   end

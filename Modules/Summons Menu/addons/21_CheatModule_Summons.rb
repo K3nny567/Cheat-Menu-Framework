@@ -57,7 +57,7 @@ class Window_DebugSummon < Window_Command
   #-------------------------------------------------------------------------
   def make_command_list
     unless @prefix.empty?
-      add_command("#{CheatsMod.getTextInfo("CheatMod:commands/back")}", :subfolder, true, "")
+      add_command("#{$game_text["cheatmenu:menu:commands/back"]}", :subfolder, true, "")
       $data_EventLib.each_key { |key|
         next if !@summonable.include? key
         name = key
@@ -96,7 +96,7 @@ class Window_DebugSummon < Window_Command
 
   def summonCurrent
     name = current_ext
-    if @prefix.empty? || name == "#{CheatsMod.getTextInfo("CheatMod:commands/back")}" || name.empty?
+    if @prefix.empty? || name == "#{$game_text["cheatmenu:menu:commands/back"]}" || name.empty?
       return subfolder
     end
 
@@ -121,7 +121,7 @@ end # Window_DebugSummon
 
 module YEA
   module DEBUG
-    COMMANDS.insert(1, [:summon, "#{CheatsMod.getTextInfo("modules/summons:commands/summon")}"])
+    COMMANDS.insert(1, [:summon, "#{$game_text["cheatmenu:modules/summons:commands/summon"]}"])
   end
 end
 
@@ -157,7 +157,7 @@ class Scene_Debug
     @dummy_window.hide
     @summon_window.show
     @summon_window.activate
-    refresh_help_window(:summon, "#{CheatsMod.getTextInfo("modules/summons:command_help/summon_0")}\n#{CheatsMod.getTextInfo("modules/summons:command_help/summon_1")}\n\n")
+    refresh_help_window(:summon, "#{$game_text["cheatmenu:modules/summons:command_help/summon_0"]}\n#{$game_text["cheatmenu:modules/summons:command_help/summon_1"]}\n\n")
   end # Summon window
 end
 

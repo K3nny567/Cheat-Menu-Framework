@@ -1,0 +1,48 @@
+mod/name
+Cheat Menu Framework
+
+mod/description
+The old Cheats Mod, reworked to use modules to add new cheats.
+
+info/alert
+ATENCIÓN
+
+cheat/dirt
+Estadística sucia
+
+cheat_toggle/on
+ACTIVADO
+
+cheat_toggle/off
+DESACTIVADO
+
+commands/back
+Volver
+
+commands/cheats
+Trucos Toggle
+
+commands/heal
+Cura
+
+commands/healw
+Curar herida
+
+commands/fall
+Agotado
+
+commands/gib
+Dar dinero
+
+commands/lvl99
+Nivel 99
+
+commands/stronk
+Dar puntos de rasgo
+
+command_help/cheats_0
+Activar/desactivar Trucos.
+
+command_help/cheats_1
+Pulsa Z para alternar.
+

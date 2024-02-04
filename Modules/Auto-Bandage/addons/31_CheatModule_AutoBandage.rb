@@ -41,7 +41,7 @@ class Window_DebugCheats
 
   def make_command_list
     make_command_list_CHEATSMODULE_AUTOBANDAGE
-    add_command("#{CheatsMod.getTextInfo("modules/autobandage:command")}", :cheatToggle, true, "toggle_autobandage")
+    add_command("#{$game_text["cheatmenu:modules/autobandage:command"]}", :cheatToggle, true, "toggle_autobandage")
   end
 
   def cheatToggle
@@ -64,7 +64,7 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_AUTOBANDAGE(index)
     if @list[index][:ext] == "toggle_autobandage"
       name = command_name(index)
-      text = $autobandage ? "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/on")}]" : "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/off")}]"
+      text = $autobandage ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
       draw_item_content(index, name, text)
     end
   end

@@ -1,43 +1,19 @@
-# Cheat Menu Framework (a.k.a CMF)
+# Cheat Menu Framework
+
+![preview](https://github.com/K3nny567/Cheat-Menu-Framework/assets/144315629/2883bcf7-898a-4590-9887-725257b5afdf)
 
 An updated, module-based version of the Cheats Mod.
 
-## Compatibility
+<!-- Latest version: #latest -->
 
-Minimum required game version: 0.8.7.0<br/>
+## Requirements
 
-<details>
-<summary>Hotkeys:</summary>
+Minimum required game version: `0.8.7.x`<br/>
+[UltraModManager](https://mega.nz/folder/FzdxST7a#SRSft4Jj27Tu_jL5O_3RXQ)
 
-F3: Unequip All Equipment (SHIFT+F3: Force Unequip) [Requires addon module]<br/>
-F4: Toggle Auto-Bandage [Requires addon module]<br/>
-F5: Toggle Infinite Main Stats (Individual options in the menu) [Requires addon module]<br/>
-F6: Add 99,999 Trade Points<br/>
-F7: Heal a wound (at random) [Requires addon module]<br/>
-F8: Heal [Requires addon module]<br/>
-F9: Show Cheats Menu<br/>
-</details>
+## Hotkeys
 
-## Before installing the mod
-
-Ensure that the old cheat mod and the dependency are not installed as they are not compatible with this mod and will result in crashes.
-
-Now make sure you can answer yes to the following questions:
-
-1. Have you set the game path in NyxLauncher?
-2. Have you launched the game to the title screen at least once?
-
-## After installing the mod
-
-1. Did your archive extractor of choice add a folder with the archive filename? <------- For this one, if you answered yes, the mod will NOT work regardless of if it shows up in nyxlauncher.
-
-## Notice
-
-Cheat Menu Framework does not nor has it ever provided the console. That feature is built into the game (See `Data/Scripts/Frames/RVscript/520_YanflyF10.rb` within the game files)
-
-## Important Information
-
-Any archive I share must be extracted how I say (if applicable), not into a folder with the archive name. The file/folder structure within is exactly how it needs to be for where it is to be extracted.
+See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.txt) file for details.
 
 ## Known Issues
 
@@ -48,9 +24,9 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 
 ## Planned changes (lower number = highest priority)
 
-1. Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
-2. Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
-3. Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
+- [ ] Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
+- [ ] Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
+- [ ] Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
 
 <hr/>
 
@@ -158,18 +134,10 @@ Any archive I share must be extracted how I say (if applicable), not into a fold
 
 <hr/>
 
-<details>
-<summary>Credits:</summary>
+## Credits
 
-- darkprizm (for the original Cheats mod)
-- SomeoneElseE (for the updated version of the Cheats mod and used as the initial codebase of MCM)
-- Tektaara (for the dependency and the summon fix)
-- forgotp (for being a central point to find the Cheats mod, dependency and the summon fix)
-- Teravisor (for the code to toggle the Dirty stat, NoFriendlyFire mod, and the Summon Menu mod that the original Cheats mod was based on)
-- DocNITE (for the code used in the translation support)
-- Zhong Xina | z洪ξ那 (for the RUS manual translation)
+See the [_readme_CheatsMod_Credits.md](Framework/_readme_CheatsMod_Credits.md) file for details.
 
-</details>
+## A note about the license
 
-## A note about the license:
 I tried to select the best one to fit the project. However, all code used belongs to those who originally wrote each segment of code. Those known are listed in the credits.

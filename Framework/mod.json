@@ -1,0 +1,11 @@
+{
+  "id": "cheatmenu",
+  "version": "pre-1.0",
+  "name": "$cheatmenu:menu:mod/name",
+  "description": "$cheatmenu:menu:mod/description",
+  "entry": "_init_.rb",
+  "texts": "text",
+  "requires": {"umm"},
+  "before": [],
+  "thumbnail": "preview.png"
+}

@@ -1,0 +1,48 @@
+mod/name
+Cheat Menu Framework
+
+mod/description
+The old Cheats Mod, reworked to use modules to add new cheats.
+
+info/alert
+ВНИМАНИЕ!
+
+cheat/dirt
+ВКЛ/ВКЛ грязь
+
+cheat_toggle/on
+ВКЛ
+
+cheat_toggle/off
+ВЫКЛ
+
+commands/back
+Назад
+
+commands/cheats
+Выбрать читы
+
+commands/heal
+Исцелить
+
+commands/healw
+Вылечить рану
+
+commands/fall
+Упасть
+
+commands/gib
+Получить очки обмена
+
+commands/lvl99
+Уст. уровень 99
+
+commands/stronk
+Уст. очки тал. 999
+
+command_help/cheats_0
+Включить/выключить читы.
+
+command_help/cheats_1
+Нажмите Z для переключения.
+

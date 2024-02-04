@@ -42,7 +42,7 @@ class Window_DebugCheats < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("#{CheatsMod.getTextInfo("CheatMod:cheat/dirt")}", :cheatToggle, true, "toggle_dirt")
+    add_command("#{$game_text["cheatmenu:menu:cheat/dirt"]}", :cheatToggle, true, "toggle_dirt")
   end
 
   def cheatToggle
@@ -69,7 +69,7 @@ class Window_DebugCheats < Window_Command
   def draw_item(index)
     if @list[index][:ext] == "toggle_dirt"
       name = command_name(index)
-      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/off")}]" : "[#{CheatsMod.getTextInfo("CheatMod:cheat_toggle/on")}]"
+      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]"
       draw_item_content(index, name, text)
     end
   end
@@ -92,13 +92,13 @@ end # Window_DebugCheats
 module YEA
   module DEBUG
     COMMANDS = [
-      [:toggle_cheats, "#{CheatsMod.getTextInfo("CheatMod:commands/cheats")}"],
-      [:heal, "#{CheatsMod.getTextInfo("CheatMod:commands/heal")}"],
-      [:healw, "#{CheatsMod.getTextInfo("CheatMod:commands/healw")}"],
-      [:fall, "#{CheatsMod.getTextInfo("CheatMod:commands/fall")}"],
-      [:gib, "#{CheatsMod.getTextInfo("CheatMod:commands/gib")}"],
-      [:lvl99, "#{CheatsMod.getTextInfo("CheatMod:commands/lvl99")}"],
-      [:stronk, "#{CheatsMod.getTextInfo("CheatMod:commands/stronk")}"],
+      [:toggle_cheats, "#{$game_text["cheatmenu:menu:commands/cheats"]}"],
+      [:heal, "#{$game_text["cheatmenu:menu:commands/heal"]}"],
+      [:healw, "#{$game_text["cheatmenu:menu:commands/healw"]}"],
+      [:fall, "#{$game_text["cheatmenu:menu:commands/fall"]}"],
+      [:gib, "#{$game_text["cheatmenu:menu:commands/gib"]}"],
+      [:lvl99, "#{$game_text["cheatmenu:menu:commands/lvl99"]}"],
+      [:stronk, "#{$game_text["cheatmenu:menu:commands/stronk"]}"],
     ]
   end
 end
@@ -201,7 +201,7 @@ class Scene_Debug < Scene_MenuBase
     @dummy_window.hide
     @cheats_window.show
     @cheats_window.activate
-    refresh_help_window(:toggle_cheats, "#{CheatsMod.getTextInfo("CheatMod:command_help/cheats_0")}\n#{CheatsMod.getTextInfo("CheatMod:command_help/cheats_1")}\n\n")
+    refresh_help_window(:toggle_cheats, "#{$game_text["cheatmenu:menu:command_help/cheats_0"]}\n#{$game_text["cheatmenu:menu:command_help/cheats_1"]}\n\n")
   end # Toggle Cheats Window
 
   def command_heal
