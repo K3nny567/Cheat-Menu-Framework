@@ -4,7 +4,7 @@
 
 An updated, module-based version of the Cheats Mod.
 
-<!-- Latest version: #latest -->
+Latest version: [v1.0rc1](../../releases/tag/v1.0rc1)
 
 ## Requirements
 
