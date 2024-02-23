@@ -36,7 +36,7 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_DIRT(index)
     if @list[index][:ext] == "toggle_dirt"
       name = command_name(index)
-      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{$game_text["cheatmenu:modules/dirt:cheat_toggle/off"]}]" : "[#{$game_text["cheatmenu:modules/dirt:cheat_toggle/on"]}]"
+      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]"
       draw_item_content(index, name, text)
     end
   end
