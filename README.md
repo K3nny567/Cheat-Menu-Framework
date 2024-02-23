@@ -4,7 +4,7 @@
 
 An updated, module-based version of the Cheats Mod.
 
-Latest version: [v1.0rc1](../../releases/tag/v1.0rc1)
+Latest version: [v1.0rc2](../../releases/tag/v1.0rc2)
 
 ## Requirements
 
@@ -24,7 +24,7 @@ See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.tx
 
 ## Planned changes (lower number = highest priority)
 
-- [ ] Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
+- [X] Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
 - [ ] Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
 - [ ] Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
 
