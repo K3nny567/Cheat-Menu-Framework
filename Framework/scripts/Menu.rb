@@ -42,36 +42,14 @@ class Window_DebugCheats < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("#{$game_text["cheatmenu:menu:cheat/dirt"]}", :cheatToggle, true, "toggle_dirt")
   end
 
   def cheatToggle
     name = current_ext
-    begin
-      if !name.nil?
-        case name
-        when "toggle_dirt"
-          if ($game_player.actor.actStat.get_stat("dirt", 3) == 0)
-            $game_player.actor.actStat.set_stat("dirt", 255, 3)
-          else
-            $game_player.actor.actStat.set_stat("dirt", 0, 3)
-          end
-          $game_player.actor.actStat.check_stat
-        end
-      end
-    rescue => e
-      p "Oops, something gone wrong: cannot do event #{name} because #{e.message}"
-      SndLib.sys_buzzer
-    end
     refresh
   end
 
   def draw_item(index)
-    if @list[index][:ext] == "toggle_dirt"
-      name = command_name(index)
-      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]"
-      draw_item_content(index, name, text)
-    end
   end
 
   def draw_item_content(index, name = "", text = "")

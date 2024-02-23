@@ -7,9 +7,6 @@ mod/description
 info/alert
 请注意!
 
-cheat/dirt
-肮脏的统计
-
 cheat_toggle/on
 启用
 

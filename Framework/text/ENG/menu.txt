@@ -7,9 +7,6 @@ The old Cheats Mod, reworked to use modules to add new cheats.
 info/alert
 ATTENTION!
 
-cheat/dirt
-Dirty Stat
-
 cheat_toggle/on
 ON
 

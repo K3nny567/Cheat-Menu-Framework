@@ -7,9 +7,6 @@ El antiguo Mod de trucos, rediseñado para usar módulos para agregar nuevos tru
 info/alert
 ATENCIÓN
 
-cheat/dirt
-Estadística sucia
-
 cheat_toggle/on
 ACTIVADO
 

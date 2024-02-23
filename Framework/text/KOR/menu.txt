@@ -7,9 +7,6 @@ mod/description
 info/alert
 주의!
 
-cheat/dirt
-더티 스탯
-
 cheat_toggle/on
 켜기
 

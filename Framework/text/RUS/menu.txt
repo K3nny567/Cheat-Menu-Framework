@@ -7,9 +7,6 @@ mod/description
 info/alert
 ВНИМАНИЕ!
 
-cheat/dirt
-ВКЛ/ВКЛ грязь
-
 cheat_toggle/on
 ВКЛ
 
