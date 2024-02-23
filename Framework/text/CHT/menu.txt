@@ -19,24 +19,6 @@ commands/back
 commands/cheats
 切换作弊器
 
-commands/heal
-痊愈
-
-commands/healw
-治愈伤口
-
-commands/fall
-疲惫不堪
-
-commands/gib
-给钱
-
-commands/lvl99
-99级
-
-commands/stronk
-给予特质点
-
 command_help/cheats_0
 启用/禁用作弊器。
 

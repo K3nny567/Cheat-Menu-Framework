@@ -19,24 +19,6 @@ commands/back
 commands/cheats
 Выбрать читы
 
-commands/heal
-Исцелить
-
-commands/healw
-Вылечить рану
-
-commands/fall
-Упасть
-
-commands/gib
-Получить очки обмена
-
-commands/lvl99
-Уст. уровень 99
-
-commands/stronk
-Уст. очки тал. 999
-
 command_help/cheats_0
 Включить/выключить читы.
 

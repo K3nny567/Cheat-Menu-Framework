@@ -1,0 +1,18 @@
+commands/heal
+Heal
+
+commands/healw
+Heal Wound
+
+commands/fall
+Exhausted
+
+commands/gib
+Give money
+
+commands/lvl99
+Level 99
+
+commands/stronk
+Give Trait Points
+

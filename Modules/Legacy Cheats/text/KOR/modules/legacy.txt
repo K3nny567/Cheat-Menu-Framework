@@ -1,0 +1,18 @@
+commands/heal
+치유
+
+commands/healw
+상처 치료
+
+commands/fall
+소진됨
+
+commands/gib
+기부하기
+
+commands/lvl99
+99 레벨
+
+commands/stronk
+특성 점수 부여
+

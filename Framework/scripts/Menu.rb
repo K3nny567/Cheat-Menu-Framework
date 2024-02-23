@@ -71,12 +71,6 @@ module YEA
   module DEBUG
     COMMANDS = [
       [:toggle_cheats, "#{$game_text["cheatmenu:menu:commands/cheats"]}"],
-      [:heal, "#{$game_text["cheatmenu:menu:commands/heal"]}"],
-      [:healw, "#{$game_text["cheatmenu:menu:commands/healw"]}"],
-      [:fall, "#{$game_text["cheatmenu:menu:commands/fall"]}"],
-      [:gib, "#{$game_text["cheatmenu:menu:commands/gib"]}"],
-      [:lvl99, "#{$game_text["cheatmenu:menu:commands/lvl99"]}"],
-      [:stronk, "#{$game_text["cheatmenu:menu:commands/stronk"]}"],
     ]
   end
 end
@@ -132,12 +126,6 @@ class Scene_Debug < Scene_MenuBase
     @command_window = Window_DebugCommand.new
     @command_window.set_handler(:cancel, method(:return_scene))
     @command_window.set_handler(:toggle_cheats, method(:command_toggle_cheats)) if CheatUtils.ingame?
-    @command_window.set_handler(:heal, method(:command_heal)) if CheatUtils.ingame?
-    @command_window.set_handler(:healw, method(:command_healwound)) if CheatUtils.ingame?
-    @command_window.set_handler(:fall, method(:command_exhaust)) if CheatUtils.ingame?
-    @command_window.set_handler(:gib, method(:command_gib_moneh)) if CheatUtils.ingame?
-    @command_window.set_handler(:lvl99, method(:command_lvl_99)) if CheatUtils.ingame?
-    @command_window.set_handler(:stronk, method(:command_make_stronk)) if CheatUtils.ingame?
   end
 
   def create_help_window
@@ -181,44 +169,6 @@ class Scene_Debug < Scene_MenuBase
     @cheats_window.activate
     refresh_help_window(:toggle_cheats, "#{$game_text["cheatmenu:menu:command_help/cheats_0"]}\n#{$game_text["cheatmenu:menu:command_help/cheats_1"]}\n\n")
   end # Toggle Cheats Window
-
-  def command_heal
-    $game_player.actor.health += 999
-    $game_player.actor.sta += 999
-    $game_player.actor.sat += 999
-    @command_window.activate
-    refresh_help_window(:heal, "")
-  end
-
-  def command_healwound
-    $game_player.actor.heal_wound
-    @command_window.activate
-    refresh_help_window(:healw, "")
-  end
-
-  def command_exhaust
-    $game_player.actor.sta = -100
-    @command_window.activate
-    refresh_help_window(:fall, "")
-  end
-
-  def command_gib_moneh
-    $game_party.gain_gold(99999)
-    @command_window.activate
-    refresh_help_window(:gib, "")
-  end
-
-  def command_lvl_99
-    $game_player.actor.change_level(99, true)
-    @command_window.activate
-    refresh_help_window(:lvl99, "")
-  end
-
-  def command_make_stronk
-    $game_player.actor.trait_point = 999
-    @command_window.activate
-    refresh_help_window(:stronk, "")
-  end
 
   def refresh_help_window(symbolName, symbolText)
     if @command_window.active

@@ -1,0 +1,18 @@
+commands/heal
+Cura
+
+commands/healw
+Curar herida
+
+commands/fall
+Agotado
+
+commands/gib
+Dar dinero
+
+commands/lvl99
+Nivel 99
+
+commands/stronk
+Dar puntos de rasgo
+
