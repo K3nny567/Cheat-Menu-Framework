@@ -1,8 +1,8 @@
 mod/name
-Cheat Menu Framework
+Marco del menú de trucos
 
 mod/description
-The old Cheats Mod, reworked to use modules to add new cheats.
+El antiguo Mod de trucos, rediseñado para usar módulos para agregar nuevos trucos.
 
 info/alert
 ATENCIÓN

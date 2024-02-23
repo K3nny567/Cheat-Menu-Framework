@@ -1,8 +1,8 @@
 mod/name
-Cheat Menu Framework
+치트 메뉴 프레임워크
 
 mod/description
-The old Cheats Mod, reworked to use modules to add new cheats.
+기존 치트 모드는 모듈을 사용하여 새로운 치트를 추가하도록 재작업되었습니다.
 
 info/alert
 주의!

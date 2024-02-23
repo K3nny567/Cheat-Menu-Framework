@@ -1,5 +1,5 @@
 mod/name
-Cheat Menu Framework
+作弊菜單框架
 
 mod/description
 舊的秘籍模組經過重新設計，使用模組來添加新的秘籍。
