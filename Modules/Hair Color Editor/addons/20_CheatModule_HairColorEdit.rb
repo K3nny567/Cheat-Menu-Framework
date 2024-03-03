@@ -80,7 +80,7 @@ end # Window_DebugHairColor
 
 module YEA
   module DEBUG
-    COMMANDS.insert(4, [:haircolor, "#{$game_text["cheatmenu:modules/haircoloredit:command_desc"]}"])
+    COMMANDS << [:haircolor, "#{$game_text["cheatmenu:modules/haircoloredit:command_desc"]}"]
   end
 end
 

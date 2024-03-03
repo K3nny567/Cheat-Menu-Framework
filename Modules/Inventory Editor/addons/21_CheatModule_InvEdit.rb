@@ -102,9 +102,9 @@ end # Window_DebugItem
 
 module YEA
   module DEBUG
-    COMMANDS.insert(1, [:items, "#{$game_text["cheatmenu:modules/invedit:commands/items"]}"])
-    COMMANDS.insert(2, [:weapons, "#{$game_text["cheatmenu:modules/invedit:commands/weapons"]}"])
-    COMMANDS.insert(3, [:armors, "#{$game_text["cheatmenu:modules/invedit:commands/armors"]}"])
+    COMMANDS << [:items, "#{$game_text["cheatmenu:modules/invedit:commands/items"]}"]
+    COMMANDS << [:weapons, "#{$game_text["cheatmenu:modules/invedit:commands/weapons"]}"]
+    COMMANDS << [:armors, "#{$game_text["cheatmenu:modules/invedit:commands/armors"]}"]
   end
 end
 

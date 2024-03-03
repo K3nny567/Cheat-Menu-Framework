@@ -13,6 +13,15 @@ ACTIVADO
 cheat_toggle/off
 DESACTIVADO
 
+modules/installed_count
+Módulos Instalados:
+
+modules/prefix
+Módulo de trucos:
+
+commands/modules
+Módulos de trucos
+
 commands/back
 Volver
 

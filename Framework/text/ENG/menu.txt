@@ -13,6 +13,15 @@ ON
 cheat_toggle/off
 OFF
 
+modules/installed_count
+Installed Modules:
+
+modules/prefix
+CheatModule:
+
+commands/modules
+CheatModules
+
 commands/back
 Back
 

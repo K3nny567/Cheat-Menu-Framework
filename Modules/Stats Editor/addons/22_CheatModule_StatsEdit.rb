@@ -104,7 +104,7 @@ end
 
 module YEA
   module DEBUG
-    COMMANDS.insert(3, [:stats, "#{$game_text["cheatmenu:modules/statsedit:commands/stats"]}"])
+    COMMANDS << [:stats, "#{$game_text["cheatmenu:modules/statsedit:commands/stats"]}"]
   end
 end
 

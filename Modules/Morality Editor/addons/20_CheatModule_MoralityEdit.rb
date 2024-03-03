@@ -79,7 +79,7 @@ end # Window_DebugMorals
 
 module YEA
   module DEBUG
-    COMMANDS.insert(4, [:set_morality, "#{$game_text["cheatmenu:modules/moralityedit:commands/morality"]}"])
+    COMMANDS << [:set_morality, "#{$game_text["cheatmenu:modules/moralityedit:commands/morality"]}"]
   end
 end
 

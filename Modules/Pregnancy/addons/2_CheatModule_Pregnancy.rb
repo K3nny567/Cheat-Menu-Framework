@@ -137,7 +137,7 @@ end # Window_DebugPreg
 
 module YEA
   module DEBUG
-    COMMANDS.insert(3, [:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:commands/preg"]}"])
+    COMMANDS << [:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:commands/preg"]}"]
   end
 end
 

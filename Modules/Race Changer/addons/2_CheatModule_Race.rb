@@ -100,7 +100,7 @@ end # Window_DebugRace
 
 module YEA
   module DEBUG
-    COMMANDS.insert(1, [:make_race, "#{$game_text["cheatmenu:modules/race:commands/race"]}"])
+    COMMANDS << [:make_race, "#{$game_text["cheatmenu:modules/race:commands/race"]}"]
   end
 end
 
