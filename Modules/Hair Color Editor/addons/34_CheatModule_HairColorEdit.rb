@@ -1,9 +1,15 @@
-# Cheats Mod Module - Morality Editor
+# Cheats Mod Module - Hair Color Editor
 
-#==============================================================================
-# Window_DebugMorals
-#==============================================================================
-class Window_DebugMorals < Window_Command
+#--------------------------------------------------------------------------
+# Window_DebugHairColor
+#--------------------------------------------------------------------------
+
+class Window_DebugHairColor < Window_Command
+  def minmaxHairColor(value)
+    return 5 if value < 0
+    return 0 if value > 5
+    return value
+  end
 
   #--------------------------------------------------------------------------
   # initialize
@@ -28,31 +34,26 @@ class Window_DebugMorals < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("", :morality, true, "#{$game_text["cheatmenu:modules/moralityedit:commands_morality/command"]}")
+    add_command("", :colorCurrent, true, "#{$game_text["cheatmenu:modules/haircoloredit:command_ext"]}")
   end
 
-  def morality
+  def colorCurrent
     # dummy
-  end
-
-  def updateMorality
-    $game_player.actor.morality = $game_player.actor.morality_lona
   end
 
   #--------------------------------------------------------------------------
   # draw_item
   #--------------------------------------------------------------------------
   def draw_item(index)
-    updateMorality
     contents.clear_rect(item_rect_for_text(index))
     rect = item_rect_for_text(index)
     name = @list[index][:ext]
-    change_color(param_change_color($game_player.actor.morality_lona))
+    change_color(param_change_color($game_player.actor.record_HairColor))
     draw_text(rect, command_name(index))
     rect.x += text_size(command_name(index)).width
     rect.width -= text_size(command_name(index)).width
     draw_text(rect, name)
-    text = sprintf("%s", $game_player.actor.morality_lona)
+    text = sprintf("%s", $game_player.actor.record_HairColor)
     draw_text(rect, text, 2)
   end
 
@@ -61,8 +62,8 @@ class Window_DebugMorals < Window_Command
   #--------------------------------------------------------------------------
   def cursor_right(wrap = false)
     SndLib.play_cursor
-    $game_player.actor.morality_lona += Input.press?(Input::KEYMAP[:SHIFT]) ? 10 : 1
-    $game_player.actor.morality_lona += Input.press?(Input::KEYMAP[:ALT]) ? 99 : 0
+    $game_player.actor.record_HairColor += 1
+    $game_player.actor.record_HairColor = minmaxHairColor($game_player.actor.record_HairColor)
     draw_item(index)
   end
 
@@ -71,46 +72,45 @@ class Window_DebugMorals < Window_Command
   #--------------------------------------------------------------------------
   def cursor_left(wrap = false)
     SndLib.play_cursor
-    $game_player.actor.morality_lona -= Input.press?(Input::KEYMAP[:SHIFT]) ? 10 : 1
-    $game_player.actor.morality_lona -= Input.press?(Input::KEYMAP[:ALT]) ? 99 : 0
+    $game_player.actor.record_HairColor -= 1
+    $game_player.actor.record_HairColor = minmaxHairColor($game_player.actor.record_HairColor)
     draw_item(index)
   end
-end # Window_DebugMorals
+end # Window_DebugHairColor
 
 module YEA
   module DEBUG
-    COMMANDS.insert(4, [:set_morality, "#{$game_text["cheatmenu:modules/moralityedit:commands/morality"]}"])
+    COMMANDS << [:haircolor, "#{$game_text["cheatmenu:modules/haircoloredit:command_desc"]}"]
   end
 end
 
 class Scene_Debug
-  alias_method :create_command_window_MODULE_MORALITYEDIT, :create_command_window
+  alias_method :create_command_window_MODULE_HAIRCOLOREDIT, :create_command_window
 
   def create_command_window
-    create_command_window_MODULE_MORALITYEDIT
-    @command_window.set_handler(:set_morality, method(:command_morality)) if CheatUtils.ingame?
+    create_command_window_MODULE_HAIRCOLOREDIT
+    @command_window.set_handler(:haircolor, method(:command_haircolor)) if CheatUtils.ingame?
   end
 
-  # Morality Window
-  def create_morals_windows
-    @morals_window = Window_DebugMorals.new
-    @morals_window.set_handler(:cancel, method(:on_morals_cancel))
+  def create_haircolor_window
+    @haircolor_window = Window_DebugHairColor.new
+    @haircolor_window.set_handler(:cancel, method(:on_haircolor_cancel))
   end
 
-  def on_morals_cancel
+  def command_haircolor
+    create_haircolor_window if @haircolor_window == nil
+    @dummy_window.hide
+    @haircolor_window.show
+    @haircolor_window.activate
+    refresh_help_window(:haircolor, "#{$game_text["cheatmenu:modules/haircoloredit:command_help_0"]}\n#{$game_text["cheatmenu:modules/haircoloredit:command_help_1"]}\n#{$game_text["cheatmenu:modules/haircoloredit:command_help_2"]}\n#{$game_text["cheatmenu:modules/haircoloredit:command_help_3"]}")
+  end
+
+  def on_haircolor_cancel
     @dummy_window.show
-    @morals_window.hide
+    @haircolor_window.hide
     @command_window.activate
     refresh_help_window(:cancel, "")
   end
-
-  def command_morality
-    create_morals_windows if @morals_window == nil
-    @dummy_window.hide
-    @morals_window.show
-    @morals_window.activate
-    refresh_help_window(@command_window.current_symbol, "#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_0"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_1"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_2"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_3"]}")
-  end # Morality Window
 end
 
-$CHEATSMOD_CHEATMODULES["Morality Editor"] = true
+$CHEATSMOD_CHEATMODULES["Hair Color Editor"] = true

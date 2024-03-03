@@ -121,7 +121,7 @@ end # Window_DebugSummon
 
 module YEA
   module DEBUG
-    COMMANDS.insert(1, [:summon, "#{$game_text["cheatmenu:modules/summons:commands/summon"]}"])
+    COMMANDS << [:summon, "#{$game_text["cheatmenu:modules/summons:commands/summon"]}"]
   end
 end
 

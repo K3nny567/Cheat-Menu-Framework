@@ -13,6 +13,15 @@ cheat_toggle/on
 cheat_toggle/off
 关闭
 
+modules/installed_count
+安裝的模組：
+
+modules/prefix
+作弊模組：
+
+commands/modules
+作弊模組
+
 commands/back
 溯源
 

@@ -13,6 +13,15 @@ cheat_toggle/on
 cheat_toggle/off
 꺼짐
 
+modules/installed_count
+설치된 모듈:
+
+modules/prefix
+치트모듈:
+
+commands/modules
+치트모듈
+
 commands/back
 뒤로
 

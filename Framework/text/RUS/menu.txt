@@ -13,6 +13,15 @@ cheat_toggle/on
 cheat_toggle/off
 ВЫКЛ
 
+modules/installed_count
+Установленные модули:
+
+modules/prefix
+ЧитМодуль:
+
+commands/modules
+ЧитМодули
+
 commands/back
 Назад
 
