@@ -173,7 +173,7 @@ class Scene_Debug
     @dummy_window.hide
     @preg_window.show
     @preg_window.activate
-    refresh_help_window(:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_0"]}\n#{$game_text["cheatmenu:modules/pregnancy:window/selectInfo"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_1"]}\n\n")
+    refresh_help_window(:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_0"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_1"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_2"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_3"]}\n")
   end # Pregnancy Window
 end
 

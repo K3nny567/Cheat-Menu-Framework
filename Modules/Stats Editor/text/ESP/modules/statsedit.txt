@@ -1,9 +1,0 @@
-commands/stats
-Situación
-
-command_help/stats_0
-Ajustar situación.
-
-command_help/stats_1
-Pulsa Izquierda/Derecha para perder/ganar.
-

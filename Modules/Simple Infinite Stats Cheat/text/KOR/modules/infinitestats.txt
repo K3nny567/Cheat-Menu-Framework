@@ -1,9 +1,0 @@
-cheat/health
-무한 체력
-
-cheat/food
-인피니트 푸드
-
-cheat/stamina
-무한 스태미나
-

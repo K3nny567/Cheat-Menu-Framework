@@ -1,9 +1,0 @@
-cheat/health
-Salud infinita
-
-cheat/food
-Comida infinita
-
-cheat/stamina
-Resistencia infinita
-

@@ -23,10 +23,16 @@ commands/preg
 Impregnate
 
 command_help/preg_0
-Select race.
+Select race to be impregnated by.
 
 command_help/preg_1
 Press Z to select.
+
+command_help/preg_2
+Select multiple times to get desired baby race
+
+command_help/preg_3
+If pregnant, scroll down to advance pregnancy
 
 window/babyRace
 Baby race
@@ -39,12 +45,3 @@ Advance pregnancy by one day
 
 window/birthInOneDay
 Advance pregnancy till last day
-
-window/selectInfo
-Select race to be impregnated by
-
-window/selectInfo2
-Select multiple times to get desired baby race
-
-window/selectInfo3
-If pregnant, scroll down to advance pregnancy
