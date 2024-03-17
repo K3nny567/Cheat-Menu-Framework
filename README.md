@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> Only download the mod from a release.
+>
+> Never use the Code button unless you are after the unsupported archived MCM version of the mod.
+
 # Cheat Menu Framework
 
 ![preview](https://github.com/K3nny567/Cheat-Menu-Framework/assets/144315629/2883bcf7-898a-4590-9887-725257b5afdf)
