@@ -33,7 +33,7 @@ class Window_DebugStats < Window_Command
   def make_command_list
     $data_StateName.each_pair do |k, v|
       if v != nil and k != nil
-        add_command("", :drawStat, true, [k, v])
+        add_command("", :drawStat, true, [k, v]) if !(v.name == "" or v.name == "nil" or v.description == "")
       end
     end
   end
