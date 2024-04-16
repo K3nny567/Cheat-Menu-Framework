@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> Only download the mod from a release.
+>
+> Never use the Code button unless you are after the unsupported archived MCM version of the mod.
+
 # Cheat Menu Framework
 
 ![preview](https://github.com/K3nny567/Cheat-Menu-Framework/assets/144315629/2883bcf7-898a-4590-9887-725257b5afdf)
@@ -8,7 +13,7 @@ Latest version: [v1.0rc4](../../releases/tag/v1.0rc4)
 
 ## Requirements
 
-Minimum required game version: `0.8.7.x`<br/>
+Minimum required game version: `0.8.7.4`<br/>
 [UltraModManager](https://mega.nz/folder/FzdxST7a#SRSft4Jj27Tu_jL5O_3RXQ)
 
 ## Hotkeys
