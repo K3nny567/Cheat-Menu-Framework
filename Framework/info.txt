@@ -1,3 +1,1 @@
 The old Cheats Mod, reworked to use modules to add new cheats.
-
-Now requires UMM to work. The mod folder is no longer hardcoded to "Cheats Mod".

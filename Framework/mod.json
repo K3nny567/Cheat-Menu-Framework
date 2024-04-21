@@ -1,13 +1,11 @@
 {
 	"id": "cheatmenu",
-	"version": "1.0rc5",
+	"version": "1.0rc6",
 	"name": "$cheatmenu:menu:mod/name",
 	"description": "$cheatmenu:menu:mod/description",
 	"entry": "scripts/__init__.rb",
 	"texts": "text",
-	"requires": {
-		"umm": [ ">=1.2.1" ]
-	},
+	"requires": { "umm": [">=1.2.1"] },
 	"before": [],
 	"thumbnail": "preview.png"
 }
