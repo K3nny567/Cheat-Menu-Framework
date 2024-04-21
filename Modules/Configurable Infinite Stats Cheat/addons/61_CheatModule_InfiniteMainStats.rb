@@ -61,6 +61,7 @@ module CheatUtils
 
   def self.player_rest(value, mode)
     return if !self.ingame?
+    return if $game_player.cannot_trigger
     $game_player.actor.sta += value if mode
     return if mode
     @stamina_max = $game_player.actor.actStat.get_stat("sta", 2)

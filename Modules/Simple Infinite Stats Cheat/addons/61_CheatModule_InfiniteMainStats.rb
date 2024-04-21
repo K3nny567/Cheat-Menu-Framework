@@ -21,6 +21,7 @@ module CheatUtils
 
   def self.player_rest
     return if !self.ingame?
+    return if $game_player.cannot_trigger
     $game_player.actor.sta += 999
   end
 
