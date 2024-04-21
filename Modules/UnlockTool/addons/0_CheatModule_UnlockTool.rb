@@ -64,3 +64,5 @@ module CheatUtils
     GabeSDK.reset
   end
 end
+
+$CHEATSMOD_CHEATMODULES["Unlock Tool"] = true
