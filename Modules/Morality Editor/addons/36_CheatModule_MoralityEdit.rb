@@ -36,7 +36,7 @@ class Window_DebugMorals < Window_Command
   end
 
   def updateMorality
-    $game_player.actor.morality = $game_player.actor.morality_lona
+    $game_player.actor.morality = $game_player.actor.morality_lona + ($game_player.actor.morality_plus-200)
   end
 
   #--------------------------------------------------------------------------
@@ -47,12 +47,12 @@ class Window_DebugMorals < Window_Command
     contents.clear_rect(item_rect_for_text(index))
     rect = item_rect_for_text(index)
     name = @list[index][:ext]
-    change_color(param_change_color($game_player.actor.morality_lona))
+    change_color(param_change_color($game_player.actor.morality))
     draw_text(rect, command_name(index))
     rect.x += text_size(command_name(index)).width
     rect.width -= text_size(command_name(index)).width
     draw_text(rect, name)
-    text = sprintf("%s", $game_player.actor.morality_lona)
+    text = sprintf("%s", $game_player.actor.morality)
     draw_text(rect, text, 2)
   end
 
