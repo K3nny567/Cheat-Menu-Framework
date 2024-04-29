@@ -1,9 +1,0 @@
-commands/summon
-Summon
-
-command_help/summon_0
-Select NPC to summon.
-
-command_help/summon_1
-Press Z to summon.
-
