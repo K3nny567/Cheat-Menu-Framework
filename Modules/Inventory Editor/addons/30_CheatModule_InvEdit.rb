@@ -51,7 +51,7 @@ class Window_DebugItem < Window_Command
     end
     for i in 1...group.size
       text = sprintf(fmt, i)
-      add_command(text, :item, true, group[i]) if !(group[i].item_name.nil? or group[i].item_name == "" or group[i].description == "")
+      add_command(text, :item, true, group[i]) if !(group[i].nil? or group[i].item_name.nil? or group[i].item_name == "" or group[i].description == "")
     end
   end
 
