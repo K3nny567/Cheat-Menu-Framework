@@ -4,7 +4,7 @@
 > Never use the Code button unless you are after the unsupported archived MCM version of the mod.
 
 > [!CAUTION]
-> If you absolutely must, grab build system from [here](../../../LMake/releases/latest), it can do everything (including downloading both required repositories, run the LMake.cmd file for what the commands available are)
+> If you absolutely must, grab the build system from [here](../../../LMake/releases/latest), it can do everything (including downloading both required repositories, run the LMake.cmd file for what the commands available are)
 
 # Cheat Menu Framework
 
