@@ -1,10 +1,10 @@
 # Cheats Mod Module - Inventory Editor
 
 #--------------------------------------------------------------------------
-# Window_DebugItem
+# Window_CheatMenuItem
 #--------------------------------------------------------------------------
 
-class Window_DebugItem < Window_Command
+class Window_CheatMenuItem < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -66,7 +66,7 @@ class Window_DebugItem < Window_Command
     change_color(normal_color, $game_party.item_number(item) > 0)
     if $game_party.item_number(item) > 0 && item.name == ""
       change_color(knockout_color)
-      name = "#{$game_text["cheatmenu:menu:info/alert"]}"
+      name = "#{$mod_cheats.getText("menu:info/alert")}"
     end
     draw_text(rect, command_name(index))
     rect.x += text_size(command_name(index)).width
@@ -98,17 +98,17 @@ class Window_DebugItem < Window_Command
     $game_party.lose_item(current_ext, Input.press?(Input::KEYMAP[:ALT]) ? 99 : 0)
     draw_item(index)
   end
-end # Window_DebugItem
+end # Window_CheatMenuItem
 
-module YEA
-  module DEBUG
-    COMMANDS << [:items, "#{$game_text["cheatmenu:modules/invedit:commands/items"]}"]
-    COMMANDS << [:weapons, "#{$game_text["cheatmenu:modules/invedit:commands/weapons"]}"]
-    COMMANDS << [:armors, "#{$game_text["cheatmenu:modules/invedit:commands/armors"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:items, "#{$mod_cheats.getText("modules/invedit:commands/items")}"]
+    COMMANDS << [:weapons, "#{$mod_cheats.getText("modules/invedit:commands/weapons")}"]
+    COMMANDS << [:armors, "#{$mod_cheats.getText("modules/invedit:commands/armors")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_INVEDIT, :create_command_window
 
   def create_command_window
@@ -122,7 +122,7 @@ class Scene_Debug
   # new method: create_item_windows
   #--------------------------------------------------------------------------
   def create_item_windows
-    @item_window = Window_DebugItem.new
+    @item_window = Window_CheatMenuItem.new
     @item_window.set_handler(:cancel, method(:on_item_cancel))
   end
 
@@ -135,7 +135,7 @@ class Scene_Debug
     @item_window.show
     @item_window.activate
     @item_window.set_type(@command_window.current_symbol)
-    refresh_help_window(@command_window.current_symbol, "#{$game_text["cheatmenu:modules/invedit:command_help/items_0"]}\n#{$game_text["cheatmenu:modules/invedit:command_help/items_1"]}\n#{$game_text["cheatmenu:modules/invedit:command_help/items_2"]}\n#{$game_text["cheatmenu:modules/invedit:command_help/items_3"]}")
+    refresh_help_window(@command_window.current_symbol, "#{$mod_cheats.getText("modules/invedit:command_help/items_0")}\n#{$mod_cheats.getText("modules/invedit:command_help/items_1")}\n#{$mod_cheats.getText("modules/invedit:command_help/items_2")}\n#{$mod_cheats.getText("modules/invedit:command_help/items_3")}")
   end
 
   #--------------------------------------------------------------------------

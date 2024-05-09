@@ -4,13 +4,13 @@
 module CheatsMod
   module Pregnancy
     COMMANDS = [
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/human"]}", :pregCurrent, true, "Human"],
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/moot"]}", :pregCurrent, true, "Moot"],
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/deepone"]}", :pregCurrent, true, "Deepone"],
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/fishkind"]}", :pregCurrent, true, "Fishkind"],
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/orkind"]}", :pregCurrent, true, "Orkind"],
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/goblin"]}", :pregCurrent, true, "Goblin"],
-      ["#{$game_text["cheatmenu:modules/pregnancy:commands_preg/abom"]}", :pregCurrent, true, "Abomination"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/human")}", :pregCurrent, true, "Human"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/moot")}", :pregCurrent, true, "Moot"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/deepone")}", :pregCurrent, true, "Deepone"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/fishkind")}", :pregCurrent, true, "Fishkind"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/orkind")}", :pregCurrent, true, "Orkind"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/goblin")}", :pregCurrent, true, "Goblin"],
+      ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/abom")}", :pregCurrent, true, "Abomination"],
     ]
   end
 end
@@ -18,7 +18,7 @@ end
 ##---------------------------------------------------------------------------
 ## Pregnancy Menu
 ##---------------------------------------------------------------------------
-class Window_DebugPreg < Window_Command
+class Window_CheatMenuPreg < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -48,10 +48,10 @@ class Window_DebugPreg < Window_Command
       add_command(command[0], command[1], command[2], command[3])
     end
     if ($game_player.actor.preg_level >= 1)
-      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/babyRace"]}: #{$game_player.actor.baby_race}", :pregCurrent, false, "separator")
-      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/daysTillBirth"]}: #{$game_player.actor.preg_whenGiveBirth?}", :pregCurrent, false, "separator")
-      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/pregplus"]}", :pregCurrent, true, "PregPlusOneDay")
-      add_command("#{$game_text["cheatmenu:modules/pregnancy:window/birthInOneDay"]}", :pregCurrent, true, "BirthOneDay")
+      add_command("#{$mod_cheats.getText("modules/pregnancy:window/babyRace")}: #{$game_player.actor.baby_race}", :pregCurrent, false, "separator")
+      add_command("#{$mod_cheats.getText("modules/pregnancy:window/daysTillBirth")}: #{$game_player.actor.preg_whenGiveBirth?}", :pregCurrent, false, "separator")
+      add_command("#{$mod_cheats.getText("modules/pregnancy:window/pregplus")}", :pregCurrent, true, "PregPlusOneDay")
+      add_command("#{$mod_cheats.getText("modules/pregnancy:window/birthInOneDay")}", :pregCurrent, true, "BirthOneDay")
     end
   end
 
@@ -133,15 +133,15 @@ class Window_DebugPreg < Window_Command
   def cursor_right(wrap = false)
     cursor_pagedown
   end
-end # Window_DebugPreg
+end # Window_CheatMenuPreg
 
-module YEA
-  module DEBUG
-    COMMANDS << [:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:commands/preg"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:make_pregnant, "#{$mod_cheats.getText("cheatmenu:modules/pregnancy:commands/preg")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_PREGNANCY, :create_command_window
 
   def create_command_window
@@ -151,7 +151,7 @@ class Scene_Debug
 
   # Pregnancy Window
   def create_preg_window
-    @preg_window = Window_DebugPreg.new
+    @preg_window = Window_CheatMenuPreg.new
     @preg_window.set_handler(:ok, method(:on_preg_ok))
     @preg_window.set_handler(:cancel, method(:on_preg_cancel))
   end
@@ -173,7 +173,7 @@ class Scene_Debug
     @dummy_window.hide
     @preg_window.show
     @preg_window.activate
-    refresh_help_window(:make_pregnant, "#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_0"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_1"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_2"]}\n#{$game_text["cheatmenu:modules/pregnancy:command_help/preg_3"]}\n")
+    refresh_help_window(:make_pregnant, "#{$mod_cheats.getText("modules/pregnancy:command_help/preg_0")}\n#{$mod_cheats.getText("modules/pregnancy:command_help/preg_1")}\n#{$mod_cheats.getText("modules/pregnancy:command_help/preg_2")}\n#{$mod_cheats.getText("modules/pregnancy:command_help/preg_3")}\n")
   end # Pregnancy Window
 end
 

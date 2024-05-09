@@ -19,7 +19,7 @@ module CheatUtils
   end
 end
 
-class Window_DebugRace
+class Window_CheatMenuRace
   alias_method :raceCurrent_MODULE_DEEPSKILL, :raceCurrent
 
   def raceCurrent

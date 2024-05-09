@@ -1,18 +1,18 @@
 # Cheats Mod Module - Legacy module
 
 #
-module YEA
-  module DEBUG
-    COMMANDS << [:heal, "#{$game_text["cheatmenu:modules/legacy:commands/heal"]}"]
-    COMMANDS << [:healw, "#{$game_text["cheatmenu:modules/legacy:commands/healw"]}"]
-    COMMANDS << [:fall, "#{$game_text["cheatmenu:modules/legacy:commands/fall"]}"]
-    COMMANDS << [:gib, "#{$game_text["cheatmenu:modules/legacy:commands/gib"]}"]
-    COMMANDS << [:lvl99, "#{$game_text["cheatmenu:modules/legacy:commands/lvl99"]}"]
-    COMMANDS << [:stronk, "#{$game_text["cheatmenu:modules/legacy:commands/stronk"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:heal, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/heal")}"]
+    COMMANDS << [:healw, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/healw")}"]
+    COMMANDS << [:fall, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/fall")}"]
+    COMMANDS << [:gib, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/gib")}"]
+    COMMANDS << [:lvl99, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/lvl99")}"]
+    COMMANDS << [:stronk, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/stronk")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_LEGACY, :create_command_window
 
   def create_command_window

@@ -33,17 +33,17 @@ module CheatUtils
 
   def self.toggle_infinite_health
     $cheat_infinite_health = !$cheat_infinite_health
-    FileGetter.cheat_save("Cheats Mod - Modules", "Infinite Health", $cheat_infinite_health)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Infinite Health", $cheat_infinite_health)
   end
 
   def self.toggle_infinite_food
     $cheat_infinite_food = !$cheat_infinite_food
-    FileGetter.cheat_save("Cheats Mod - Modules", "Infinite Food", $cheat_infinite_food)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Infinite Food", $cheat_infinite_food)
   end
 
   def self.toggle_infinite_stamina
     $cheat_infinite_stamina = !$cheat_infinite_stamina
-    FileGetter.cheat_save("Cheats Mod - Modules", "Infinite Stamina", $cheat_infinite_stamina)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Infinite Stamina", $cheat_infinite_stamina)
   end
 end
 
@@ -75,16 +75,16 @@ module CheatsMod
   end
 end
 
-class Window_DebugCheats
+class Window_CheatMenuCheats
   alias_method :make_command_list_CHEATSMODULE_AUTOHEAL, :make_command_list
   alias_method :cheatToggle_CHEATSMODULE_AUTOHEAL, :cheatToggle
   alias_method :draw_item_CHEATSMODULE_AUTOHEAL, :draw_item
 
   def make_command_list
     make_command_list_CHEATSMODULE_AUTOHEAL
-    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/health"]}", :cheatToggle, true, "toggle_infinite_health")
-    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/food"]}", :cheatToggle, true, "toggle_infinite_food")
-    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/stamina"]}", :cheatToggle, true, "toggle_infinite_stamina")
+    add_command("#{$mod_cheats.getText("modules/infinitestats:cheat/health")}", :cheatToggle, true, "toggle_infinite_health")
+    add_command("#{$mod_cheats.getText("modules/infinitestats:cheat/food")}", :cheatToggle, true, "toggle_infinite_food")
+    add_command("#{$mod_cheats.getText("modules/infinitestats:cheat/stamina")}", :cheatToggle, true, "toggle_infinite_stamina")
   end
 
   def cheatToggle
@@ -111,26 +111,26 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_AUTOHEAL(index)
     if @list[index][:ext] == "toggle_infinite_health"
       name = command_name(index)
-      text = $cheat_infinite_health ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $cheat_infinite_health ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
     if @list[index][:ext] == "toggle_infinite_food"
       name = command_name(index)
-      text = $cheat_infinite_food ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $cheat_infinite_food ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
     if @list[index][:ext] == "toggle_infinite_stamina"
       name = command_name(index)
-      text = $cheat_infinite_stamina ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $cheat_infinite_stamina ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
   end
 end
 
 if !$mod_cheats.modules["Infinite Main Stats"]
-  $cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
-  $cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
-  $cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
+  $cheat_infinite_health = $mod_cheats.config.read("Cheats Mod - Modules", "Infinite Health", false)
+  $cheat_infinite_food = $mod_cheats.config.read("Cheats Mod - Modules", "Infinite Food", false)
+  $cheat_infinite_stamina = $mod_cheats.config.read("Cheats Mod - Modules", "Infinite Stamina", false)
 
   $mod_cheats.modules["Infinite Main Stats"] = true
 end

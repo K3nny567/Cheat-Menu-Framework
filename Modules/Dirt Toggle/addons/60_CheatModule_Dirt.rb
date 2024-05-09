@@ -42,6 +42,4 @@ class Window_CheatMenuCheats
   end
 end
 
-if !$mod_cheats.modules["Dirt"]
-  $mod_cheats.modules["Dirt"] = true
-end
+$mod_cheats.modules["Dirt"] = true
