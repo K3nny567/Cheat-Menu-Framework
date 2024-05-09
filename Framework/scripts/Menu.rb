@@ -4,11 +4,11 @@
 ## Hotkeys
 ##---------------------------------------------------------------------------
 module CheatsMod
-  self.singleton_class.send(:alias_method, :cheat_triggers_CHEATMENUFRAMEWORK, :cheat_triggers)
-  def self.cheat_triggers
+  singleton_class.send(:alias_method, :cheat_triggers_CHEATMENUFRAMEWORK, :cheat_triggers)
+  def cheat_triggers
     cheat_triggers_CHEATMENUFRAMEWORK
     if Input.trigger?(Input::F9)
-      SceneManager.call(Scene_Debug) if CheatUtils.ingame?
+      SceneManager.call(Scene_CheatMenu) if CheatUtils.ingame?
     end
   end
 end
@@ -16,7 +16,7 @@ end
 ##---------------------------------------------------------------------------
 ## Installed Modules
 ##---------------------------------------------------------------------------
-class Window_DebugModules < Window_Command
+class Window_CheatMenuModules < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -42,9 +42,9 @@ class Window_DebugModules < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("#{$game_text["cheatmenu:menu:modules/installed_count"]} #{$CHEATSMOD_CHEATMODULES.size}", :moduleToggle, false)
+    add_command("#{$mod_cheats.getText("menu:modules/installed_count")} #{$mod_cheats.modules.size}", :moduleToggle, false)
     add_command("--------------", :moduleToggle, false)
-    $CHEATSMOD_CHEATMODULES.map { |key, _| add_command("#{$game_text["cheatmenu:menu:modules/prefix"]} #{key.to_sym}", :moduleToggle, false) }
+    $mod_cheats.modules.map { |key, _| add_command("#{$mod_cheats.getText("menu:modules/prefix")} #{key.to_sym}", :moduleToggle, false) }
   end
 
   def moduleToggle
@@ -64,12 +64,12 @@ class Window_DebugModules < Window_Command
   def cursor_right(wrap = false)
     cursor_pagedown
   end
-end # Window_DebugModules
+end # Window_CheatMenuModules
 
 ##---------------------------------------------------------------------------
 ## Cheats Menu
 ##---------------------------------------------------------------------------
-class Window_DebugCheats < Window_Command
+class Window_CheatMenuCheats < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -120,20 +120,20 @@ class Window_DebugCheats < Window_Command
   def cursor_right(wrap = false)
     cursor_pagedown
   end
-end # Window_DebugCheats
+end # Window_CheatMenuCheats
 
-module YEA
-  module DEBUG
+module CheatsMod
+  module MENU
     COMMANDS = Array.new
-    COMMANDS << [:modules, "#{$game_text["cheatmenu:menu:commands/modules"]}"]
-    COMMANDS << [:toggle_cheats, "#{$game_text["cheatmenu:menu:commands/cheats"]}"]
+    COMMANDS << [:modules, "#{$mod_cheats.getText("menu:commands/modules")}"]
+    COMMANDS << [:toggle_cheats, "#{$mod_cheats.getText("menu:commands/cheats")}"]
   end
 end
 
 #==============================================================================
-# Window_DebugCommand
+# Window_CheatMenuCommand
 #==============================================================================
-class Window_DebugCommand < Window_Command
+class Window_CheatMenuCommand < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -154,13 +154,13 @@ class Window_DebugCommand < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    for command in YEA::DEBUG::COMMANDS
+    for command in CheatsMod::MENU::COMMANDS
       add_command(command[1], command[0])
     end
   end
-end # Window_DebugCommand
+end # Window_CheatMenuCommand
 
-class Scene_Debug < Scene_MenuBase
+class Scene_CheatMenu < Scene_MenuBase
   def start
     super
     create_all_windows
@@ -178,7 +178,7 @@ class Scene_Debug < Scene_MenuBase
   end
 
   def create_command_window
-    @command_window = Window_DebugCommand.new
+    @command_window = Window_CheatMenuCommand.new
     @command_window.set_handler(:cancel, method(:return_scene))
     @command_window.set_handler(:modules, method(:command_modules))
     @command_window.set_handler(:toggle_cheats, method(:command_toggle_cheats)) if CheatUtils.ingame?
@@ -201,7 +201,7 @@ class Scene_Debug < Scene_MenuBase
 
   # Installed Modules Window
   def create_modules_window
-    @modules_window = Window_DebugModules.new
+    @modules_window = Window_CheatMenuModules.new
     @modules_window.set_handler(:ok, method(:on_modules_ok))
     @modules_window.set_handler(:cancel, method(:on_modules_cancel))
   end
@@ -224,10 +224,10 @@ class Scene_Debug < Scene_MenuBase
     @modules_window.activate
     refresh_help_window(:modules, "")
   end # Installed Modules Window
-  
+
   # Toggle Cheats Window
   def create_cheats_window
-    @cheats_window = Window_DebugCheats.new
+    @cheats_window = Window_CheatMenuCheats.new
     @cheats_window.set_handler(:ok, method(:on_cheats_ok))
     @cheats_window.set_handler(:cancel, method(:on_cheats_cancel))
   end
@@ -249,7 +249,7 @@ class Scene_Debug < Scene_MenuBase
     @dummy_window.hide
     @cheats_window.show
     @cheats_window.activate
-    refresh_help_window(:toggle_cheats, "#{$game_text["cheatmenu:menu:command_help/cheats_0"]}\n#{$game_text["cheatmenu:menu:command_help/cheats_1"]}\n\n")
+    refresh_help_window(:toggle_cheats, "#{$mod_cheats.getText("menu:command_help/cheats_0")}\n#{$mod_cheats.getText("menu:command_help/cheats_1")}\n\n")
   end # Toggle Cheats Window
 
   def refresh_help_window(symbolName, symbolText)

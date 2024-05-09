@@ -65,4 +65,4 @@ module CheatUtils
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Unlock Tool"] = true
+$mod_cheats.modules["Unlock Tool"] = true

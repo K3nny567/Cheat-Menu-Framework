@@ -3,6 +3,6 @@ class Scene_Base
 
   def trigger_debug_window_entry
     trigger_debug_window_entry_CHEATMENUFRAMEWORK
-    CheatsMod.cheat_triggers if CheatUtils.ingame?
+    $mod_cheats.cheat_triggers if CheatUtils.ingame?
   end
 end

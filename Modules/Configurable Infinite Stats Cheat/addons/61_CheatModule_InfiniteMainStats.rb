@@ -92,42 +92,42 @@ module CheatUtils
   end
 
   def self.load_infinite_stats_config
-    $cheat_infinite_health_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenLimit", 0.20)
-    $cheat_infinite_health_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenRate", 0.01)
-    $cheat_infinite_food_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenLimit", 0.10)
-    $cheat_infinite_food_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenRate", 0.005)
-    $cheat_infinite_stamina_limit = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenLimit", 0.40)
-    $cheat_infinite_stamina_rate = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenRate", 0.002)
-    $cheat_infinite_health_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "HealthRegenMode", "OnlyBelow")
-    $cheat_infinite_food_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "FoodRegenMode", "OnlyBelow")
-    $cheat_infinite_stamina_mode = FileGetter.cheat_load("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenMode", "OnlyBelow")
+    $cheat_infinite_health_limit = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "HealthRegenLimit", 0.20)
+    $cheat_infinite_health_rate = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "HealthRegenRate", 0.01)
+    $cheat_infinite_food_limit = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "FoodRegenLimit", 0.10)
+    $cheat_infinite_food_rate = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "FoodRegenRate", 0.005)
+    $cheat_infinite_stamina_limit = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenLimit", 0.40)
+    $cheat_infinite_stamina_rate = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenRate", 0.002)
+    $cheat_infinite_health_mode = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "HealthRegenMode", "OnlyBelow")
+    $cheat_infinite_food_mode = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "FoodRegenMode", "OnlyBelow")
+    $cheat_infinite_stamina_mode = $mod_cheats.config.read("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenMode", "OnlyBelow")
   end
 
   def self.save_infinite_stats_config
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "HealthRegenLimit", $cheat_infinite_health_limit)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "HealthRegenRate", $cheat_infinite_health_rate)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "FoodRegenLimit", $cheat_infinite_food_limit)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "FoodRegenRate", $cheat_infinite_food_rate)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenLimit", $cheat_infinite_stamina_limit)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenRate", $cheat_infinite_stamina_rate)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "HealthRegenMode", $cheat_infinite_health_mode)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "FoodRegenMode", $cheat_infinite_food_mode)
-    FileGetter.cheat_save("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenMode", $cheat_infinite_stamina_mode)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "HealthRegenLimit", $cheat_infinite_health_limit)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "HealthRegenRate", $cheat_infinite_health_rate)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "FoodRegenLimit", $cheat_infinite_food_limit)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "FoodRegenRate", $cheat_infinite_food_rate)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenLimit", $cheat_infinite_stamina_limit)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenRate", $cheat_infinite_stamina_rate)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "HealthRegenMode", $cheat_infinite_health_mode)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "FoodRegenMode", $cheat_infinite_food_mode)
+    $mod_cheats.config.write("Cheats Mod - Infinite Main Stats: Config", "StaminaRegenMode", $cheat_infinite_stamina_mode)
   end
 
   def self.toggle_infinite_health
     $cheat_infinite_health = !$cheat_infinite_health
-    FileGetter.cheat_save("Cheats Mod - Modules", "Infinite Health", $cheat_infinite_health)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Infinite Health", $cheat_infinite_health)
   end
 
   def self.toggle_infinite_food
     $cheat_infinite_food = !$cheat_infinite_food
-    FileGetter.cheat_save("Cheats Mod - Modules", "Infinite Food", $cheat_infinite_food)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Infinite Food", $cheat_infinite_food)
   end
 
   def self.toggle_infinite_stamina
     $cheat_infinite_stamina = !$cheat_infinite_stamina
-    FileGetter.cheat_save("Cheats Mod - Modules", "Infinite Stamina", $cheat_infinite_stamina)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Infinite Stamina", $cheat_infinite_stamina)
   end
 end
 
@@ -159,16 +159,16 @@ module CheatsMod
   end
 end
 
-class Window_DebugCheats
+class Window_CheatMenuCheats
   alias_method :make_command_list_CHEATSMODULE_AUTOHEAL, :make_command_list
   alias_method :cheatToggle_CHEATSMODULE_AUTOHEAL, :cheatToggle
   alias_method :draw_item_CHEATSMODULE_AUTOHEAL, :draw_item
 
   def make_command_list
     make_command_list_CHEATSMODULE_AUTOHEAL
-    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/health"]}", :cheatToggle, true, "toggle_infinite_health")
-    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/food"]}", :cheatToggle, true, "toggle_infinite_food")
-    add_command("#{$game_text["cheatmenu:modules/infinitestats:cheat/stamina"]}", :cheatToggle, true, "toggle_infinite_stamina")
+    add_command("#{$mod_cheats.getText("modules/infinitestats:cheat/health")}", :cheatToggle, true, "toggle_infinite_health")
+    add_command("#{$mod_cheats.getText("modules/infinitestats:cheat/food")}", :cheatToggle, true, "toggle_infinite_food")
+    add_command("#{$mod_cheats.getText("modules/infinitestats:cheat/stamina")}", :cheatToggle, true, "toggle_infinite_stamina")
   end
 
   def cheatToggle
@@ -195,26 +195,26 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_AUTOHEAL(index)
     if @list[index][:ext] == "toggle_infinite_health"
       name = command_name(index)
-      text = $cheat_infinite_health ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $cheat_infinite_health ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
     if @list[index][:ext] == "toggle_infinite_food"
       name = command_name(index)
-      text = $cheat_infinite_food ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $cheat_infinite_food ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
     if @list[index][:ext] == "toggle_infinite_stamina"
       name = command_name(index)
-      text = $cheat_infinite_stamina ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $cheat_infinite_stamina ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
   end
 end
 
-if !$CHEATSMOD_CHEATMODULES["Infinite Main Stats"]
-  $cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
-  $cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
-  $cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
+if !$mod_cheats.modules["Infinite Main Stats"]
+  $cheat_infinite_health = $mod_cheats.config.read("Cheats Mod - Modules", "Infinite Health", false)
+  $cheat_infinite_food = $mod_cheats.config.read("Cheats Mod - Modules", "Infinite Food", false)
+  $cheat_infinite_stamina = $mod_cheats.config.read("Cheats Mod - Modules", "Infinite Stamina", false)
 
   CheatUtils.load_infinite_stats_config
 
@@ -222,5 +222,5 @@ if !$CHEATSMOD_CHEATMODULES["Infinite Main Stats"]
   $cheat_infinite_food_loop = false
   $cheat_infinite_stamina_loop = false
 
-  $CHEATSMOD_CHEATMODULES["Infinite Main Stats"] = true
+  $mod_cheats.modules["Infinite Main Stats"] = true
 end

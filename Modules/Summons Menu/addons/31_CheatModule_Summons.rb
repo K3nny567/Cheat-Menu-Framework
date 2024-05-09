@@ -161,4 +161,4 @@ class Scene_Debug
   end # Summon window
 end
 
-$CHEATSMOD_CHEATMODULES["Summons Menu"] = true
+$mod_cheats.modules["Summons Menu"] = true

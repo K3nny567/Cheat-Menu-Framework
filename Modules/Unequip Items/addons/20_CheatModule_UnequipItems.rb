@@ -30,4 +30,4 @@ module CheatsMod
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Unequip Items"] = true
+$mod_cheats.modules["Unequip Items"] = true

@@ -73,7 +73,7 @@ class Window_DebugCheats
   end
 end
 
-if !$CHEATSMOD_CHEATMODULES["Infinite Money"]
+if !$mod_cheats.modules["Infinite Money"]
   $cheat_infinite_money = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Money", false)
-  $CHEATSMOD_CHEATMODULES["Infinite Money"] = true
+  $mod_cheats.modules["Infinite Money"] = true
 end

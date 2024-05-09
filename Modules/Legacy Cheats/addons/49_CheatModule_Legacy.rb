@@ -64,4 +64,4 @@ class Scene_Debug
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Legacy"] = true
+$mod_cheats.modules["Legacy"] = true

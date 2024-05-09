@@ -127,10 +127,10 @@ class Window_DebugCheats
   end
 end
 
-if !$CHEATSMOD_CHEATMODULES["Infinite Main Stats"]
+if !$mod_cheats.modules["Infinite Main Stats"]
   $cheat_infinite_health = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Health", false)
   $cheat_infinite_food = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Food", false)
   $cheat_infinite_stamina = FileGetter.cheat_load("Cheats Mod - Modules", "Infinite Stamina", false)
 
-  $CHEATSMOD_CHEATMODULES["Infinite Main Stats"] = true
+  $mod_cheats.modules["Infinite Main Stats"] = true
 end

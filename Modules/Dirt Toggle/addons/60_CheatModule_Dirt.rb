@@ -1,14 +1,14 @@
 # Cheats Mod Module - Dirt Module
 
 #
-class Window_DebugCheats
+class Window_CheatMenuCheats
   alias_method :make_command_list_CHEATSMODULE_DIRT, :make_command_list
   alias_method :cheatToggle_CHEATSMODULE_DIRT, :cheatToggle
   alias_method :draw_item_CHEATSMODULE_DIRT, :draw_item
 
   def make_command_list
     make_command_list_CHEATSMODULE_DIRT
-    add_command("#{$game_text["cheatmenu:modules/dirt:cheat/dirt"]}", :cheatToggle, true, "toggle_dirt")
+    add_command("#{$mod_cheats.getText("modules/dirt:cheat/dirt")}", :cheatToggle, true, "toggle_dirt")
   end
 
   def cheatToggle
@@ -36,12 +36,12 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_DIRT(index)
     if @list[index][:ext] == "toggle_dirt"
       name = command_name(index)
-      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]"
+      text = $game_player.actor.actStat.get_stat("dirt", 3) == 0 ? "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]"
       draw_item_content(index, name, text)
     end
   end
 end
 
-if !$CHEATSMOD_CHEATMODULES["Dirt"]
-  $CHEATSMOD_CHEATMODULES["Dirt"] = true
+if !$mod_cheats.modules["Dirt"]
+  $mod_cheats.modules["Dirt"] = true
 end
