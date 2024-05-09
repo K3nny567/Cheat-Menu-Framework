@@ -19,13 +19,13 @@ module CheatUtils
   end
 end
 
-module CheatsMod
-  self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_INFINITE_MONEY, :cheat_triggers)
+class CheatsMod
+  alias_method :cheat_triggers_CHEATSMODULE_INFINITE_MONEY, :cheat_triggers
 
   ##---------------------------------------------------------------------------
   ## Hotkeys
   ##---------------------------------------------------------------------------
-  def self.cheat_triggers
+  def cheat_triggers
     cheat_triggers_CHEATSMODULE_INFINITE_MONEY
     if Input.trigger?(Input::F6)
       $game_party.gain_gold(99999) if CheatUtils.ingame?

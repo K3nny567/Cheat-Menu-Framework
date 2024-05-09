@@ -5,7 +5,7 @@
 	"description": "$cheatmenu:menu:mod/description",
 	"entry": "__init__.rb",
 	"texts": "text",
-	"requires": { "umm": [">=1.2.1"] },
+	"requires": {},
 	"before": [],
 	"thumbnail": "preview.png"
 }

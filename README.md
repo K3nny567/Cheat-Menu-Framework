@@ -1,7 +1,10 @@
 > [!IMPORTANT]
 > Only download the mod from a release.
 >
-> Never use the Code button unless you are after the unsupported archived MCM version of the mod.
+> Never use the Code button.
+
+> [!CAUTION]
+> If you absolutely must, grab the build system from [here](../../../LMake/releases/latest), it can do everything (including downloading both required repositories, run the LMake.cmd file for what the commands available are)
 
 # Cheat Menu Framework
 
@@ -9,12 +12,11 @@
 
 An updated, module-based version of the Cheats Mod.
 
-Latest version: [v1.0rc6](../../releases/tag/v1.0rc6)
+Latest version: [v1.0rc7](../../releases/tag/v1.0rc7)
 
 ## Requirements
 
 Minimum required game version: `0.8.7.4`<br/>
-[UltraModManager](https://mega.nz/folder/FzdxST7a#SRSft4Jj27Tu_jL5O_3RXQ)
 
 ## Hotkeys
 
@@ -29,13 +31,12 @@ See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.tx
 
 ## Planned changes (lower number = highest priority)
 
-- [X] Move features into their own CheatModules. (The Pregnancy addon is a sample of how that will look) - Once this change is fully implemented I'll be giving the mod version numbers starting from 1.0
 - [ ] Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
 - [ ] Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
 
 <hr/>
 
-## Changelog
+## Changelog (Legacy)
 
 <details>
 <summary>Changelog</summary>

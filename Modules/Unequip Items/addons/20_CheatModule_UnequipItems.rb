@@ -13,13 +13,13 @@ module CheatUtils
   end
 end
 
-module CheatsMod
-  self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_UNEQUIPITEMS, :cheat_triggers)
+class CheatsMod
+  alias_method :cheat_triggers_CHEATSMODULE_UNEQUIPITEMS, :cheat_triggers
 
   ##---------------------------------------------------------------------------
   ## Hotkeys
   ##---------------------------------------------------------------------------
-  def self.cheat_triggers
+  def cheat_triggers
     cheat_triggers_CHEATSMODULE_UNEQUIPITEMS
     if Input.trigger?(Input::F3)
       CheatUtils.unequipall(false)

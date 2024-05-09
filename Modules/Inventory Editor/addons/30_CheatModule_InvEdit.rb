@@ -100,7 +100,7 @@ class Window_CheatMenuItem < Window_Command
   end
 end # Window_CheatMenuItem
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS << [:items, "#{$mod_cheats.getText("modules/invedit:commands/items")}"]
     COMMANDS << [:weapons, "#{$mod_cheats.getText("modules/invedit:commands/weapons")}"]

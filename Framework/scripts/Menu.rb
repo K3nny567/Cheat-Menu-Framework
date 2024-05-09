@@ -3,12 +3,14 @@
 ##---------------------------------------------------------------------------
 ## Hotkeys
 ##---------------------------------------------------------------------------
-module CheatsMod
-  singleton_class.send(:alias_method, :cheat_triggers_CHEATMENUFRAMEWORK, :cheat_triggers)
+class CheatsMod
+  alias_method :cheat_triggers_CHEATMENUFRAMEWORK, :cheat_triggers
   def cheat_triggers
     cheat_triggers_CHEATMENUFRAMEWORK
-    if Input.trigger?(Input::F9)
-      SceneManager.call(Scene_CheatMenu) if CheatUtils.ingame?
+    if Input.trigger?(:F9)
+      unless SceneManager.scene_is?(Scene_CheatMenu)
+        SceneManager.call(Scene_CheatMenu) if CheatUtils.ingame?
+      end
     end
   end
 end
@@ -122,7 +124,7 @@ class Window_CheatMenuCheats < Window_Command
   end
 end # Window_CheatMenuCheats
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS = Array.new
     COMMANDS << [:modules, "#{$mod_cheats.getText("menu:commands/modules")}"]
@@ -154,7 +156,7 @@ class Window_CheatMenuCommand < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    for command in CheatsMod::MENU::COMMANDS
+    for command in CheatMenuFramework::MENU::COMMANDS
       add_command(command[1], command[0])
     end
   end
@@ -163,7 +165,9 @@ end # Window_CheatMenuCommand
 class Scene_CheatMenu < Scene_MenuBase
   def start
     super
-    create_all_windows
+    create_command_window
+    create_help_window
+    create_dummy_window
   end
 
   def update
@@ -171,10 +175,9 @@ class Scene_CheatMenu < Scene_MenuBase
     return_scene if Input.trigger?(:F9)
   end
 
-  def create_all_windows
-    create_command_window
-    create_help_window
-    create_dummy_window
+  def terminate
+    super
+    #$game_map.refresh
   end
 
   def create_command_window

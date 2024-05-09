@@ -81,6 +81,7 @@ class Window_CheatMenuStats < Window_Command
   end
 
   def prep_desc(desc)
+    return "" if desc.nil?
     begin
       desc.gsub "\\n", "\n"
     rescue => e
@@ -102,7 +103,7 @@ class Window_CheatMenuStats < Window_Command
   end
 end
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS << [:stats, "#{$mod_cheats.getText("modules/statsedit:commands/stats")}"]
   end

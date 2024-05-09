@@ -119,7 +119,7 @@ class Window_CheatMenuSummon < Window_Command
   end
 end # Window_CheatMenuSummon
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS << [:summon, "#{$mod_cheats.getText("modules/summons:commands/summon")}"]
   end

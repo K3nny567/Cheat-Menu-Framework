@@ -98,7 +98,7 @@ class Window_CheatMenuRace < Window_Command
   end
 end # Window_CheatMenuRace
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS << [:make_race, "#{$mod_cheats.getText("modules/race:commands/race")}"]
   end
