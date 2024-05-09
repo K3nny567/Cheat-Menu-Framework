@@ -5,7 +5,7 @@
 #===============================================================================
 
 #Mod namespace
-module CheatsMod
+class CheatsMod
   attr_reader :version
   attr_reader :config
   attr_reader :path
@@ -14,43 +14,47 @@ module CheatsMod
   attr_reader :modid
   attr_accessor :modules
 
-  def self.initialize()
+  def initialize
     @version = '1.0rc7'
     @config = nil
     @umm = !$mod_manager.nil?
     @modid = "cheatmenu"
     @path = File.dirname(__FILE__)
-    @text = Text.new("#{@path}/text") unless @umm
+    @text = Text.new("#{@path}/text/#{$lang}") unless @umm
     @modules = {}
   end
 
-  def self.init_config(ini_file)
+  def init_config(ini_file)
     @config = CheatsConfig.new(ini_file)
   end
 
-  def self.getText(text_block)
+  def updateText
+    @text = Text.new("#{@path}/text/#{$lang}") unless @umm
+  end
+
+  def getText(text_block)
     return $game_text["cheatmenu:#{text_block}"] if @umm
     return @text[text_block]
   end
 
-  def self.getResource(id, resource)
+  def getResource(id, resource)
     return $mod_manager.get_resource(id, resource) if @umm
     return "#{@path}/#{resource}"
   end
 
   #Include a single script
-  def self.import(dir, file)
+  def import(dir, file)
     FileGetter.load_from_list(FileGetter.getFileList(getResource("#{@modid}", "#{dir}/#{file}.rb")))
   end
 
   #Include scripts from path
-  def self.import(dir)
+  def imports(dir)
     FileGetter.load_from_list(FileGetter.getFileList(getResource("#{@modid}", "#{dir}/*.rb")))
   end
 
   #Expand cheat hotkeys
   #overridable function
-  def self.cheat_triggers
+  def cheat_triggers
     #empty so cheatmodules can override
   end
 end
@@ -59,10 +63,10 @@ if $mod_cheats.nil?
   $mod_cheats = CheatsMod.new
 
   #Include Libraries
-  $mod_cheats.import("scripts/lib")
+  $mod_cheats.imports("scripts/lib")
   
   #Include Other Mods
-  $mod_cheats.import("othermods")
+  $mod_cheats.imports("othermods")
   
   #Include project
   $mod_cheats.import("scripts", "Utils") # CheatUtils
@@ -71,5 +75,5 @@ if $mod_cheats.nil?
   $mod_cheats.import("scripts", "Menu") # Cheat Menu
   
   #Include Cheat Modules
-  $mod_cheats.import("addons")  
+  $mod_cheats.imports("addons")  
 end

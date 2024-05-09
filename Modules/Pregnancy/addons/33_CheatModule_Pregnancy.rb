@@ -1,7 +1,11 @@
 # Cheats Mod Module - Pregnancy advancement
 
 #
-module CheatsMod
+module CheatMenuFramework
+  module MENU
+    COMMANDS << [:make_pregnant, "#{$mod_cheats.getText("modules/pregnancy:commands/preg")}"]
+  end
+
   module Pregnancy
     COMMANDS = [
       ["#{$mod_cheats.getText("modules/pregnancy:commands_preg/human")}", :pregCurrent, true, "Human"],
@@ -44,7 +48,7 @@ class Window_CheatMenuPreg < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    for command in CheatsMod::Pregnancy::COMMANDS
+    for command in CheatMenuFramework::Pregnancy::COMMANDS
       add_command(command[0], command[1], command[2], command[3])
     end
     if ($game_player.actor.preg_level >= 1)
@@ -134,12 +138,6 @@ class Window_CheatMenuPreg < Window_Command
     cursor_pagedown
   end
 end # Window_CheatMenuPreg
-
-module CheatsMod
-  module MENU
-    COMMANDS << [:make_pregnant, "#{$mod_cheats.getText("cheatmenu:modules/pregnancy:commands/preg")}"]
-  end
-end
 
 class Scene_CheatMenu
   alias_method :create_command_window_MODULE_PREGNANCY, :create_command_window

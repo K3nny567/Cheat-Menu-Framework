@@ -78,7 +78,7 @@ class Window_CheatMenuHairColor < Window_Command
   end
 end # Window_CheatMenuHairColor
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS << [:haircolor, "#{$mod_cheats.getText("modules/haircoloredit:command_desc")}"]
   end

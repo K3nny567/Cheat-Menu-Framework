@@ -12,13 +12,13 @@ module CheatUtils
   end
 end
 
-module CheatsMod
-  self.singleton_class.send(:alias_method, :cheat_triggers_CHEATSMODULE_AUTOBANDAGE, :cheat_triggers)
+class CheatsMod
+  alias_method :cheat_triggers_CHEATSMODULE_AUTOBANDAGE, :cheat_triggers
 
   ##---------------------------------------------------------------------------
   ## Hotkeys
   ##---------------------------------------------------------------------------
-  def self.cheat_triggers
+  def cheat_triggers
     cheat_triggers_CHEATSMODULE_AUTOBANDAGE
     if Input.trigger?(Input::F7)
       CheatUtils.bandage_player
@@ -41,7 +41,7 @@ class Window_CheatMenuCheats
 
   def make_command_list
     make_command_list_CHEATSMODULE_AUTOBANDAGE
-    add_command("#{$mod_cheats.getText("modules/autobandage:command"}", :cheatToggle, true, "toggle_autobandage")
+    add_command("#{$mod_cheats.getText("modules/autobandage:command")}", :cheatToggle, true, "toggle_autobandage")
   end
 
   def cheatToggle
@@ -64,7 +64,7 @@ class Window_CheatMenuCheats
     draw_item_CHEATSMODULE_AUTOBANDAGE(index)
     if @list[index][:ext] == "toggle_autobandage"
       name = command_name(index)
-      text = $autobandage ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod-cheats.getText("menu:cheat_toggle/off")}]"
+      text = $autobandage ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod_cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
   end

@@ -1,8 +1,8 @@
-module CheatsConfig
+class CheatsConfig
 
   attr_reader :ini
 
-  def self.initialize(ini_file)
+  def initialize(ini_file)
     unless File.exists?(ini_file)
       @ini = IniFile.new
       @ini.filename = ini_file
@@ -14,13 +14,13 @@ module CheatsConfig
     sleep 0.9
   end
 
-  def self.read(section = "", cheat = "", default_value = "")
+  def read(section = "", cheat = "", default_value = "")
     @ini.read
     return @ini[section][cheat] if @ini.has_section?(section)
     return default_value
   end
 
-  def self.write(section = "", cheat = "", value)
+  def write(section = "", cheat = "", value)
     @ini[section][cheat] = value
     @ini.save
   end

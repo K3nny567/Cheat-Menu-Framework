@@ -1,14 +1,14 @@
 # Cheats Mod Module - Legacy module
 
 #
-module CheatsMod
+module CheatMenuFramework
   module MENU
-    COMMANDS << [:heal, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/heal")}"]
-    COMMANDS << [:healw, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/healw")}"]
-    COMMANDS << [:fall, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/fall")}"]
-    COMMANDS << [:gib, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/gib")}"]
-    COMMANDS << [:lvl99, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/lvl99")}"]
-    COMMANDS << [:stronk, "#{$mod_cheats.getText("cheatmenu:modules/legacy:commands/stronk")}"]
+    COMMANDS << [:heal, "#{$mod_cheats.getText("modules/legacy:commands/heal")}"]
+    COMMANDS << [:healw, "#{$mod_cheats.getText("modules/legacy:commands/healw")}"]
+    COMMANDS << [:fall, "#{$mod_cheats.getText("modules/legacy:commands/fall")}"]
+    COMMANDS << [:gib, "#{$mod_cheats.getText("modules/legacy:commands/gib")}"]
+    COMMANDS << [:lvl99, "#{$mod_cheats.getText("modules/legacy:commands/lvl99")}"]
+    COMMANDS << [:stronk, "#{$mod_cheats.getText("modules/legacy:commands/stronk")}"]
   end
 end
 

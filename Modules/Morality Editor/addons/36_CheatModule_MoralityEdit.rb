@@ -77,7 +77,7 @@ class Window_CheatMenuMorals < Window_Command
   end
 end # Window_CheatMenuMorals
 
-module CheatsMod
+module CheatMenuFramework
   module MENU
     COMMANDS << [:set_morality, "#{$mod_cheats.getText("modules/moralityedit:commands/morality")}"]
   end
