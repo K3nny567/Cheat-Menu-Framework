@@ -13,7 +13,7 @@ class Game_Actor
   end
 end
 
-class Window_DebugStats < Window_Command
+class Window_CheatMenuStats < Window_Command
   def initialize(help_window)
     @stats_help_window = help_window
     super(160, 0)
@@ -102,13 +102,13 @@ class Window_DebugStats < Window_Command
   end
 end
 
-module YEA
-  module DEBUG
-    COMMANDS << [:stats, "#{$game_text["cheatmenu:modules/statsedit:commands/stats"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:stats, "#{$mod_cheats.getText("modules/statsedit:commands/stats")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_STATSEDIT, :create_command_window
 
   def create_command_window
@@ -118,7 +118,7 @@ class Scene_Debug
 
   def create_stats_window
     @stats_help_window = Window_Base.new(((Graphics.width - 160) / 2) + 160, 0, (Graphics.width - 160) / 2, Graphics.height - 120)
-    @stats_window = Window_DebugStats.new(@stats_help_window)
+    @stats_window = Window_CheatMenuStats.new(@stats_help_window)
     @stats_window.set_handler(:cancel, method(:on_stats_cancel))
   end
 
@@ -128,7 +128,7 @@ class Scene_Debug
     @stats_window.show
     @stats_help_window.show
     @stats_window.activate
-    refresh_help_window(:stats, "#{$game_text["cheatmenu:modules/statsedit:command_help/stats_0"]}\n#{$game_text["cheatmenu:modules/statsedit:command_help/stats_1"]}\n\n")
+    refresh_help_window(:stats, "#{$mod_cheats.getText("modules/statsedit:command_help/stats_0")}\n#{$mod_cheats.getText("modules/statsedit:command_help/stats_1")}\n\n")
   end
 
   def on_stats_cancel

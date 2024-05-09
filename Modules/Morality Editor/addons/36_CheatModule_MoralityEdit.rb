@@ -1,9 +1,9 @@
 # Cheats Mod Module - Morality Editor
 
 #==============================================================================
-# Window_DebugMorals
+# Window_CheatMenuMorals
 #==============================================================================
-class Window_DebugMorals < Window_Command
+class Window_CheatMenuMorals < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -28,7 +28,7 @@ class Window_DebugMorals < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("", :morality, true, "#{$game_text["cheatmenu:modules/moralityedit:commands_morality/command"]}")
+    add_command("", :morality, true, "#{$mod_cheats.getText("modules/moralityedit:commands_morality/command")}")
   end
 
   def morality
@@ -75,15 +75,15 @@ class Window_DebugMorals < Window_Command
     $game_player.actor.morality_lona -= Input.press?(Input::KEYMAP[:ALT]) ? 99 : 0
     draw_item(index)
   end
-end # Window_DebugMorals
+end # Window_CheatMenuMorals
 
-module YEA
-  module DEBUG
-    COMMANDS << [:set_morality, "#{$game_text["cheatmenu:modules/moralityedit:commands/morality"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:set_morality, "#{$mod_cheats.getText("modules/moralityedit:commands/morality")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_MORALITYEDIT, :create_command_window
 
   def create_command_window
@@ -93,7 +93,7 @@ class Scene_Debug
 
   # Morality Window
   def create_morals_windows
-    @morals_window = Window_DebugMorals.new
+    @morals_window = Window_CheatMenuMorals.new
     @morals_window.set_handler(:cancel, method(:on_morals_cancel))
   end
 
@@ -109,7 +109,7 @@ class Scene_Debug
     @dummy_window.hide
     @morals_window.show
     @morals_window.activate
-    refresh_help_window(@command_window.current_symbol, "#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_0"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_1"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_2"]}\n#{$game_text["cheatmenu:modules/moralityedit:command_help/morality_3"]}")
+    refresh_help_window(@command_window.current_symbol, "#{$mod_cheats.getText("modules/moralityedit:command_help/morality_0")}\n#{$mod_cheats.getText("modules/moralityedit:command_help/morality_1")}\n#{$mod_cheats.getText("modules/moralityedit:command_help/morality_2")}\n#{$mod_cheats.getText("modules/moralityedit:command_help/morality_3")}")
   end # Morality Window
 end
 

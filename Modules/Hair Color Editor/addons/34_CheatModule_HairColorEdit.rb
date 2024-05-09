@@ -1,10 +1,10 @@
 # Cheats Mod Module - Hair Color Editor
 
 #--------------------------------------------------------------------------
-# Window_DebugHairColor
+# Window_CheatMenuHairColor
 #--------------------------------------------------------------------------
 
-class Window_DebugHairColor < Window_Command
+class Window_CheatMenuHairColor < Window_Command
   def minmaxHairColor(value)
     return 5 if value < 0
     return 0 if value > 5
@@ -34,7 +34,7 @@ class Window_DebugHairColor < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("", :colorCurrent, true, "#{$game_text["cheatmenu:modules/haircoloredit:command_ext"]}")
+    add_command("", :colorCurrent, true, "#{$mod_cheats.getText("modules/haircoloredit:command_ext")}")
   end
 
   def colorCurrent
@@ -76,15 +76,15 @@ class Window_DebugHairColor < Window_Command
     $game_player.actor.record_HairColor = minmaxHairColor($game_player.actor.record_HairColor)
     draw_item(index)
   end
-end # Window_DebugHairColor
+end # Window_CheatMenuHairColor
 
-module YEA
-  module DEBUG
-    COMMANDS << [:haircolor, "#{$game_text["cheatmenu:modules/haircoloredit:command_desc"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:haircolor, "#{$mod_cheats.getText("modules/haircoloredit:command_desc")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_HAIRCOLOREDIT, :create_command_window
 
   def create_command_window
@@ -93,7 +93,7 @@ class Scene_Debug
   end
 
   def create_haircolor_window
-    @haircolor_window = Window_DebugHairColor.new
+    @haircolor_window = Window_CheatMenuHairColor.new
     @haircolor_window.set_handler(:cancel, method(:on_haircolor_cancel))
   end
 
@@ -102,7 +102,7 @@ class Scene_Debug
     @dummy_window.hide
     @haircolor_window.show
     @haircolor_window.activate
-    refresh_help_window(:haircolor, "#{$game_text["cheatmenu:modules/haircoloredit:command_help_0"]}\n#{$game_text["cheatmenu:modules/haircoloredit:command_help_1"]}\n#{$game_text["cheatmenu:modules/haircoloredit:command_help_2"]}\n#{$game_text["cheatmenu:modules/haircoloredit:command_help_3"]}")
+    refresh_help_window(:haircolor, "#{$mod_cheats.getText("modules/haircoloredit:command_help_0")}\n#{$mod_cheats.getText("modules/haircoloredit:command_help_1")}\n#{$mod_cheats.getText("modules/haircoloredit:command_help_2")}\n#{$mod_cheats.getText("modules/haircoloredit:command_help_3")}")
   end
 
   def on_haircolor_cancel
