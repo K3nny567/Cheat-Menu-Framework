@@ -12,7 +12,7 @@ module CheatUtils
   end
 end
 
-class Window_DebugRace
+class Window_CheatMenuRace
   alias_method :raceCurrent_MODULE_ABOMSKILLS, :raceCurrent
 
   def raceCurrent
@@ -21,4 +21,4 @@ class Window_DebugRace
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Abomination Skills"] = true
+$mod_cheats.modules["Abomination Skills"] = true

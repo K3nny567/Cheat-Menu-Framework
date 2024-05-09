@@ -113,4 +113,4 @@ class Scene_Debug
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Hair Color Editor"] = true
+$mod_cheats.modules["Hair Color Editor"] = true

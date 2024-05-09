@@ -149,4 +149,4 @@ class Scene_Debug
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Inventory Editor"] = true
+$mod_cheats.modules["Inventory Editor"] = true

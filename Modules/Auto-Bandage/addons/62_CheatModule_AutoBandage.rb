@@ -8,7 +8,7 @@ module CheatUtils
 
   def self.toggle_autobandage
     $autobandage = !$autobandage
-    FileGetter.cheat_save("Cheats Mod - Modules", "Auto-Bandage", $autobandage)
+    $mod_cheats.config.write("Cheats Mod - Modules", "Auto-Bandage", $autobandage)
   end
 end
 
@@ -34,14 +34,14 @@ module CheatsMod
   end
 end
 
-class Window_DebugCheats
+class Window_CheatMenuCheats
   alias_method :make_command_list_CHEATSMODULE_AUTOBANDAGE, :make_command_list
   alias_method :cheatToggle_CHEATSMODULE_AUTOBANDAGE, :cheatToggle
   alias_method :draw_item_CHEATSMODULE_AUTOBANDAGE, :draw_item
 
   def make_command_list
     make_command_list_CHEATSMODULE_AUTOBANDAGE
-    add_command("#{$game_text["cheatmenu:modules/autobandage:command"]}", :cheatToggle, true, "toggle_autobandage")
+    add_command("#{$mod_cheats.getText("modules/autobandage:command"}", :cheatToggle, true, "toggle_autobandage")
   end
 
   def cheatToggle
@@ -64,13 +64,13 @@ class Window_DebugCheats
     draw_item_CHEATSMODULE_AUTOBANDAGE(index)
     if @list[index][:ext] == "toggle_autobandage"
       name = command_name(index)
-      text = $autobandage ? "[#{$game_text["cheatmenu:menu:cheat_toggle/on"]}]" : "[#{$game_text["cheatmenu:menu:cheat_toggle/off"]}]"
+      text = $autobandage ? "[#{$mod_cheats.getText("menu:cheat_toggle/on")}]" : "[#{$mod-cheats.getText("menu:cheat_toggle/off")}]"
       draw_item_content(index, name, text)
     end
   end
 end
 
-if !$CHEATSMOD_CHEATMODULES["Auto-Bandage"]
-  $autobandage = FileGetter.cheat_load("Cheats Mod - Modules", "Auto-Bandage", false)
-  $CHEATSMOD_CHEATMODULES["Auto-Bandage"] = true
+if !$mod_cheats.modules["Auto-Bandage"]
+  $autobandage = $mod_cheats.config.read("Cheats Mod - Modules", "Auto-Bandage", false)
+  $mod_cheats.modules["Auto-Bandage"] = true
 end

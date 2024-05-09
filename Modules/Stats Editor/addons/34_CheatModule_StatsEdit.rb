@@ -140,4 +140,4 @@ class Scene_Debug
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Stats Editor"] = true
+$mod_cheats.modules["Stats Editor"] = true

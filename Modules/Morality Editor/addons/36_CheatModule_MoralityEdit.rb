@@ -113,4 +113,4 @@ class Scene_Debug
   end # Morality Window
 end
 
-$CHEATSMOD_CHEATMODULES["Morality Editor"] = true
+$mod_cheats.modules["Morality Editor"] = true

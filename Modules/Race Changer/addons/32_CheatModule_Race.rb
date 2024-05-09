@@ -3,7 +3,7 @@
 ##---------------------------------------------------------------------------
 ## Race Menu
 ##---------------------------------------------------------------------------
-class Window_DebugRace < Window_Command
+class Window_CheatMenuRace < Window_Command
 
   #--------------------------------------------------------------------------
   # initialize
@@ -29,12 +29,12 @@ class Window_DebugRace < Window_Command
   # make_command_list
   #--------------------------------------------------------------------------
   def make_command_list
-    add_command("#{$game_text["cheatmenu:modules/race:commands_race/human"]}", :raceCurrent, true, "Human")
-    add_command("#{$game_text["cheatmenu:modules/race:commands_race/moot"]}", :raceCurrent, true, "Moot")
-    add_command("#{$game_text["cheatmenu:modules/race:commands_race/deepone"]}", :raceCurrent, true, "Deepone")
-    add_command("#{$game_text["cheatmenu:modules/race:commands_race/truedeepone"]}", :raceCurrent, true, "TrueDeepone")
-    add_command("#{$game_text["cheatmenu:modules/race:commands_race/abom_human"]}", :raceCurrent, true, "HumanAbomination")
-    add_command("#{$game_text["cheatmenu:modules/race:commands_race/abom_moot"]}", :raceCurrent, true, "MootAbomination")
+    add_command("#{$mod_cheats.getText("modules/race:commands_race/human")}", :raceCurrent, true, "Human")
+    add_command("#{$mod_cheats.getText("modules/race:commands_race/moot")}", :raceCurrent, true, "Moot")
+    add_command("#{$mod_cheats.getText("modules/race:commands_race/deepone")}", :raceCurrent, true, "Deepone")
+    add_command("#{$mod_cheats.getText("modules/race:commands_race/truedeepone")}", :raceCurrent, true, "TrueDeepone")
+    add_command("#{$mod_cheats.getText("modules/race:commands_race/abom_human")}", :raceCurrent, true, "HumanAbomination")
+    add_command("#{$mod_cheats.getText("modules/race:commands_race/abom_moot")}", :raceCurrent, true, "MootAbomination")
   end
 
   def raceCurrent
@@ -96,15 +96,15 @@ class Window_DebugRace < Window_Command
   def cursor_right(wrap = false)
     cursor_pagedown
   end
-end # Window_DebugRace
+end # Window_CheatMenuRace
 
-module YEA
-  module DEBUG
-    COMMANDS << [:make_race, "#{$game_text["cheatmenu:modules/race:commands/race"]}"]
+module CheatsMod
+  module MENU
+    COMMANDS << [:make_race, "#{$mod_cheats.getText("modules/race:commands/race")}"]
   end
 end
 
-class Scene_Debug
+class Scene_CheatMenu
   alias_method :create_command_window_MODULE_RACECHANGER, :create_command_window
 
   def create_command_window
@@ -114,7 +114,7 @@ class Scene_Debug
 
   # Race Window
   def create_race_window
-    @race_window = Window_DebugRace.new
+    @race_window = Window_CheatMenuRace.new
     @race_window.set_handler(:ok, method(:on_race_ok))
     @race_window.set_handler(:cancel, method(:on_race_cancel))
   end
@@ -136,8 +136,8 @@ class Scene_Debug
     @dummy_window.hide
     @race_window.show
     @race_window.activate
-    refresh_help_window(:make_race, "#{$game_text["cheatmenu:modules/race:command_help/race_0"]}\n#{$game_text["cheatmenu:modules/race:command_help/race_1"]}\n\n")
+    refresh_help_window(:make_race, "#{$mod_cheats.getText("modules/race:command_help/race_0")}\n#{$mod_cheats.getText("modules/race:command_help/race_1")}\n\n")
   end # Race Window
 end
 
-$CHEATSMOD_CHEATMODULES["Race Changer"] = true
+$mod_cheats.modules["Race Changer"] = true

@@ -177,4 +177,4 @@ class Scene_Debug
   end # Pregnancy Window
 end
 
-$CHEATSMOD_CHEATMODULES["Pregnancy"] = true
+$mod_cheats.modules["Pregnancy"] = true

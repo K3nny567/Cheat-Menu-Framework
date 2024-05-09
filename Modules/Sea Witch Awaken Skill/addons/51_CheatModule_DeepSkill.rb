@@ -28,4 +28,4 @@ class Window_DebugRace
   end
 end
 
-$CHEATSMOD_CHEATMODULES["Sea Witch Awaken Skill"] = true
+$mod_cheats.modules["Sea Witch Awaken Skill"] = true
