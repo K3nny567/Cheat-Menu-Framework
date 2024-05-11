@@ -65,4 +65,4 @@ module CheatUtils
   end
 end
 
-$mod_cheats.modules["Unlock Tool"] = true
+$mod_cheats.modules["Unlock Tool"] = true unless $mod_cheats.nil?
