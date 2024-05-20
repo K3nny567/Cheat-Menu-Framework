@@ -1,4 +1,4 @@
-# Adds F1-F4 Configurations to Input module
+# Adds extra triggerable keys to Input module
 
 #
 
@@ -7,4 +7,5 @@ module Input
   F2 = [KEYMAP[:F2]]
   F3 = [KEYMAP[:F3]]
   F4 = [KEYMAP[:F4]]
+  Agrave = [KEYMAP[:Agrave]]
 end
