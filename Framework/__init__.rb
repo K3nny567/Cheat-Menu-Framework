@@ -8,15 +8,19 @@
 class CheatsMod
   attr_reader :version
   attr_reader :config
+  attr_reader :loadorder
   attr_reader :path
   attr_reader :text
   attr_reader :umm
   attr_reader :modid
   attr_accessor :modules
+  attr_accessor :addons
 
   def initialize
     @version = '1.0rc7'
     @config = nil
+    @addons = nil
+    @loadorder = nil
     @umm = !$mod_manager.nil?
     @modid = "cheatmenu"
     @path = File.dirname(__FILE__)
@@ -26,6 +30,39 @@ class CheatsMod
 
   def init_config(ini_file)
     @config = CheatsConfig.new(ini_file)
+  end
+
+  def init_addons
+    @addons = Plugins.new("#{@path}")
+    addons = {
+      :path => "#{@addons.root_path}/addons",
+      :order => @loadorder,
+      :exclude => [
+      ]
+    }
+    @addons.load_files(addons)
+  end
+
+  def init_loadorder(file)
+    unless File.exist?(getResource("#{@modid}", "#{file}"))
+      default_loadorder = [
+          "UnlockTool", "UnequipItems", "InvEdit", "Summons",
+          "Race", "Pregnancy", "StatsEdit", "HairColorEdit",
+          "MoralityEdit", "Legacy", "AbomSkills", "DeepSkill", "Dirt",
+          "InfiniteMainStats", "AutoBandage", "InfiniteMoney"
+        ]
+      
+      File.open(getResource("#{@modid}", "#{file}"), 'w') {
+        |lo_file|
+
+        lo_file.write(JSON.encode(default_loadorder))
+        lo_file.close
+      }
+    end
+    json_file = File.open(getResource("#{@modid}", "#{file}"))
+    @loadorder = JSON.decode(json_file.read())
+    @loadorder << :rest
+    json_file.close
   end
 
   def updateText
@@ -62,6 +99,12 @@ end
 if $mod_cheats.nil?
   $mod_cheats = CheatsMod.new
 
+  #Import Load Order (creates default if no file)
+  $mod_cheats.init_loadorder("loadorder.json")
+
+  #Include Plugins class
+  $mod_cheats.import("scripts", "Plugins")
+
   #Include Libraries
   $mod_cheats.imports("scripts/lib")
   
@@ -75,5 +118,6 @@ if $mod_cheats.nil?
   $mod_cheats.import("scripts", "Menu") # Cheat Menu
   
   #Include Cheat Modules
-  $mod_cheats.imports("addons")  
+  $mod_cheats.init_addons
+  $mod_cheats.addons.run
 end

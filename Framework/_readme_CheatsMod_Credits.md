@@ -14,6 +14,8 @@
 
 • DocNITE (for the code that was previously used in the translation support)
 
+• Galenmereth / Tor Damian for the Plugin Framework
+
 ## Translations
 
 • RUS - [Zhong Xina | z洪ξ那](https://f95zone.to/members/3532752/)
