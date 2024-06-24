@@ -24,4 +24,12 @@ class CheatsConfig
     @ini[section][cheat] = value
     @ini.save
   end
+
+  def readHotkey
+    hotkey = read("Cheats Mod - Hotkeys", "CheatMenu", "Agrave")
+    $mod_cheats.hotkey = hotkey.to_sym
+  end
+  def writeHotkey
+    write("Cheats Mod - Hotkeys", "CheatMenu", $mod_cheats.hotkey.to_s)
+  end
 end

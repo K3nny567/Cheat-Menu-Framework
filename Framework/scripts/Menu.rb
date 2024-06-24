@@ -7,7 +7,7 @@ class CheatsMod
   alias_method :cheat_triggers_CHEATMENUFRAMEWORK, :cheat_triggers
   def cheat_triggers
     cheat_triggers_CHEATMENUFRAMEWORK
-    if Input.trigger?(:Agrave)
+    if Input.trigger?(@hotkey)
       unless SceneManager.scene_is?(Scene_CheatMenu)
         SceneManager.call(Scene_CheatMenu) if CheatUtils.ingame?
       end
@@ -172,7 +172,7 @@ class Scene_CheatMenu < Scene_MenuBase
 
   def update
     super
-    return_scene if Input.trigger?(:Agrave)
+    return_scene if Input.trigger?($mod_cheats.hotkey)
   end
 
   def terminate

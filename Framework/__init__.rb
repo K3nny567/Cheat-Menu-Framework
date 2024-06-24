@@ -15,6 +15,7 @@ class CheatsMod
   attr_reader :modid
   attr_accessor :modules
   attr_accessor :addons
+  attr_accessor :hotkey
 
   def initialize
     @version = '1.0rc7'
@@ -26,6 +27,7 @@ class CheatsMod
     @path = File.dirname(__FILE__)
     @text = Text.new("#{@path}/text/#{$lang}") unless @umm
     @modules = {}
+    @hotkey = nil
   end
 
   def init_config(ini_file)
@@ -115,6 +117,7 @@ if $mod_cheats.nil?
   $mod_cheats.import("scripts", "Utils") # CheatUtils
   $mod_cheats.import("scripts", "Config") # Cheat Config
   $mod_cheats.init_config("GameCheats.ini")
+  $mod_cheats.config.readHotkey
   $mod_cheats.import("scripts", "Menu") # Cheat Menu
   
   #Include Cheat Modules
