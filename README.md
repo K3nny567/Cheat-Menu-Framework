@@ -12,7 +12,7 @@
 
 An updated, module-based version of the Cheats Mod.
 
-Latest version: [v1.0rc7](../../releases/tag/v1.0rc7)
+Latest version: [v1.0rc8](../../releases/tag/v1.0rc8)
 
 ## Requirements
 

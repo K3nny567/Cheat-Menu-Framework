@@ -18,7 +18,7 @@ class CheatsMod
   attr_accessor :hotkey
 
   def initialize
-    @version = '1.0rc7'
+    @version = '1.0rc8'
     @config = nil
     @addons = nil
     @loadorder = nil
@@ -51,7 +51,7 @@ class CheatsMod
           "UnlockTool", "UnequipItems", "InvEdit", "Summons",
           "Race", "Pregnancy", "StatsEdit", "HairColorEdit",
           "MoralityEdit", "Legacy", "AbomSkills", "DeepSkill", "Dirt",
-          "InfiniteMainStats", "AutoBandage", "InfiniteMoney"
+          "InfiniteMainStats", "AutoBandage", "AutoClean", "InfiniteMoney"
         ]
       
       File.open(getResource("#{@modid}", "#{file}"), 'w') {

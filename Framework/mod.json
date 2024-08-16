@@ -1,6 +1,6 @@
 {
 	"id": "cheatmenu",
-	"version": "1.0rc7",
+	"version": "1.0rc8",
 	"name": "$cheatmenu:menu:mod/name",
 	"description": "$cheatmenu:menu:mod/description",
 	"entry": "__init__.rb",

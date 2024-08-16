@@ -26,7 +26,7 @@ class CheatsConfig
   end
 
   def readHotkey
-    hotkey = read("Cheats Mod - Hotkeys", "CheatMenu", "Agrave")
+    hotkey = read("Cheats Mod - Hotkeys", "CheatMenu", "F9")
     $mod_cheats.hotkey = hotkey.to_sym
   end
   def writeHotkey
