@@ -3,8 +3,12 @@
 >
 > Never use the Code button.
 
+---
+
 > [!CAUTION]
 > If you absolutely must, grab the build system from [here](../../../LMake/releases/latest), it can do everything (including downloading both required repositories, run the LMake.cmd file for what the commands available are)
+
+---
 
 # Cheat Menu Framework
 
@@ -12,11 +16,11 @@
 
 An updated, module-based version of the Cheats Mod.
 
-Latest version: [v1.0rc8](../../releases/tag/v1.0rc8)
+[Latest version](../../releases/latest)
 
 ## Requirements
 
-Minimum required game version: `0.8.7.4`<br/>
+Minimum required game version: `0.8.7.4`
 
 ## Hotkeys
 
@@ -34,7 +38,7 @@ See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.tx
 - [ ] Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
 - [ ] Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
 
-<hr/>
+---
 
 ## Changelog (Legacy)
 
@@ -138,7 +142,7 @@ See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.tx
 
 </details>
 
-<hr/>
+---
 
 ## Credits
 
