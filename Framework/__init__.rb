@@ -18,7 +18,7 @@ class CheatsMod
   attr_accessor :hotkey
 
   def initialize
-    @version = '1.0rc8'
+    @version = '1.0rc9'
     @config = nil
     @addons = nil
     @loadorder = nil

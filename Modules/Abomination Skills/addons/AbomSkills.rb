@@ -1,6 +1,6 @@
 module CheatUtils
   def self.abom?
-    return $game_player.actor.record_lona_race == "Abomination"
+    return $game_player.actor.stat["RaceRecord"] == "Abomination"
   end
 
   def self.AbomSkills

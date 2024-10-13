@@ -49,36 +49,36 @@ class Window_CheatMenuRace < Window_Command
         $game_player.actor.erase_state("Tail")
         case name
         when "Moot"
-          $game_player.actor.record_lona_race = "Moot"
+          $game_player.actor.stat["RaceRecord"] = "Moot"
           $game_player.actor.stat["Race"] = "Moot"
           $game_player.actor.race = "Moot"
           $game_player.actor.add_state("Moot")
           $game_player.actor.add_state("Tail")
         when "Deepone"
-          $game_player.actor.record_lona_race = "PreDeepone"
+          $game_player.actor.stat["RaceRecord"] = "PreDeepone"
           $game_player.actor.stat["Race"] = "Human"
           $game_player.actor.race = "Human"
           $game_player.actor.add_state("PreDeepone")
         when "TrueDeepone"
-          $game_player.actor.record_lona_race = "TrueDeepone"
+          $game_player.actor.stat["RaceRecord"] = "TrueDeepone"
           $game_player.actor.stat["Race"] = "Deepone"
           $game_player.actor.race = "Deepone"
           $game_player.actor.add_state("TrueDeepone")
         when "HumanAbomination"
-          $game_player.actor.record_lona_race = "Abomination"
+          $game_player.actor.stat["RaceRecord"] = "Abomination"
           $game_player.actor.stat["Race"] = "Human"
           $game_player.actor.race = "Human"
           $story_stats["DreamPTSD"] = "Abomination"
           $game_player.actor.add_state("AbomSickly")
         when "MootAbomination"
-          $game_player.actor.record_lona_race = "Abomination"
+          $game_player.actor.stat["RaceRecord"] = "Abomination"
           $game_player.actor.stat["Race"] = "Moot"
           $game_player.actor.race = "Moot"
           $story_stats["DreamPTSD"] = "Abomination"
           $game_player.actor.add_state("AbomSickly")
           $game_player.actor.add_state("Moot")
         else # Human
-          $game_player.actor.record_lona_race = "Human"
+          $game_player.actor.stat["RaceRecord"] = "Human"
           $game_player.actor.stat["Race"] = "Human"
           $game_player.actor.race = "Human"
         end

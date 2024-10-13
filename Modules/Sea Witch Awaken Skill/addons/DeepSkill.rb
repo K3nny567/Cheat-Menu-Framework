@@ -1,6 +1,6 @@
 module CheatUtils
   def self.deepone?
-    case $game_player.actor.record_lona_race
+    case $game_player.actor.stat["RaceRecord"]
     when "PreDeepone"
       return true
     when "TrueDeepone"

@@ -20,7 +20,7 @@ An updated, module-based version of the Cheats Mod.
 
 ## Requirements
 
-Minimum required game version: `0.8.7.4`
+Minimum required game version: `0.9.3.0`
 
 ## Hotkeys
 

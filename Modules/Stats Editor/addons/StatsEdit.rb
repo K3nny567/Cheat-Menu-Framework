@@ -8,7 +8,7 @@ class Game_Actor
     return prp "erase_state #{state_id} not found", 1 if !state_id
     @states.delete_at(@states.index(state_id) || @states.length) ## Line added to remove only one instance.
     return if state?(state_id) ## Line added to prevent a stack from bugging.
-    @state_turns.delete(state_id)
+    # @state_turns.delete(state_id)
     @state_steps.delete(state_id)
   end
 end
