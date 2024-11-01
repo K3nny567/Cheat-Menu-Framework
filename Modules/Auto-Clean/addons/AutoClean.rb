@@ -3,8 +3,9 @@
 #
 module CheatUtils
   def self.clean_player
-    $game_player.actor.cumsMap.each do |state, id|
-      $game_player.actor.healCums(state, 1000) if self.ingame?
+    return if self.ingame?
+    $game_player.actor.cumsMeters.each do |key, value|
+      $game_player.actor.healCums(key, value) if value > 0
     end
   end
 
