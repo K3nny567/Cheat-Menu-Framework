@@ -20,7 +20,7 @@ An updated, module-based version of the Cheats Mod.
 
 ## Requirements
 
-Minimum required game version: `0.9.3.0`
+Minimum required game version: `0.9.4.0.4`
 
 ## Hotkeys
 
@@ -36,7 +36,6 @@ See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.tx
 ## Planned changes (lower number = highest priority)
 
 - [ ] Major optimization of the Infinite Stats cheats (Configurable variant ONLY) [On-hold]
-- [ ] Redesign the menu to match the pause menu (maybe even add a Cheats entry to the pause menu to free up a hotkey) [TBD]
 
 ---
 

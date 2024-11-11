@@ -6,6 +6,7 @@ module CheatUtils
   def self.unequipall(force)
     if self.ingame?
       $game_player.actor.equip_slots.size.times do |i|
+        next if i == 7 and force == false
         $game_player.actor.change_equip(i, nil) if $game_player.actor.equip_change_ok?(i) or force
         SndLib.sound_equip_armor
       end

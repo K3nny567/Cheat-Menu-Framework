@@ -33,7 +33,7 @@ class Window_CheatMenuStats < Window_Command
   def make_command_list
     $data_StateName.each_pair do |k, v|
       if v != nil and k != nil
-        add_command("", :drawStat, true, [k, v]) if !(v.name == "" or v.name == "nil" or v.description == "")
+        add_command("", :drawStat, true, [k, v]) if !(v.name == "" or v.name == "nil" or v.name == "DataState:nil/name" or v.description == "" or v.description == "nil" or v.description == "DataState:nil/description")
       end
     end
   end
@@ -44,7 +44,7 @@ class Window_CheatMenuStats < Window_Command
   def activate
     super
     if @list.size > 0
-      @stats_help_window.draw_text_ex(4, 0, prep_desc(@list[0][:ext][1].description))
+      @stats_help_window.draw_text_ex(4, 0, prep_desc($game_text[@list[0][:ext][1].description]))
     end
   end
 
@@ -61,7 +61,7 @@ class Window_CheatMenuStats < Window_Command
     if item.name.empty?
       draw_text(rect, name)
     else
-      draw_text(rect, item.name)
+      draw_text(rect, $game_text[item.name])
     end
     text = sprintf("%s/%s", stack, item.max_stacks)
     draw_text(rect, text, 2)
@@ -93,13 +93,13 @@ class Window_CheatMenuStats < Window_Command
   def cursor_down(wrap = false)
     super wrap
     @stats_help_window.contents.clear
-    @stats_help_window.draw_text_ex(4, 0, prep_desc(current_ext[1].description))
+    @stats_help_window.draw_text_ex(4, 0, prep_desc($game_text[current_ext[1].description]))
   end
 
   def cursor_up(wrap = false)
     super wrap
     @stats_help_window.contents.clear
-    @stats_help_window.draw_text_ex(4, 0, prep_desc(current_ext[1].description))
+    @stats_help_window.draw_text_ex(4, 0, prep_desc($game_text[current_ext[1].description]))
   end
 end
 

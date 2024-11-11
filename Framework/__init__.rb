@@ -11,21 +11,19 @@ class CheatsMod
   attr_reader :loadorder
   attr_reader :path
   attr_reader :text
-  attr_reader :umm
   attr_reader :modid
   attr_accessor :modules
   attr_accessor :addons
   attr_accessor :hotkey
 
   def initialize
-    @version = '1.0rc9'
+    @version = '1.0-rc.10'
     @config = nil
     @addons = nil
     @loadorder = nil
-    @umm = !$mod_manager.nil?
     @modid = "cheatmenu"
     @path = File.dirname(__FILE__)
-    @text = Text.new("#{@path}/text/#{$lang}") unless @umm
+    @text = Text.new("#{@path}/ModText/#{$lang}") #unless @umm
     @modules = {}
     @hotkey = nil
   end
@@ -68,16 +66,14 @@ class CheatsMod
   end
 
   def updateText
-    @text = Text.new("#{@path}/text/#{$lang}") unless @umm
+    @text = Text.new("#{@path}/ModText/#{$lang}") #unless @umm
   end
 
-  def getText(text_block)
-    return $game_text["cheatmenu:#{text_block}"] if @umm
-    return @text[text_block]
+  def getText(text_flag)
+    return @text[text_flag]
   end
 
   def getResource(id, resource)
-    return $mod_manager.get_resource(id, resource) if @umm
     return "#{@path}/#{resource}"
   end
 
@@ -116,7 +112,7 @@ if $mod_cheats.nil?
   #Include project
   $mod_cheats.import("scripts", "Utils") # CheatUtils
   $mod_cheats.import("scripts", "Config") # Cheat Config
-  $mod_cheats.init_config("GameCheats.ini")
+  $mod_cheats.init_config("UserData/GameCheats.ini")
   $mod_cheats.config.readHotkey
   $mod_cheats.import("scripts", "Menu") # Cheat Menu
   
