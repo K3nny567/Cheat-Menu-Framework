@@ -29,7 +29,7 @@ class CheatsMod
   end
 
   def init_configDir
-    @configDir = System_Settings::USER_DATA_PATH} + @modid
+    @configDir = System_Settings::USER_DATA_PATH + @modid
 
     # Check if the directory exists
     unless Dir.exist?(@configDir)
