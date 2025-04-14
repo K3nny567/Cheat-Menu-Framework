@@ -31,7 +31,7 @@ See the [_readme_CheatsMod_Controls.txt](Framework/_readme_CheatsMod_Controls.tx
 - Hive Hearts summoned on maps without H_BIOS storypoints crash the game. Only summon them if you wish to farm them on their actual maps. (If anyone knows how to recreate these storypoints in code if they don't exist in the current area, feel free to make and share a patch to the Summon feature)
 - Having all 3 Infinite Stats cheats enabled causes lag to a noticeable degree. (Configurable variant ONLY, partially fixed by recent changes)
 - Some things don't change when changing languages. This is a problem with even the game itself, so restart after switching languages.
-- [Will NOT be changed] There is no default language fallback implemented in the mod, so if you use the MTL in the game itself, you MUST create the MTL folder in the mod too. This is by design as the mod relies on the language as set by the game. The MTL tool can be tricked into translating the mod, but the language the tool uses as a source is Google Translated from English and will be inaccurate. The only languages included in the mod that are confirmed accurate are English (being my native language) and Russian (see Credits spoiler)
+- [Will NOT be changed] There is no default language fallback implemented in the mod. This is by design as the mod relies on the language as set by the game. The MTL tool can be tricked into translating the mod, but the language the tool uses as a source is Google Translated from English and will be inaccurate. The only languages included in the mod that are confirmed accurate are English (being my native language) and Russian (see Credits spoiler)
 
 ## Planned changes (lower number = highest priority)
 
