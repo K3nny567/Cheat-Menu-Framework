@@ -6,30 +6,26 @@
 
 #Mod namespace
 class CheatsMod
-  attr_reader :version
+  attr_reader :info
   attr_reader :config
   attr_reader :configDir
   attr_reader :loadorder
-  attr_reader :path
-  attr_reader :modid
   attr_accessor :modules
   attr_accessor :addons
   attr_accessor :hotkey
 
   def initialize
-    @version = '1.0-rc.11'
+    @info = $mod_manager.mods["cheatmenu"]
     @config = nil
     @configDir = nil
     @addons = nil
     @loadorder = nil
-    @modid = "cheatmenu"
-    @path = $mod_manager.mods[@modid].path
     @modules = {}
     @hotkey = nil
   end
 
   def init_configDir
-    @configDir = System_Settings::USER_DATA_PATH + @modid
+    @configDir = System_Settings::USER_DATA_PATH + @info.id
 
     # Check if the directory exists
     unless Dir.exist?(@configDir)
@@ -46,7 +42,7 @@ class CheatsMod
   end
 
   def init_addons
-    @addons = Plugins.new("#{@path}")
+    @addons = Plugins.new("#{@info.path}")
     addons = {
       :path => "#{@addons.root_path}/addons",
       :order => @loadorder,
@@ -59,12 +55,14 @@ class CheatsMod
   def init_loadorder(file)
     unless File.exist?(file)
       default_loadorder = [
-          "UnlockTool", "UnequipItems", "InvEdit", "Summons",
-          "Race", "Pregnancy", "StatsEdit", "HairColorEdit",
-          "MoralityEdit", "Legacy", "AbomSkills", "DeepSkill", "Dirt",
-          "InfiniteMainStats", "AutoBandage", "AutoClean", "InfiniteMoney"
-        ]
-      
+        "DisplayPortrait"  , "UnlockTool"       , "UnequipItems"     ,
+        "InvEdit"          , "Summons"          , "Race"             ,
+        "Pregnancy"        , "StatsEdit"        , "HairColorEdit"    ,
+        "MoralityEdit"     , "Legacy"           , "AbomSkills"       ,
+        "DeepSkill"        , "Dirt"             , "InfiniteMainStats",
+        "AutoBandage"      , "AutoClean"        , "InfiniteMoney"
+      ]
+
       File.open(file, 'w') {
         |lo_file|
 
@@ -72,6 +70,7 @@ class CheatsMod
         lo_file.close
       }
     end
+
     json_file = File.open(file)
     @loadorder = JSON.decode(json_file.read())
     @loadorder << :rest
@@ -79,21 +78,21 @@ class CheatsMod
   end
 
   def getText(text_flag)
-    return $game_text["#{@modid}:#{text_flag}"]
+    return $game_text["#{@info.id}:#{text_flag}"]
   end
 
-  def getResource(id, resource)
-    return $mod_manager.get_resource(id, resource)
+  def getResource(resource)
+    return $mod_manager.get_resource(@info.id, resource)
   end
 
   #Include a single script
   def import(dir, file)
-    FileGetter.load_from_list(FileGetter.getFileList(getResource("#{@modid}", "#{dir}/#{file}.rb")))
+    FileGetter.load_from_list(FileGetter.getFileList(getResource("#{dir}/#{file}.rb")))
   end
 
   #Include scripts from path
   def imports(dir)
-    FileGetter.load_from_list(FileGetter.getFileList(getResource("#{@modid}", "#{dir}/*.rb")))
+    FileGetter.load_from_list(FileGetter.getFileList(getResource("#{dir}/*.rb")))
   end
 
   #Expand cheat hotkeys
@@ -131,4 +130,7 @@ if $mod_cheats.nil?
   #Include Cheat Modules
   $mod_cheats.init_addons
   $mod_cheats.addons.run
+
+  #Save Hotkey for future sessions
+  $mod_cheats.config.writeHotkey
 end

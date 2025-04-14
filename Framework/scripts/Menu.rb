@@ -225,7 +225,7 @@ class Scene_CheatMenu < Scene_MenuBase
     @dummy_window.hide
     @modules_window.show
     @modules_window.activate
-    refresh_help_window(:modules, "")
+    refresh_help_window(:modules, "#{$mod_cheats.info.localized_name}\nv#{$mod_cheats.info.version}\n#{$mod_cheats.info.localized_description}")
   end # Installed Modules Window
 
   # Toggle Cheats Window

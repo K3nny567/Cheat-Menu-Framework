@@ -1,11 +1,13 @@
 {
 	"id": "cheatmenu",
-	"version": "1.0-rc.11",
+	"version": "1.0-rc.12",
 	"name": "$cheatmenu:mod:name",
 	"description": "$cheatmenu:mod:description",
 	"entry": "__init__.rb",
 	"texts": "text",
-	"requires": {},
+	"requires": {
+		"LonaRPG": [">=", 0.9404]
+	},
 	"before": [],
 	"thumbnail": "preview.png"
 }
