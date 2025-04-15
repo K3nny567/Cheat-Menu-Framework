@@ -1,9 +1,29 @@
 ##---------------------------------------------------------------------------
-## CheatUtils Module
+  ## CheatUtils Module
 ##---------------------------------------------------------------------------
 module CheatUtils
+  #List of Scenes classed as being out of game
+  @outgame_scenes = [
+    ModManagerScene,
+    Scene_MapTitle,
+    Scene_AdultContentWarning,
+    Scene_FirstTimeSetup,
+    Scene_Title,
+    Scene_TitleOptions,
+    Scene_TitleOptInputMenu,
+    Scene_ACHlistMenu,
+    Scene_Credits,
+    Scene_Menu,
+    Scene_File,
+    Scene_Save,
+    Scene_Load_OnGameMenu,
+    Scene_Load
+  ]
   #Check if a game is loaded
   def self.ingame?
-    return ((!SceneManager.scene_is?(ModManagerScene) unless $mod_manager.nil?) and !SceneManager.scene_is?(Scene_MapTitle) and !SceneManager.scene_is?(Scene_AdultContentWarning) and !SceneManager.scene_is?(Scene_FirstTimeSetup) and !SceneManager.scene_is?(Scene_Title) and !SceneManager.scene_is?(Scene_TitleOptions) and !SceneManager.scene_is?(Scene_TitleOptInputMenu) and !SceneManager.scene_is?(Scene_ACHlistMenu) and !SceneManager.scene_is?(Scene_Credits) and !SceneManager.scene_is?(Scene_Load) and $loading_screen.disposed?)
+    return (!@outgame_scenes.any? {
+      |outgame_scene|
+      SceneManager.scene_is?(outgame_scene)
+    } and $loading_screen.disposed?)
   end
 end
